@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node:*)",
+      "Bash(npm:*)",
+      "Bash(powershell:*)",
+      "Bash(claude mcp:*)",
+      "Bash(where:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": []
+  }
+}

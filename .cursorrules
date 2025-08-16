@@ -1,0 +1,44 @@
+# MenuSparks Project Rules (Cursor + Claude)
+
+Context:
+- Project: MenuSparks - AI-powered menu optimization for restaurants
+- Owner: Derek (serial entrepreneur, 7 kids, owns Bobola's Restaurant in Nashua NH)
+- Tech Stack: Next.js 15 + Tailwind CSS + TypeScript
+- Dev Server: http://localhost:3000 (run `cd menspk-main && npm run dev`)
+- Key docs:
+  - PRD: MenuSparks_PRD.md
+  - CLAUDE.md: Project instructions and Derek's context
+  - Startup Guide: claude_startup.md
+
+Current Status:
+- Landing page conversion flow complete
+- Savings calculator with visual cards implemented
+- Pricing tiers: $10/$20/$35 weekly with annual toggle
+- Mobile-responsive design with dark theme
+- Next: Backend integration (Stripe + Google Gemini API)
+
+When a chat starts or context seems unclear:
+1) Reference CLAUDE.md for Derek's background and project context
+2) Check MenuSparks_PRD.md for product direction and requirements
+3) Review claude_startup.md for quick project refresh
+4) Confirm next step in plain English before coding
+
+Work rules:
+- Follow Derek's vibecoding approach - practical, actionable solutions
+- Scope changes narrowly (one file/section at a time)
+- Explain planned changes before generating full code
+- Stick to PRD requirements unless explicitly instructed otherwise
+- For big edits: chunk changes; avoid blind full-file rewrites
+- Focus on business growth and restaurant industry context
+
+Derek's priorities:
+- MenuSparks.com (current project)
+- The Pour Plan (bar version of MenuSparks)
+- Meet the Feed (social media platform)
+- Trading and business optimization
+
+If drift occurs:
+- Re-anchor to PRD + CLAUDE.md and summarize current goal
+- Ask Derek for clarification on business priorities
+
+Reference doc: claude_startup.md
