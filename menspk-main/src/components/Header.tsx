@@ -7,7 +7,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="bg-gray-900 shadow-sm border-b border-gray-700">
+    <header className="bg-black shadow-sm border-b border-gray-700">
       <nav className="section-container">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -19,21 +19,18 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="#how-it-works" className="text-gray-300 hover:text-orange-500 transition-colors">
-              How It Works
-            </Link>
             <Link href="#pricing" className="text-gray-300 hover:text-orange-500 transition-colors">
               Pricing
             </Link>
-            <Link href="#about" className="text-gray-300 hover:text-orange-500 transition-colors">
+            <Link href="/about" className="text-gray-300 hover:text-orange-500 transition-colors">
               About
             </Link>
-            <Link href="#contact" className="text-gray-300 hover:text-orange-500 transition-colors">
+            <a href="mailto:admin@menusparks.com" className="text-gray-300 hover:text-orange-500 transition-colors">
               Contact
+            </a>
+            <Link href="/calculator" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200">
+              Waste Calculator
             </Link>
-            <button className="btn-primary">
-              Get Started
-            </button>
           </div>
 
           {/* Mobile menu button */}
@@ -52,24 +49,22 @@ export default function Header() {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-900 border-t border-gray-700">
-              <Link href="#how-it-works" className="block px-3 py-2 text-gray-300 hover:text-orange-500">
-                How It Works
-              </Link>
-              <Link href="#pricing" className="block px-3 py-2 text-gray-300 hover:text-orange-500">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black border-t border-gray-700">
+              <Link href="#pricing" className="block px-3 py-2 text-gray-300 hover:text-orange-500" onClick={() => setIsMenuOpen(false)}>
                 Pricing
               </Link>
-              <Link href="#about" className="block px-3 py-2 text-gray-300 hover:text-orange-500">
+              <Link href="#about" className="block px-3 py-2 text-gray-300 hover:text-orange-500" onClick={() => setIsMenuOpen(false)}>
                 About
               </Link>
-              <Link href="#contact" className="block px-3 py-2 text-gray-300 hover:text-orange-500">
+              <a href="mailto:admin@menusparks.com" className="block px-3 py-2 text-gray-300 hover:text-orange-500" onClick={() => setIsMenuOpen(false)}>
                 Contact
+              </a>
+              <Link href="/faq" className="block px-3 py-2 text-gray-300 hover:text-orange-500" onClick={() => setIsMenuOpen(false)}>
+                FAQ
               </Link>
-              <div className="px-3 py-2">
-                <button className="btn-primary w-full">
-                  Get Started
-                </button>
-              </div>
+              <Link href="/calculator" className="block px-3 py-2 text-gray-300 hover:text-orange-500" onClick={() => setIsMenuOpen(false)}>
+                Waste Calculator
+              </Link>
             </div>
           </div>
         )}

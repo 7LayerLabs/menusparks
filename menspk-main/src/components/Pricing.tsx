@@ -7,65 +7,62 @@ export default function Pricing() {
 
   const tiers = [
     {
-      name: "Newsletter Only",
-      price: { weekly: 5, annual: 260 },
-      description: "Stay informed with industry intelligence",
+      name: "The Appetizer",
+      price: { weekly: 10, annual: 420 },
+      description: "Perfect starter for busy kitchens",
       features: [
-        "Weekly market intelligence report",
-        "Industry news digest", 
-        "Regional market analysis",
-        "Seasonal preparation guides",
-        "Vendor pricing trends"
-      ],
-      popular: false,
-      cta: "Start Newsletter"
-    },
-    {
-      name: "Appetizer Tier",
-      price: { weekly: 10, annual: 520 },
-      description: "Basic special development for small restaurants",
-      features: [
-        "5-7 weekly specials with complete recipes",
-        "Cost analysis and pricing suggestions", 
-        "Basic social media captions",
+        "3-5 weekly specials with complete recipes",
+        "Prep complexity and timing guides", 
         "Equipment requirement specifications",
-        "Staff training notes",
         "Email support"
       ],
-      popular: true,
-      cta: "Start Free Trial"
+      popular: false,
+      cta: "Order Your App"
     },
     {
-      name: "Entree Tier", 
-      price: { weekly: 25, annual: 1300 },
-      description: "Comprehensive service for established restaurants",
+      name: "The Main Meal",
+      price: { weekly: 20, annual: 840 },
+      description: "Full-service special development",
       features: [
-        "7-10 weekly specials with premium recipes",
-        "Advanced cost optimization",
-        "Multi-platform social media content",
-        "Customer dashboard access", 
-        "Performance analytics",
-        "Video preparation guides",
+        "5-7 weekly specials with premium recipes",
+        "Detailed cost guidance and pricing help",
+        "Complete social media content package",
+        "Video preparation guides", 
+        "Performance tracking",
         "Priority email support"
       ],
-      popular: false,
-      cta: "Start Free Trial"
+      popular: true,
+      cta: "Order Your Meal"
     },
     {
-      name: "Full Meal + Dessert",
-      price: { weekly: 39, annual: 2028 },
-      description: "Complete business optimization with POUR Plan",
+      name: "The Dessert",
+      price: { weekly: 35, annual: 1470 },
+      description: "Main Meal + full access to The Pour Plan",
       features: [
-        "Everything in Entree Tier",
-        "POUR Plan bar special development",
-        "Custom market intelligence",
-        "Vendor negotiation support",
+        "Everything in The Main Meal",
+        "Full access to The Pour Plan (our sister site)",
+        "Alcoholic beverage specials & cocktails",
+        "Bar profit optimization",
         "Direct expert consultation",
-        "Quarterly strategy sessions",
         "Phone support"
       ],
       popular: false,
-      cta: "Schedule Consultation"
+      cta: "Grab Your Dessert"
+    }
+  ]
+
+  const alaCarteOptions = [
+    {
+      name: "Industry Newsletter",
+      price: "$5/week",
+      description: "Market intelligence, pricing trends, and industry insights",
+      highlight: false
+    },
+    {
+      name: "Custom Newsletter",
+      price: "$10/week",
+      description: "Personalized market updates based on YOUR inventory and menu",
+      highlight: true
     }
   ]
 
@@ -74,7 +71,7 @@ export default function Pricing() {
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            Choose Your Success Level
+            Pick Your Perfect Menu
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
             Start small and upgrade as you see the profit impact. All tiers include our 
@@ -82,35 +79,37 @@ export default function Pricing() {
           </p>
 
           {/* Billing Toggle */}
-          <div className="inline-flex bg-gray-100 rounded-lg p-1">
-            <button
-              onClick={() => setBillingCycle('weekly')}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
-                billingCycle === 'weekly'
-                  ? 'bg-white text-blue-600 shadow-sm'
-                  : 'text-gray-600 hover:text-gray-900'
-              }`}
-            >
+          <div className="flex items-center justify-center gap-4">
+            <span className={`text-lg font-medium ${billingCycle === 'weekly' ? 'text-gray-900' : 'text-gray-500'}`}>
               Weekly
-            </button>
+            </span>
             <button
-              onClick={() => setBillingCycle('annual')}
-              className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
-                billingCycle === 'annual'
-                  ? 'bg-white text-blue-600 shadow-sm'
-                  : 'text-gray-600 hover:text-gray-900'
+              onClick={() => setBillingCycle(billingCycle === 'weekly' ? 'annual' : 'weekly')}
+              className={`relative inline-flex h-8 w-14 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
+                billingCycle === 'annual' ? 'bg-green-600' : 'bg-gray-400'
               }`}
+              aria-label="Toggle billing cycle"
             >
-              Annual <span className="text-green-600 font-semibold">(Save 20%)</span>
+              <span
+                className={`inline-block h-6 w-6 transform rounded-full bg-white shadow-lg transition-transform ${
+                  billingCycle === 'annual' ? 'translate-x-7' : 'translate-x-1'
+                }`}
+              />
             </button>
+            <span className={`text-lg font-medium ${billingCycle === 'annual' ? 'text-gray-900' : 'text-gray-500'}`}>
+              Annual
+              <span className="ml-2 bg-green-500 text-white px-2 py-0.5 rounded-full text-xs font-bold">
+                SAVE 10 WEEKS
+              </span>
+            </span>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
           {tiers.map((tier, index) => (
             <div
               key={index}
-              className={`relative bg-white rounded-xl shadow-lg border-2 p-8 ${
+              className={`relative bg-white rounded-xl shadow-lg border-2 p-8 flex flex-col h-full ${
                 tier.popular
                   ? 'border-blue-500 ring-2 ring-blue-200'
                   : 'border-gray-200'
@@ -142,9 +141,19 @@ export default function Pricing() {
                     ${(tier.price.weekly * 52).toLocaleString()}/year if paid weekly
                   </p>
                 )}
+                {billingCycle === 'annual' && (
+                  <div className="text-center">
+                    <p className="text-sm text-gray-500 line-through">
+                      ${(tier.price.weekly * 52).toLocaleString()} if paid weekly
+                    </p>
+                    <p className="text-lg font-bold text-green-600">
+                      Get 10 Weeks FREE!
+                    </p>
+                  </div>
+                )}
               </div>
 
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-3 mb-8 flex-grow">
                 {tier.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-start">
                     <svg className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -166,6 +175,27 @@ export default function Pricing() {
               </button>
             </div>
           ))}
+        </div>
+
+        {/* A La Carte Options */}
+        <div className="mt-16">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">A La Carte Options</h3>
+            <p className="text-gray-600">Need something specific? Try these individual services</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            {alaCarteOptions.map((option, index) => (
+              <div key={index} className="bg-gray-50 rounded-lg p-6 text-center border-2 border-blue-300">
+                <h4 className="text-lg font-semibold text-gray-900 mb-2">{option.name}</h4>
+                <div className="text-2xl font-bold text-orange-500 mb-2">{option.price}</div>
+                <p className="text-gray-600 text-sm mb-4">{option.description}</p>
+                <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg font-medium transition-colors">
+                  Learn More
+                </button>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="mt-16 text-center">
