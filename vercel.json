@@ -1,18 +1,6 @@
 {
-  "buildCommand": "cd menspk-main && npm run build",
-  "devCommand": "cd menspk-main && npm run dev",
-  "installCommand": "cd menspk-main && npm install",
-  "outputDirectory": "menspk-main/.next",
-  "framework": "nextjs",
-  "functions": {
-    "menspk-main/src/app/**": {
-      "runtime": "nodejs18.x"
-    }
-  },
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/menspk-main/$1"
-    }
-  ]
+  "buildCommand": "cd menspk-main/menspk-main && npm run build",
+  "installCommand": "cd menspk-main/menspk-main && npm install",
+  "outputDirectory": "menspk-main/menspk-main/.next",
+  "framework": "nextjs"
 }
