@@ -151,8 +151,8 @@ export default function Pricing() {
                     </div>
 
                     {billingCycle === 'weekly' && (
-                      <p className="text-sm text-gray-500">
-                        ${(tier.price.weekly * 52).toLocaleString()}/year if paid weekly
+                      <p className="text-sm text-green-600 font-semibold">
+                        Save ${((tier.price.weekly * 52) - tier.price.annual).toLocaleString()} with annual plan
                       </p>
                     )}
                     {billingCycle === 'annual' && (
