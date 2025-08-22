@@ -139,28 +139,38 @@ export default function Pricing() {
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{tier.name}</h3>
                 <p className="text-gray-600 text-sm mb-4">{tier.description}</p>
                 
-                <div className="mb-4">
-                  <span className="text-4xl font-bold text-gray-900">
-                    ${tier.price[billingCycle]}
-                  </span>
-                  <span className="text-gray-600 ml-2">
-                    /{billingCycle === 'weekly' ? 'week' : 'year'}
-                  </span>
-                </div>
+                {tier.name !== 'The Dessert' ? (
+                  <>
+                    <div className="mb-4">
+                      <span className="text-4xl font-bold text-gray-900">
+                        ${tier.price[billingCycle]}
+                      </span>
+                      <span className="text-gray-600 ml-2">
+                        /{billingCycle === 'weekly' ? 'week' : 'year'}
+                      </span>
+                    </div>
 
-                {billingCycle === 'weekly' && (
-                  <p className="text-sm text-gray-500">
-                    ${(tier.price.weekly * 52).toLocaleString()}/year if paid weekly
-                  </p>
-                )}
-                {billingCycle === 'annual' && (
-                  <div className="text-center">
-                    <p className="text-sm text-gray-500 line-through">
-                      ${(tier.price.weekly * 52).toLocaleString()} if paid weekly
-                    </p>
-                    <p className="text-lg font-bold text-green-600">
-                      Get 10 Weeks FREE!
-                    </p>
+                    {billingCycle === 'weekly' && (
+                      <p className="text-sm text-gray-500">
+                        ${(tier.price.weekly * 52).toLocaleString()}/year if paid weekly
+                      </p>
+                    )}
+                    {billingCycle === 'annual' && (
+                      <div className="text-center">
+                        <p className="text-sm text-gray-500 line-through">
+                          ${(tier.price.weekly * 52).toLocaleString()} if paid weekly
+                        </p>
+                        <p className="text-lg font-bold text-green-600">
+                          Get 10 Weeks FREE!
+                        </p>
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <div className="mb-4 py-8">
+                    <span className="text-2xl font-bold text-gray-400">
+                      Price TBD
+                    </span>
                   </div>
                 )}
               </div>
