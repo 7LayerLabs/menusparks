@@ -234,7 +234,7 @@ export default function Calculator() {
                   Sources: WRAP Study, National Restaurant Association, Academic Research 2024-2025
                 </p>
                 <button className="btn-secondary">
-                  Get My Free Sample Special
+                  Join the Waitlist
                 </button>
               </div>
             </div>

@@ -179,8 +179,8 @@ export default function Contact() {
                       <span className="text-blue-600">📧</span>
                     </div>
                     <div>
-                      <div className="font-semibold text-gray-900">Free Sample Specials</div>
-                      <div className="text-gray-600 text-sm">Get 3 sample specials in 24 hours</div>
+                      <div className="font-semibold text-gray-900">Join the Waitlist</div>
+                      <div className="text-gray-600 text-sm">Secure your spot for upcoming launch</div>
                     </div>
                   </div>
                   
@@ -215,7 +215,7 @@ export default function Contact() {
                     <span className="font-semibold text-gray-900">24 hours</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Free samples</span>
+                    <span className="text-gray-600">Waitlist confirmation</span>
                     <span className="font-semibold text-gray-900">24 hours</span>
                   </div>
                   <div className="flex justify-between">
@@ -236,7 +236,7 @@ export default function Contact() {
                 <p className="text-gray-600 mb-6">
                   We get it. Restaurant margins are tight and you can&apos;t afford another expense 
                   that doesn&apos;t deliver results. That&apos;s why we offer a satisfaction guarantee 
-                  and free samples.
+                  and are accepting limited restaurants to ensure quality service.
                 </p>
                 <div className="text-center">
                   <button className="btn-secondary">

@@ -28,7 +28,7 @@ export default function FinalCTA() {
       existingEmails.push(emailData)
       localStorage.setItem('menusparks_emails', JSON.stringify(existingEmails))
       
-      setToast({ message: '🎉 Success! Check your email for your free sample specials within 24 hours.', type: 'success' })
+      setToast({ message: '🎉 You\'re on the waitlist! We\'ll notify you when your spot opens up.', type: 'success' })
       setEmail('')
     } catch (error) {
       console.error('Error capturing email:', error)
@@ -43,7 +43,7 @@ export default function FinalCTA() {
           Ready to Stop Wasting Inventory?
         </h3>
         <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-          Join hundreds of restaurants saving thousands on food costs.
+          This isn\'t AI-generated fluff. It\'s real kitchen wisdom from 25+ years of restaurant experience. We\'re accepting limited restaurants to ensure everyone gets the attention they deserve.
         </p>
         
         <form onSubmit={handleSubmit} className="max-w-md mx-auto">
@@ -57,7 +57,7 @@ export default function FinalCTA() {
               className="flex-1 px-5 py-4 text-lg border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
             />
             <button type="submit" className="bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg py-4 px-8 rounded-lg transition-colors duration-200 whitespace-nowrap">
-              Get Free Sample
+              Join the Waitlist
             </button>
           </div>
         </form>
@@ -73,13 +73,13 @@ export default function FinalCTA() {
             <svg className="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
             </svg>
-            24-hour delivery
+            Limited spots available
           </div>
           <div className="flex items-center">
             <svg className="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
             </svg>
-            Cancel anytime
+            Real chef expertise
           </div>
         </div>
       </div>
