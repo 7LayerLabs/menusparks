@@ -80,7 +80,7 @@ export default function Hero() {
                 </button>
               </form>
               <p className="text-sm text-gray-400 mt-2">
-                Real kitchen experience, not AI-generated. We\'re accepting restaurants in limited allotments to ensure quality - secure your spot now!
+                Built from 25+ years of real kitchen wisdom. Limited spots available each month to ensure every restaurant gets personalized attention.
               </p>
             </div>
 

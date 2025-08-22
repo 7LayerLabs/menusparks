@@ -43,7 +43,7 @@ export default function FinalCTA() {
           Ready to Stop Wasting Inventory?
         </h3>
         <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-          This isn\'t AI-generated fluff. It\'s real kitchen wisdom from 25+ years of restaurant experience. We\'re accepting limited restaurants to ensure everyone gets the attention they deserve.
+          Join hundreds of restaurants already saving thousands. Built by chefs who actually understand your kitchen challenges.
         </p>
         
         <form onSubmit={handleSubmit} className="max-w-md mx-auto">
