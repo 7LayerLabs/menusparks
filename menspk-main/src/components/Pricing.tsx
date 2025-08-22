@@ -113,13 +113,25 @@ export default function Pricing() {
                 tier.popular
                   ? 'border-blue-500 ring-2 ring-blue-200'
                   : 'border-gray-200'
-              }`}
+              } ${tier.name === 'The Dessert' ? 'overflow-hidden' : ''}`}
             >
               {tier.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                   <span className="bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-medium">
                     Most Popular
                   </span>
+                </div>
+              )}
+              
+              {/* Coming Soon Overlay for Dessert */}
+              {tier.name === 'The Dessert' && (
+                <div className="absolute inset-0 bg-black/60 backdrop-blur-sm z-10 flex flex-col items-center justify-center">
+                  <div className="bg-orange-500 text-white px-6 py-3 rounded-full font-bold text-xl mb-3 shadow-xl">
+                    🍰 COMING SOON
+                  </div>
+                  <p className="text-white text-sm font-medium px-4 text-center">
+                    Something special is brewing...
+                  </p>
                 </div>
               )}
 
@@ -166,12 +178,15 @@ export default function Pricing() {
 
               <button
                 className={`w-full py-3 px-4 rounded-lg font-semibold transition-colors ${
-                  tier.popular
+                  tier.name === 'The Dessert'
+                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                    : tier.popular
                     ? 'bg-blue-600 hover:bg-blue-700 text-white'
                     : 'bg-gray-100 hover:bg-gray-200 text-gray-900'
                 }`}
+                disabled={tier.name === 'The Dessert'}
               >
-                {tier.cta}
+                {tier.name === 'The Dessert' ? 'Coming Soon' : tier.cta}
               </button>
             </div>
           ))}
