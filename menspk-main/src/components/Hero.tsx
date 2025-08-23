@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Toast from './Toast'
+import { trackEvent } from '@/lib/analytics'
 
 export default function Hero() {
   const [email, setEmail] = useState('')
@@ -35,6 +36,8 @@ export default function Hero() {
       const data = await response.json()
 
       if (response.ok) {
+        // Track successful waitlist signup
+        trackEvent('waitlist_signup', { source: 'hero' })
         setToast({ message: '🎉 You\'re on the waitlist! We\'ll notify you when your spot opens up.', type: 'success' })
         setEmail('')
       } else {
