@@ -105,16 +105,49 @@ export default function Pricing() {
     {
       name: "Industry Newsletter",
       price: "$5/week",
+      priceId: process.env.NEXT_PUBLIC_STRIPE_PRICE_NEWSLETTER_INDUSTRY || '',
       description: "Market intelligence, pricing trends, and industry insights",
       highlight: false
     },
     {
       name: "Custom Newsletter",
       price: "$10/week",
+      priceId: process.env.NEXT_PUBLIC_STRIPE_PRICE_NEWSLETTER_CUSTOM || '',
       description: "Personalized market updates based on YOUR inventory and menu",
       highlight: true
     }
   ]
+
+  const handleNewsletterCheckout = async (option: typeof alaCarteOptions[0]) => {
+    if (!option.priceId) {
+      alert('This plan is not yet configured. Please contact support.')
+      return
+    }
+
+    setLoading(option.name)
+    try {
+      const response = await fetch('/api/stripe/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ priceId: option.priceId }),
+      })
+
+      const data = await response.json()
+      
+      if (data.error) {
+        throw new Error(data.error)
+      }
+
+      if (data.url) {
+        window.location.href = data.url
+      }
+    } catch (error: any) {
+      console.error('Checkout error:', error)
+      alert(error.message || 'Failed to start checkout. Please try again.')
+    } finally {
+      setLoading(null)
+    }
+  }
 
   return (
     <section id="pricing" className="py-20 bg-white">
@@ -266,8 +299,12 @@ export default function Pricing() {
                 <h4 className="text-lg font-semibold text-gray-900 mb-2">{option.name}</h4>
                 <div className="text-2xl font-bold text-orange-500 mb-2">{option.price}</div>
                 <p className="text-gray-600 text-sm mb-4">{option.description}</p>
-                <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg font-medium transition-colors">
-                  Learn More
+                <button 
+                  onClick={() => handleNewsletterCheckout(option)}
+                  disabled={loading === option.name}
+                  className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg font-medium transition-colors disabled:opacity-50"
+                >
+                  {loading === option.name ? 'Loading...' : 'Subscribe Now'}
                 </button>
               </div>
             ))}
