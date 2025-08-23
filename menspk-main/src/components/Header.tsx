@@ -1,10 +1,17 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const pathname = usePathname()
+
+  // Close menu when route changes
+  useEffect(() => {
+    setIsMenuOpen(false)
+  }, [pathname])
 
   return (
     <header className="bg-black shadow-sm border-b border-gray-700">
@@ -53,15 +60,12 @@ export default function Header() {
               <Link href="#pricing" className="block px-3 py-2 text-gray-300 hover:text-orange-500" onClick={() => setIsMenuOpen(false)}>
                 Pricing
               </Link>
-              <Link href="#about" className="block px-3 py-2 text-gray-300 hover:text-orange-500" onClick={() => setIsMenuOpen(false)}>
+              <Link href="/about" className="block px-3 py-2 text-gray-300 hover:text-orange-500" onClick={() => setIsMenuOpen(false)}>
                 About
               </Link>
               <a href="mailto:admin@menusparks.com" className="block px-3 py-2 text-gray-300 hover:text-orange-500" onClick={() => setIsMenuOpen(false)}>
                 Contact
               </a>
-              <Link href="/faq" className="block px-3 py-2 text-gray-300 hover:text-orange-500" onClick={() => setIsMenuOpen(false)}>
-                FAQ
-              </Link>
               <Link href="/calculator" className="block px-3 py-2 text-gray-300 hover:text-orange-500" onClick={() => setIsMenuOpen(false)}>
                 Waste Calculator
               </Link>
