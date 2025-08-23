@@ -64,7 +64,7 @@ export default function Hero() {
 
             <div className="bg-gray-900 p-6 rounded-lg shadow-lg border border-gray-700 mb-8">
               <h3 className="text-lg font-semibold text-white mb-3">
-                👨‍🍳 Join the Waitlist - Limited Spots Available
+                👨‍🍳 Join the Waitlist
               </h3>
               <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-3">
                 <input
