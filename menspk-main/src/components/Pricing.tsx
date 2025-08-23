@@ -1,14 +1,56 @@
 'use client'
 
 import { useState } from 'react'
+import { loadStripe } from '@stripe/stripe-js'
+
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
 
 export default function Pricing() {
   const [billingCycle, setBillingCycle] = useState<'weekly' | 'annual'>('weekly')
+  const [loading, setLoading] = useState<string | null>(null)
+
+  const handleCheckout = async (tier: typeof tiers[0]) => {
+    if (tier.name === 'The Dessert') return // Coming soon
+    
+    const priceId = tier.priceId[billingCycle]
+    if (!priceId) {
+      alert('This plan is not yet configured. Please contact support.')
+      return
+    }
+
+    setLoading(tier.name)
+    try {
+      const response = await fetch('/api/stripe/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ priceId }),
+      })
+
+      const data = await response.json()
+      
+      if (data.error) {
+        throw new Error(data.error)
+      }
+
+      if (data.url) {
+        window.location.href = data.url
+      }
+    } catch (error: any) {
+      console.error('Checkout error:', error)
+      alert(error.message || 'Failed to start checkout. Please try again.')
+    } finally {
+      setLoading(null)
+    }
+  }
 
   const tiers = [
     {
       name: "The Appetizer",
       price: { weekly: 10, annual: 420 },
+      priceId: {
+        weekly: process.env.NEXT_PUBLIC_STRIPE_PRICE_APPETIZER_WEEKLY || '',
+        annual: process.env.NEXT_PUBLIC_STRIPE_PRICE_APPETIZER_ANNUAL || ''
+      },
       description: "Perfect starter for busy kitchens",
       features: [
         "3-5 weekly specials with complete recipes",
@@ -22,6 +64,10 @@ export default function Pricing() {
     {
       name: "The Main Meal",
       price: { weekly: 20, annual: 840 },
+      priceId: {
+        weekly: process.env.NEXT_PUBLIC_STRIPE_PRICE_MAIN_WEEKLY || '',
+        annual: process.env.NEXT_PUBLIC_STRIPE_PRICE_MAIN_ANNUAL || ''
+      },
       description: "Full-service special development",
       features: [
         "5-7 weekly specials with premium recipes",
@@ -37,6 +83,10 @@ export default function Pricing() {
     {
       name: "The Dessert",
       price: { weekly: 35, annual: 1470 },
+      priceId: {
+        weekly: process.env.NEXT_PUBLIC_STRIPE_PRICE_DESSERT_WEEKLY || '',
+        annual: process.env.NEXT_PUBLIC_STRIPE_PRICE_DESSERT_ANNUAL || ''
+      },
       description: "Main Meal + full access to The Pour Plan",
       features: [
         "Everything in The Main Meal",
@@ -187,6 +237,7 @@ export default function Pricing() {
               </ul>
 
               <button
+                onClick={() => handleCheckout(tier)}
                 className={`w-full py-3 px-4 rounded-lg font-semibold transition-colors ${
                   tier.name === 'The Dessert'
                     ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
@@ -194,9 +245,9 @@ export default function Pricing() {
                     ? 'bg-blue-600 hover:bg-blue-700 text-white'
                     : 'bg-gray-100 hover:bg-gray-200 text-gray-900'
                 }`}
-                disabled={tier.name === 'The Dessert'}
+                disabled={tier.name === 'The Dessert' || loading === tier.name}
               >
-                {tier.name === 'The Dessert' ? 'Coming Soon' : tier.cta}
+                {loading === tier.name ? 'Loading...' : tier.name === 'The Dessert' ? 'Coming Soon' : tier.cta}
               </button>
             </div>
           ))}
