@@ -15,7 +15,7 @@ export default function ReferralPage() {
     setLoading(true)
 
     try {
-      const response = await fetch('/api/referral/stats', {
+      const response = await fetch('/api/customer/referral', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email })
@@ -76,10 +76,13 @@ export default function ReferralPage() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-white mb-4">
-            Refer & Earn Rewards
+            Customer Referral Program
           </h1>
           <p className="text-xl text-gray-300">
-            Share MenuSparks with other restaurant owners and earn free weeks of service!
+            As a paying customer, earn free weeks when your referrals become subscribers!
+          </p>
+          <p className="text-sm text-orange-400 mt-2">
+            ⭐ Exclusive benefit for active subscribers only
           </p>
         </div>
 
@@ -91,8 +94,8 @@ export default function ReferralPage() {
               <div className="bg-orange-500 text-white text-3xl w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 1
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">Join Waitlist</h3>
-              <p className="text-gray-400">Sign up and get your unique referral code</p>
+              <h3 className="text-lg font-semibold text-white mb-2">Subscribe</h3>
+              <p className="text-gray-400">Become a paying customer to unlock referrals</p>
             </div>
             <div className="text-center">
               <div className="bg-orange-500 text-white text-3xl w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -106,7 +109,7 @@ export default function ReferralPage() {
                 3
               </div>
               <h3 className="text-lg font-semibold text-white mb-2">Earn Rewards</h3>
-              <p className="text-gray-400">Get 1 free week for every 3 referrals</p>
+              <p className="text-gray-400">Get 1 free week for each paying referral</p>
             </div>
           </div>
         </div>
@@ -133,7 +136,7 @@ export default function ReferralPage() {
               </button>
             </form>
             <p className="text-sm text-gray-400 mt-4">
-              Not on the waitlist yet? <Link href="/" className="text-orange-500 hover:text-orange-400">Join here first</Link>
+              Not a customer yet? <Link href="/#pricing" className="text-orange-500 hover:text-orange-400">View our pricing plans</Link>
             </p>
           </div>
         )}

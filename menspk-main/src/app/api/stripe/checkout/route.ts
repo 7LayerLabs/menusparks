@@ -7,7 +7,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 
 export async function POST(request: NextRequest) {
   try {
-    const { priceId, mode = 'subscription' } = await request.json()
+    const { priceId, mode = 'subscription', referralCode } = await request.json()
 
     if (!priceId) {
       return NextResponse.json(
@@ -29,6 +29,7 @@ export async function POST(request: NextRequest) {
       cancel_url: `${request.headers.get('origin')}/#pricing`,
       allow_promotion_codes: true,
       billing_address_collection: 'required',
+      metadata: referralCode ? { referral_code: referralCode } : undefined,
     }
 
     // Only add customer_creation for payment mode
