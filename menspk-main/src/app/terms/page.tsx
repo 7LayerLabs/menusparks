@@ -19,7 +19,7 @@ export default function TermsOfService() {
 
               <div>
                 <h3 className="text-xl font-semibold text-white mb-2">1. Service Description</h3>
-                <p>MenuSparks provides AI-powered weekly special generation for restaurants based on existing inventory. We offer various subscription tiers with different features and special frequencies.</p>
+                <p>MenuSparks provides chef-crafted weekly special generation for restaurants based on existing inventory. We offer various subscription tiers with different features and special frequencies.</p>
               </div>
 
               <div>
@@ -39,7 +39,7 @@ export default function TermsOfService() {
                   <li>Provide accurate inventory information</li>
                   <li>Maintain the confidentiality of your account</li>
                   <li>Comply with all applicable food safety regulations</li>
-                  <li>Not misuse or attempt to reverse-engineer our AI algorithms</li>
+                  <li>Not misuse or attempt to reverse-engineer our proprietary systems</li>
                 </ul>
               </div>
 

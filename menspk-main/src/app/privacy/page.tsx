@@ -34,7 +34,7 @@ export default function PrivacyPolicy() {
                   <li>Generate customized weekly specials based on your inventory</li>
                   <li>Send weekly special recommendations and newsletters</li>
                   <li>Process payments and manage subscriptions</li>
-                  <li>Improve our AI algorithms and service quality</li>
+                  <li>Improve our recipe generation and service quality</li>
                   <li>Provide customer support</li>
                 </ul>
               </div>
