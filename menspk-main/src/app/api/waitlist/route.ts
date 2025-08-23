@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
 
     // Check if email already exists
     const { data: existingEmail } = await supabase
-      .from('waitlist')
+      .from('email_captures')
       .select('email')
       .eq('email', email)
       .single()
@@ -28,9 +28,9 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Insert into waitlist table
+    // Insert into email_captures table
     const { data, error } = await supabase
-      .from('waitlist')
+      .from('email_captures')
       .insert([
         {
           email,
