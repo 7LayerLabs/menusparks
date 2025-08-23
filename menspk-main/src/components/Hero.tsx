@@ -49,7 +49,7 @@ export default function Hero() {
             <h1 className="text-4xl lg:text-6xl font-bold text-white mb-8 leading-tight">
               Something Good is
               <br />
-              <span className="gradient-text block text-center pb-2">Simmering</span>
+              <span className="gradient-text block text-center pb-2">Simmering 🔥</span>
             </h1>
             <h2 className="text-2xl lg:text-3xl font-semibold text-gray-300 mb-6 text-center">
               <span className="text-red-500 font-bold">STOP!</span> adding to your inventory -
