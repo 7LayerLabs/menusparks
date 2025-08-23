@@ -3,6 +3,15 @@ import { supabase } from '@/lib/supabase'
 
 export async function POST(request: NextRequest) {
   try {
+    // Check if Supabase is configured
+    if (!supabase) {
+      console.error('Supabase not configured - missing environment variables')
+      return NextResponse.json(
+        { error: 'Database not configured. Please try again later.' },
+        { status: 503 }
+      )
+    }
+
     const { email, source } = await request.json()
 
     // Validate email
