@@ -79,10 +79,10 @@ export default function ReferralPage() {
             Customer Referral Program
           </h1>
           <p className="text-xl text-gray-300">
-            As a paying customer, earn free weeks when your referrals become subscribers!
+            As a paying customer, earn $5 credits when your referrals become subscribers!
           </p>
           <p className="text-sm text-orange-400 mt-2">
-            ⭐ Exclusive benefit for active subscribers only
+            ⭐ Exclusive benefit for active subscribers only - 25% commission on every referral
           </p>
         </div>
 
@@ -108,8 +108,8 @@ export default function ReferralPage() {
               <div className="bg-orange-500 text-white text-3xl w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 3
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">Earn Rewards</h3>
-              <p className="text-gray-400">Get 1 free week for each paying referral</p>
+              <h3 className="text-lg font-semibold text-white mb-2">Earn Credits</h3>
+              <p className="text-gray-400">Get $5 credit for each paying referral</p>
             </div>
           </div>
         </div>
@@ -153,13 +153,13 @@ export default function ReferralPage() {
                   <p className="text-4xl font-bold text-white">{referralData.totalReferrals}</p>
                 </div>
                 <div className="bg-white/10 rounded-lg p-4">
-                  <p className="text-orange-100">Free Weeks Earned</p>
-                  <p className="text-4xl font-bold text-white">{referralData.freeWeeks}</p>
+                  <p className="text-orange-100">Credits Earned</p>
+                  <p className="text-4xl font-bold text-white">${referralData.creditsEarned || 0}</p>
                 </div>
                 <div className="bg-white/10 rounded-lg p-4">
-                  <p className="text-orange-100">Next Reward In</p>
-                  <p className="text-4xl font-bold text-white">{referralData.nextMilestone}</p>
-                  <p className="text-sm text-orange-100">more referrals</p>
+                  <p className="text-orange-100">Next Reward</p>
+                  <p className="text-4xl font-bold text-white">{referralData.nextReward}</p>
+                  <p className="text-sm text-orange-100">per referral</p>
                 </div>
               </div>
             </div>

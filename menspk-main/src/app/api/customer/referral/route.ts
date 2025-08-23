@@ -34,14 +34,19 @@ export async function POST(request: NextRequest) {
     }
 
     // Calculate rewards based on PAID referrals only
+    // Credit system: $5 credit per referral (25% of weekly Main Meal price)
+    const creditPerReferral = 5
+    const totalCredits = (data.paid_referral_count || 0) * creditPerReferral
+    
     const rewards = {
       referralCode: data.referral_code,
       totalReferrals: data.paid_referral_count || 0,
-      freeWeeksEarned: data.free_weeks_earned || 0,
+      creditsEarned: totalCredits,
+      creditPerReferral: creditPerReferral,
       subscriptionTier: data.subscription_tier,
-      nextReward: `${(data.paid_referral_count || 0) + 1} paid referral${(data.paid_referral_count || 0) + 1 > 1 ? 's' : ''}`,
+      nextReward: `$${creditPerReferral} credit`,
       shareUrl: `https://menusparks.com?ref=${data.referral_code}`,
-      message: `You earn 1 free week for every friend who becomes a paying customer!`
+      message: `Earn $${creditPerReferral} credit for each friend who becomes a paying customer!`
     }
 
     return NextResponse.json(rewards)
