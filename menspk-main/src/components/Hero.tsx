@@ -38,7 +38,8 @@ export default function Hero() {
         setToast({ message: '🎉 You\'re on the waitlist! We\'ll notify you when your spot opens up.', type: 'success' })
         setEmail('')
       } else {
-        setToast({ message: data.message || 'Oops! Something went wrong. Please try again.', type: 'error' })
+        console.error('Waitlist error:', data)
+        setToast({ message: data.error || data.message || 'Oops! Something went wrong. Please try again.', type: 'error' })
       }
     } catch (error) {
       console.error('Error capturing email:', error)
