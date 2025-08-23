@@ -3,6 +3,11 @@ import { supabase } from '@/lib/supabase'
 
 export async function POST(request: NextRequest) {
   try {
+    // Log environment variables (without exposing sensitive data)
+    console.log('Supabase URL configured:', !!process.env.NEXT_PUBLIC_SUPABASE_URL)
+    console.log('Supabase Key configured:', !!process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY)
+    console.log('Supabase client exists:', !!supabase)
+    
     // Check if Supabase is configured
     if (!supabase) {
       console.error('Supabase not configured - missing environment variables')
