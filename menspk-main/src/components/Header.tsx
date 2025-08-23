@@ -32,6 +32,9 @@ export default function Header() {
             <Link href="/about" className="text-gray-300 hover:text-orange-500 transition-colors">
               About
             </Link>
+            <Link href="/referral" className="text-gray-300 hover:text-orange-500 transition-colors">
+              🎁 Referrals
+            </Link>
             <a href="mailto:admin@menusparks.com" className="text-gray-300 hover:text-orange-500 transition-colors">
               Contact
             </a>
@@ -62,6 +65,9 @@ export default function Header() {
               </Link>
               <Link href="/about" className="block px-3 py-2 text-gray-300 hover:text-orange-500" onClick={() => setIsMenuOpen(false)}>
                 About
+              </Link>
+              <Link href="/referral" className="block px-3 py-2 text-gray-300 hover:text-orange-500" onClick={() => setIsMenuOpen(false)}>
+                🎁 Referrals
               </Link>
               <a href="mailto:admin@menusparks.com" className="block px-3 py-2 text-gray-300 hover:text-orange-500" onClick={() => setIsMenuOpen(false)}>
                 Contact
