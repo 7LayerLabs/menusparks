@@ -4,12 +4,22 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-MenuSparks is a Next.js 15 application that provides an AI-powered restaurant menu optimization platform. The current implementation is a conversion-focused landing page for a SaaS that generates profitable restaurant specials from existing inventory.
+MenuSparks is a Next.js 15 application that provides an AI-powered restaurant menu optimization platform. **LIVE at https://menusparks.com with Stripe payments enabled.**
 
 ### Core Business Model
 - **Problem**: Restaurants waste 4-10% of food budget annually through poor inventory management
 - **Solution**: Weekly AI-generated specials using existing inventory to reduce waste and increase profits
-- **Pricing**: Three tiers ($10/week Appetizer, $20/week Main Meal, $35/week Dessert) plus newsletters
+- **Pricing**: 
+  - Appetizer: $10/week or $420/year
+  - Main Meal: $20/week or $840/year
+  - Dessert: Coming Soon
+  - Industry Newsletter: $5/week
+  - Custom Newsletter: $10/week
+
+### Current Status
+- **Live Site**: https://menusparks.com
+- **Payments**: Stripe integration (LIVE MODE) ✅
+- **Mode**: Waitlist signups (limited spots messaging)
 
 ### Design Philosophy
 **"Cool vibes don't convert - CLARITY is king."**
@@ -107,10 +117,11 @@ Color palette:
 
 ### Pricing Component (`Pricing.tsx`)
 - Weekly/Annual toggle (annual saves 10 weeks)
-- Three tiers with feature lists
-- À la carte newsletters section
+- Three tiers with feature lists (Dessert is "Coming Soon")
+- À la carte newsletters section with Stripe checkout
 - 100% satisfaction guarantee section
-- Billing state managed with useState
+- All buttons connected to live Stripe checkout
+- Loading states during checkout redirect
 
 ### SavingsCalculator Component
 - Three revenue tiers ($500k, $750k, $1M)
@@ -159,34 +170,48 @@ Command: "Create a special with [ingredients]"
 
 ## Current State & Next Steps
 
-### Recently Completed
-- Streamlined landing page flow for conversion
-- Removed About section to separate page
-- Simplified pricing to $10/$20/$35 weekly
-- Made savings calculator visual with cards
-- Added collapsible recipe example
-- Implemented annual pricing toggle
-- Updated stats: Recipe Database to 10,000+ items
-- Updated restaurant experience to "over 10 restaurants managed"
-- Cleaned footer: removed unnecessary sections, simplified to email + legal links
-- Updated contact to admin@menusparks.com via mailto in header
-- Removed Reviews navigation temporarily
-- Updated How It Works to clear 3-step process
-- Reduced section spacing for better visual flow
+### Recently Completed (August 23, 2025)
+- ✅ **STRIPE PAYMENTS LIVE** - Full checkout integration with live mode
+- ✅ All price IDs configured (Appetizer, Main Meal, Newsletters)
+- ✅ Changed all CTAs to "Join the Waitlist" messaging
+- ✅ Added "Coming Soon" blur overlay on Dessert tier
+- ✅ Fixed success page with Suspense boundary
+- ✅ Connected newsletter subscription buttons
+- ✅ Privacy Policy and Terms of Service pages created
+- ✅ Annual pricing toggle (10 weeks free)
+- ✅ Visual savings calculator with cards
+- ✅ Collapsible recipe example
+- ✅ Responsive design for mobile/desktop
+
+### Environment Variables (Required in Vercel)
+```
+# Stripe (LIVE MODE) - ✅ ADDED
+STRIPE_SECRET_KEY=sk_live_[your_key]
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_live_[your_key]
+NEXT_PUBLIC_STRIPE_PRICE_APPETIZER_WEEKLY=price_1RzLIVDlxrM8ZIxccXQOfcT0
+NEXT_PUBLIC_STRIPE_PRICE_APPETIZER_ANNUAL=price_1RzLJcDlxrM8ZIxcQad2yLn7
+NEXT_PUBLIC_STRIPE_PRICE_MAIN_WEEKLY=price_1RzLKrDlxrM8ZIxcauTWpOFn
+NEXT_PUBLIC_STRIPE_PRICE_MAIN_ANNUAL=price_1RzLKrDlxrM8ZIxclcFO4WCT
+NEXT_PUBLIC_STRIPE_PRICE_NEWSLETTER_INDUSTRY=price_1RzLLxDlxrM8ZIxctmOIRPSU
+NEXT_PUBLIC_STRIPE_PRICE_NEWSLETTER_CUSTOM=price_1RzLNPDlxrM8ZIxc45k28YfR
+
+# Supabase - ⏳ TO BE ADDED
+NEXT_PUBLIC_SUPABASE_URL=https://fbzjjxhyfovvjjjqmyqw.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=[from .env file]
+```
 
 ### Known Issues
 - Mobile menu doesn't close after navigation
-- Forms don't persist after page refresh
-- No backend integration yet
-- Images need optimization
-- Need to create actual About, Privacy, Terms pages
+- Waste Calculator needs ROI enhancement section
+- About page returns 404 (not created yet)
+- Supabase not connected (needs env vars)
 
-### Upcoming Features (from PRD)
-- Backend initialization (Express + PostgreSQL)
+### Upcoming Features
+- Supabase integration for waitlist storage
+- Enhanced waste calculator with ROI calculations
+- About page creation
 - Google Gemini API integration for AI generation
 - User authentication system
-- Restaurant profile management
+- Restaurant dashboard
 - Inventory input system
-- Stripe payment processing
 - Analytics and tracking
-- Create missing pages (About, Privacy, Terms)
