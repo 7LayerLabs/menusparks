@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const session = await stripe.checkout.sessions.create({
+    const sessionConfig: Stripe.Checkout.SessionCreateParams = {
       payment_method_types: ['card'],
       line_items: [
         {
@@ -29,8 +29,14 @@ export async function POST(request: NextRequest) {
       cancel_url: `${request.headers.get('origin')}/#pricing`,
       allow_promotion_codes: true,
       billing_address_collection: 'required',
-      customer_creation: 'always',
-    })
+    }
+
+    // Only add customer_creation for payment mode
+    if (mode === 'payment') {
+      sessionConfig.customer_creation = 'always'
+    }
+
+    const session = await stripe.checkout.sessions.create(sessionConfig)
 
     return NextResponse.json({ sessionId: session.id, url: session.url })
   } catch (error: any) {
