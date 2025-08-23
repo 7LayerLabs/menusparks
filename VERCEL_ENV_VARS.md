@@ -25,12 +25,14 @@ NEXT_PUBLIC_STRIPE_PRICE_NEWSLETTER_INDUSTRY=price_1RzLLxDlxrM8ZIxctmOIRPSU
 NEXT_PUBLIC_STRIPE_PRICE_NEWSLETTER_CUSTOM=price_1RzLNPDlxrM8ZIxc45k28YfR
 ```
 
-## Supabase Configuration
+## Supabase Configuration (REQUIRED - Add these NOW!)
 
 ```
 NEXT_PUBLIC_SUPABASE_URL=https://fbzjjxhyfovvjjjqmyqw.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZiempqeGh5Zm92dmpqanFteXF3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU2MzAwNjAsImV4cCI6MjA3MTIwNjA2MH0.mj5R4UVIQQvidYw-xr7RSbvyN5y1oP72KMA6N2Y_QkI
 ```
+
+**IMPORTANT**: Without these, waitlist signups won't save to your database!
 
 ## Status:
 - ✅ Appetizer price IDs ready

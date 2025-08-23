@@ -1,0 +1,62 @@
+import { NextRequest, NextResponse } from 'next/server'
+import { supabase } from '@/lib/supabase'
+
+export async function POST(request: NextRequest) {
+  try {
+    const { email, source } = await request.json()
+
+    // Validate email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!email || !emailRegex.test(email)) {
+      return NextResponse.json(
+        { error: 'Invalid email address' },
+        { status: 400 }
+      )
+    }
+
+    // Check if email already exists
+    const { data: existingEmail } = await supabase
+      .from('waitlist')
+      .select('email')
+      .eq('email', email)
+      .single()
+
+    if (existingEmail) {
+      return NextResponse.json(
+        { message: 'You\'re already on the waitlist!' },
+        { status: 200 }
+      )
+    }
+
+    // Insert into waitlist table
+    const { data, error } = await supabase
+      .from('waitlist')
+      .insert([
+        {
+          email,
+          source: source || 'website',
+          created_at: new Date().toISOString()
+        }
+      ])
+      .select()
+
+    if (error) {
+      console.error('Supabase error:', error)
+      return NextResponse.json(
+        { error: 'Failed to add to waitlist' },
+        { status: 500 }
+      )
+    }
+
+    return NextResponse.json(
+      { message: 'Successfully added to waitlist!', data },
+      { status: 200 }
+    )
+  } catch (error) {
+    console.error('Waitlist API error:', error)
+    return NextResponse.json(
+      { error: 'Internal server error' },
+      { status: 500 }
+    )
+  }
+}

@@ -18,18 +18,26 @@ export default function FinalCTA() {
         return
       }
 
-      const emailData = {
-        email,
-        timestamp: new Date().toISOString(),
-        source: 'final_cta'
+      // Send to Supabase via API
+      const response = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          source: 'final_cta'
+        })
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        setToast({ message: '🎉 You\'re on the waitlist! We\'ll notify you when your spot opens up.', type: 'success' })
+        setEmail('')
+      } else {
+        setToast({ message: data.message || 'Oops! Something went wrong. Please try again.', type: 'error' })
       }
-      
-      const existingEmails = JSON.parse(localStorage.getItem('menusparks_emails') || '[]')
-      existingEmails.push(emailData)
-      localStorage.setItem('menusparks_emails', JSON.stringify(existingEmails))
-      
-      setToast({ message: '🎉 You\'re on the waitlist! We\'ll notify you when your spot opens up.', type: 'success' })
-      setEmail('')
     } catch (error) {
       console.error('Error capturing email:', error)
       setToast({ message: 'Oops! Something went wrong. Please try again.', type: 'error' })

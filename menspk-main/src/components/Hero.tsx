@@ -20,21 +20,26 @@ export default function Hero() {
         return
       }
 
-      // For now, store in localStorage (later replace with actual backend)
-      const emailData = {
-        email,
-        timestamp: new Date().toISOString(),
-        source: 'hero_signup'
+      // Send to Supabase via API
+      const response = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          source: 'hero_signup'
+        })
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        setToast({ message: '🎉 You\'re on the waitlist! We\'ll notify you when your spot opens up.', type: 'success' })
+        setEmail('')
+      } else {
+        setToast({ message: data.message || 'Oops! Something went wrong. Please try again.', type: 'error' })
       }
-      
-      // Store locally
-      const existingEmails = JSON.parse(localStorage.getItem('menusparks_emails') || '[]')
-      existingEmails.push(emailData)
-      localStorage.setItem('menusparks_emails', JSON.stringify(existingEmails))
-      
-      console.log('Email captured:', emailData)
-      setToast({ message: '🎉 You\'re on the waitlist! We\'ll notify you when your spot opens up.', type: 'success' })
-      setEmail('')
     } catch (error) {
       console.error('Error capturing email:', error)
       setToast({ message: 'Oops! Something went wrong. Please try again.', type: 'error' })
