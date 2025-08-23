@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const { email, source } = await request.json()
+    const { email, source, referralCode } = await request.json()
 
     // Validate email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -46,16 +46,21 @@ export async function POST(request: NextRequest) {
     }
 
     // Insert into email_captures table
+    const insertData: any = {
+      email,
+      source: source || 'website',
+      created_at: new Date().toISOString()
+    }
+    
+    // Add referral code if provided
+    if (referralCode) {
+      insertData.referred_by = referralCode.toUpperCase()
+    }
+    
     const { data, error } = await supabase
       .from('email_captures')
-      .insert([
-        {
-          email,
-          source: source || 'website',
-          created_at: new Date().toISOString()
-        }
-      ])
-      .select()
+      .insert([insertData])
+      .select('referral_code')
 
     if (error) {
       console.error('Supabase error:', error)
@@ -66,7 +71,11 @@ export async function POST(request: NextRequest) {
     }
 
     return NextResponse.json(
-      { message: 'Successfully added to waitlist!', data },
+      { 
+        message: 'Successfully added to waitlist!', 
+        referralCode: data?.[0]?.referral_code,
+        data 
+      },
       { status: 200 }
     )
   } catch (error) {

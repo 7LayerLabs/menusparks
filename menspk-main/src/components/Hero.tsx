@@ -1,6 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 import Toast from './Toast'
 import { trackEvent } from '@/lib/analytics'
 
@@ -8,6 +9,28 @@ export default function Hero() {
   const [email, setEmail] = useState('')
   const [isDark, setIsDark] = useState(false)
   const [toast, setToast] = useState<{message: string, type: 'success' | 'error' | 'info'} | null>(null)
+  const [referralCode, setReferralCode] = useState<string | null>(null)
+  const searchParams = useSearchParams()
+
+  useEffect(() => {
+    // Check for referral code in URL
+    const ref = searchParams.get('ref')
+    if (ref) {
+      setReferralCode(ref.toUpperCase())
+      // Validate the referral code
+      fetch(`/api/referral/${ref}`)
+        .then(res => res.json())
+        .then(data => {
+          if (data.valid) {
+            setToast({ 
+              message: `Welcome! ${data.message}`, 
+              type: 'info' 
+            })
+          }
+        })
+        .catch(() => {})
+    }
+  }, [searchParams])
 
   const handleEmailSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -29,7 +52,8 @@ export default function Hero() {
         },
         body: JSON.stringify({
           email,
-          source: 'hero_signup'
+          source: 'hero_signup',
+          referralCode: referralCode
         })
       })
 
@@ -37,8 +61,20 @@ export default function Hero() {
 
       if (response.ok) {
         // Track successful waitlist signup
-        trackEvent('waitlist_signup', { source: 'hero' })
-        setToast({ message: '🎉 You\'re on the waitlist! We\'ll notify you when your spot opens up.', type: 'success' })
+        trackEvent('waitlist_signup', { source: 'hero', referred: !!referralCode })
+        
+        // Show success with referral code if available
+        if (data.referralCode) {
+          setToast({ 
+            message: `🎉 You're on the waitlist! Your referral code is: ${data.referralCode}. Share it to earn rewards!`, 
+            type: 'success' 
+          })
+        } else {
+          setToast({ 
+            message: '🎉 You\'re on the waitlist! We\'ll notify you when your spot opens up.', 
+            type: 'success' 
+          })
+        }
         setEmail('')
       } else {
         console.error('Waitlist error:', data)

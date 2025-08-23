@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import SavingsCalculator from '@/components/SavingsCalculator'
@@ -11,7 +12,9 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-black">
       <Header />
-      <Hero />
+      <Suspense fallback={<div className="py-20 bg-black" />}>
+        <Hero />
+      </Suspense>
       
       {/* Savings Calculator - Moved up to show immediate value */}
       <SavingsCalculator />

@@ -19,6 +19,9 @@ export default function Footer() {
             </div>
             
             <div className="flex space-x-6 mt-4 md:mt-0">
+              <Link href="/referral" className="text-gray-400 hover:text-orange-500 text-sm transition-colors">
+                🎁 Referral Program
+              </Link>
               <Link href="/privacy" className="text-gray-400 hover:text-orange-500 text-sm transition-colors">
                 Privacy Policy
               </Link>
