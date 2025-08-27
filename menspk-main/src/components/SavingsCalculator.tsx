@@ -107,9 +107,9 @@ export default function SavingsCalculator() {
             <p className="text-lg font-semibold text-orange-500">
               These are conservative estimates - many restaurants see even greater savings
             </p>
-            <button className="btn-primary mt-6">
+            <a href="/calculator" className="btn-primary mt-6 inline-block">
               Calculate My Exact Savings
-            </button>
+            </a>
           </div>
         </div>
       </div>
