@@ -2,9 +2,11 @@ import { Suspense } from 'react'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import SavingsCalculator from '@/components/SavingsCalculator'
-import MenuSparkExample from '@/components/MenuSparkExample'
+import MenuSparksIntro from '@/components/MenuSparksIntro'
 import HowItWorks from '@/components/HowItWorks'
+import MenuSparkExample from '@/components/MenuSparkExample'
 import Pricing from '@/components/Pricing'
+import Testimonials from '@/components/Testimonials'
 import FinalCTA from '@/components/FinalCTA'
 import Footer from '@/components/Footer'
 
@@ -12,21 +14,28 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-black">
       <Header />
+      {/* 1. Hook the Pain */}
       <Suspense fallback={<div className="py-20 bg-black" />}>
         <Hero />
       </Suspense>
       
-      {/* Savings Calculator - Moved up to show immediate value */}
+      {/* 2. Show the Potential (Savings) */}
       <SavingsCalculator />
       
-      {/* MenuSpark Example - Moved before How It Works to show tangible output */}
-      <MenuSparkExample />
+      {/* 3. Introduce MenuSparks (The Hero) */}
+      <MenuSparksIntro />
       
-      {/* How It Works - After seeing the example, now explain the process */}
+      {/* 4. Explain How It Works (Process) */}
       <HowItWorks />
       
-      {/* Pricing with guarantee */}
+      {/* Show Example of What They Get */}
+      <MenuSparkExample />
+      
+      {/* 5. Pricing / Plans */}
       <Pricing />
+      
+      {/* 6. Social Proof / Guarantee */}
+      <Testimonials />
       
       {/* Final Closer - Credibility + CTA */}
       <section className="py-8 bg-gray-900">
