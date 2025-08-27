@@ -52,7 +52,7 @@ export default function Hero() {
             </p>
 
             <div className="mb-8">
-              <a href="#pricing" className="btn-secondary inline-block">
+              <a href="#how-it-works" className="btn-secondary inline-block">
                 See How It Works
               </a>
             </div>
