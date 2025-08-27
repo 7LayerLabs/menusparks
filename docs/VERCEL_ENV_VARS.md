@@ -34,6 +34,17 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzd
 
 **IMPORTANT**: Without these, waitlist signups won't save to your database!
 
+## EmailJS Configuration (OPTIONAL - for Welcome Emails)
+
+```
+# Get these from https://www.emailjs.com (FREE - 200 emails/month)
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=service_YOUR_SERVICE_ID
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=template_YOUR_TEMPLATE_ID
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=YOUR_PUBLIC_KEY
+```
+
+**Note**: Welcome emails will only send if these are configured. The waitlist will still work without them.
+
 ## Status:
 - ✅ Appetizer price IDs ready
 - ✅ Main Meal price IDs ready

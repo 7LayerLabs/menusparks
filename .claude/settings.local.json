@@ -9,7 +9,17 @@
       "Bash(git push:*)",
       "Bash(git config:*)",
       "Bash(git ls-remote:*)",
-      "Bash(git remote set-url:*)"
+      "Bash(git remote set-url:*)",
+      "Bash(git commit:*)",
+      "Bash(git ls-tree:*)",
+      "Bash(grep:*)",
+      "Bash(git rm:*)",
+      "Bash(mkdir:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run build:*)",
+      "Bash(curl:*)",
+      "Bash(git log:*)",
+      "Bash(git revert:*)"
     ],
     "deny": [],
     "ask": []

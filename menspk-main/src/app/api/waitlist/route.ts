@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { supabase } from '@/lib/supabase'
+import { sendWelcomeEmail } from '@/lib/emailjs'
 
 export async function POST(request: NextRequest) {
   try {
@@ -70,10 +71,23 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // Send welcome email (non-blocking - don't wait for response)
+    const userReferralCode = data?.[0]?.referral_code
+    if (userReferralCode) {
+      sendWelcomeEmail({
+        to_email: email,
+        referral_code: userReferralCode,
+        referred_by: referralCode
+      }).catch(err => {
+        // Log error but don't fail the request
+        console.error('Welcome email failed:', err)
+      })
+    }
+
     return NextResponse.json(
       { 
         message: 'Successfully added to waitlist!', 
-        referralCode: data?.[0]?.referral_code,
+        referralCode: userReferralCode,
         data 
       },
       { status: 200 }
