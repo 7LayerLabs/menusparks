@@ -6,8 +6,6 @@ import Toast from './Toast'
 import { trackEvent } from '@/lib/analytics'
 
 export default function Hero() {
-  const [email, setEmail] = useState('')
-  const [isDark, setIsDark] = useState(false)
   const [toast, setToast] = useState<{message: string, type: 'success' | 'error' | 'info'} | null>(null)
   const [referralCode, setReferralCode] = useState<string | null>(null)
   const searchParams = useSearchParams()
@@ -32,60 +30,6 @@ export default function Hero() {
     }
   }, [searchParams])
 
-  const handleEmailSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!email) return
-    
-    try {
-      // Simple email validation
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-      if (!emailRegex.test(email)) {
-        setToast({ message: 'Please enter a valid email address', type: 'error' })
-        return
-      }
-
-      // Send to Supabase via API
-      const response = await fetch('/api/waitlist', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email,
-          source: 'hero_signup',
-          referralCode: referralCode
-        })
-      })
-
-      const data = await response.json()
-
-      if (response.ok) {
-        // Track successful signup
-        trackEvent('signup', { source: 'hero', referred: !!referralCode })
-        
-        // Show success with referral code if available
-        if (data.referralCode) {
-          setToast({ 
-            message: `🎉 Welcome to MenuSparks! Your referral code is: ${data.referralCode}. Share it to earn rewards!`, 
-            type: 'success' 
-          })
-        } else {
-          setToast({ 
-            message: '🎉 Welcome to MenuSparks! Check your email for next steps.', 
-            type: 'success' 
-          })
-        }
-        setEmail('')
-      } else {
-        console.error('Waitlist error:', data)
-        setToast({ message: data.error || data.message || 'Oops! Something went wrong. Please try again.', type: 'error' })
-      }
-    } catch (error) {
-      console.error('Error capturing email:', error)
-      setToast({ message: 'Oops! Something went wrong. Please try again.', type: 'error' })
-    }
-  }
-
   return (
     <>
     <section className="bg-gradient-to-br from-black to-gray-900 py-20">
@@ -107,27 +51,15 @@ export default function Hero() {
               no grocery runs - just smart recipes using what's already in your kitchen.
             </p>
 
-            <div className="bg-gray-900 p-6 rounded-lg shadow-lg border border-gray-700 mb-8">
-              <h3 className="text-lg font-semibold text-white mb-3">
-                👨‍🍳 Start Saving Today
-              </h3>
-              <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-3">
-                <input
-                  type="email"
-                  placeholder="your@restaurant-email.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
-                <button type="submit" className="btn-secondary whitespace-nowrap">
-                  Get Started Now
-                </button>
-              </form>
-              <p className="text-sm text-gray-400 mt-2">
-                Built from 25+ years of real kitchen wisdom. Every restaurant gets personalized attention.
-              </p>
+            <div className="mb-8">
+              <a href="#pricing" className="btn-secondary inline-block">
+                See How It Works
+              </a>
             </div>
+            
+            <p className="text-lg text-gray-400 mb-8">
+              Built from 25+ years of real kitchen wisdom. Every restaurant gets personalized attention.
+            </p>
 
             <div className="text-sm text-gray-400">
               <div className="flex flex-wrap justify-center gap-6 mb-4">
