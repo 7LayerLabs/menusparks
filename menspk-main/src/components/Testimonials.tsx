@@ -34,7 +34,7 @@ export default function Testimonials() {
             Restaurant Owners Love MenuSparks
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Join hundreds of restaurant owners who&apos;ve eliminated special stress 
+            Hundreds of restaurant owners have already eliminated special stress 
             while boosting their profits.
           </p>
         </div>

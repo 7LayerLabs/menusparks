@@ -60,18 +60,18 @@ export default function Hero() {
       const data = await response.json()
 
       if (response.ok) {
-        // Track successful waitlist signup
-        trackEvent('waitlist_signup', { source: 'hero', referred: !!referralCode })
+        // Track successful signup
+        trackEvent('signup', { source: 'hero', referred: !!referralCode })
         
         // Show success with referral code if available
         if (data.referralCode) {
           setToast({ 
-            message: `🎉 You're on the waitlist! Your referral code is: ${data.referralCode}. Share it to earn rewards!`, 
+            message: `🎉 Welcome to MenuSparks! Your referral code is: ${data.referralCode}. Share it to earn rewards!`, 
             type: 'success' 
           })
         } else {
           setToast({ 
-            message: '🎉 You\'re on the waitlist! We\'ll notify you when your spot opens up.', 
+            message: '🎉 Welcome to MenuSparks! Check your email for next steps.', 
             type: 'success' 
           })
         }
@@ -109,7 +109,7 @@ export default function Hero() {
 
             <div className="bg-gray-900 p-6 rounded-lg shadow-lg border border-gray-700 mb-8">
               <h3 className="text-lg font-semibold text-white mb-3">
-                👨‍🍳 Join the Waitlist
+                👨‍🍳 Start Saving Today
               </h3>
               <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-3">
                 <input
@@ -121,11 +121,11 @@ export default function Hero() {
                   className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
                 <button type="submit" className="btn-secondary whitespace-nowrap">
-                  Join the Waitlist
+                  Get Started Now
                 </button>
               </form>
               <p className="text-sm text-gray-400 mt-2">
-                Built from 25+ years of real kitchen wisdom. Limited spots available each month to ensure every restaurant gets personalized attention.
+                Built from 25+ years of real kitchen wisdom. Every restaurant gets personalized attention.
               </p>
             </div>
 
@@ -149,7 +149,7 @@ export default function Hero() {
                   <svg className="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  Limited spots per month
+                  Instant access to savings
                 </div>
               </div>
             </div>

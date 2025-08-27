@@ -210,10 +210,10 @@ export default function Pricing() {
               {tier.name === 'The Dessert' && (
                 <div className="absolute inset-0 bg-black/60 backdrop-blur-sm z-10 flex flex-col items-center justify-center">
                   <div className="bg-orange-500 text-white px-6 py-3 rounded-full font-bold text-xl mb-3 shadow-xl">
-                    🍰 COMING SOON
+                    🍰 LAUNCHING SOON
                   </div>
                   <p className="text-white text-sm font-medium px-4 text-center">
-                    Something special is brewing...
+                    Contact us for early access pricing
                   </p>
                 </div>
               )}
@@ -280,7 +280,7 @@ export default function Pricing() {
                 }`}
                 disabled={tier.name === 'The Dessert' || loading === tier.name}
               >
-                {loading === tier.name ? 'Loading...' : tier.name === 'The Dessert' ? 'Coming Soon' : tier.cta}
+                {loading === tier.name ? 'Loading...' : tier.name === 'The Dessert' ? 'Get Early Access' : tier.cta}
               </button>
             </div>
           ))}
@@ -317,7 +317,7 @@ export default function Pricing() {
               100% Satisfaction Guarantee
             </h3>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              If you&apos;re not completely satisfied with your specials in the first 30 days, 
+              If you&apos;re not seeing value within your first 30 days, 
               we&apos;ll refund your money. No questions asked. We&apos;ve been running restaurants 
               for 25+ years - we know what works.
             </p>
