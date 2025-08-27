@@ -47,8 +47,9 @@ export default function Hero() {
             </h2>
             
             <p className="text-xl text-gray-300 mb-8 leading-relaxed text-center">
-              Transform your back-of-house inventory into profit-driving specials. No extra items on your order, 
-              no grocery runs - just smart recipes using what's already in your kitchen.
+              MenuSparks turns your current inventory into profitable specials. Stop adding items to your food order when you already have enough. 
+              Restaurants throw away thousands of dollars worth of food each year, we help you serve it. No extra 
+              purchasing, no grocery runs - just smart recipes using what's already in your kitchen.
             </p>
 
             <div className="mb-8">
