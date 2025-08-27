@@ -1,29 +1,32 @@
 import { Suspense } from 'react'
 import Header from '@/components/Header'
-import Hero from '@/components/Hero'
+import HeroClean from '@/components/HeroClean'
+import FeaturesGrid from '@/components/FeaturesGrid'
+import ProcessSteps from '@/components/ProcessSteps'
 import SavingsCalculator from '@/components/SavingsCalculator'
-import MenuSparkExample from '@/components/MenuSparkExample'
-import HowItWorks from '@/components/HowItWorks'
 import Pricing from '@/components/Pricing'
+import Testimonials from '@/components/Testimonials'
 import FinalCTA from '@/components/FinalCTA'
 import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black">
+    <main className="min-h-screen bg-white">
       <Header />
-      <Suspense fallback={<div className="py-20 bg-black" />}>
-        <Hero />
+      
+      {/* Clean Hero Section */}
+      <Suspense fallback={<div className="py-20 bg-white" />}>
+        <HeroClean />
       </Suspense>
       
-      {/* Savings Calculator - Moved up to show immediate value */}
+      {/* Features Grid */}
+      <FeaturesGrid />
+      
+      {/* How It Works - Process Steps */}
+      <ProcessSteps />
+      
+      {/* Savings Calculator */}
       <SavingsCalculator />
-      
-      {/* MenuSpark Example - Moved before How It Works to show tangible output */}
-      <MenuSparkExample />
-      
-      {/* How It Works - After seeing the example, now explain the process */}
-      <HowItWorks />
       
       {/* Pricing with guarantee */}
       <Pricing />
