@@ -2,20 +2,20 @@ export default function HowItWorks() {
   const steps = [
     {
       number: "1",
-      title: "Tell Us What's Overstocked",
-      description: "2-minute form about your excess inventory",
+      title: "Fill Out Quick Form",
+      description: "Send us your inventory",
       icon: "📋"
     },
     {
       number: "2", 
-      title: "We Create Your Specials",
-      description: "5-7 recipes with exact costs & pricing",
+      title: "We Get to Work",
+      description: "Creating your profitable specials",
       icon: "👨‍🍳"
     },
     {
       number: "3",
-      title: "Start Serving & Saving",
-      description: "Complete recipes in your inbox <24 hours",
+      title: "Delivered to You",
+      description: "In <24 hrs",
       icon: "📧"
     }
   ]
@@ -28,7 +28,7 @@ export default function HowItWorks() {
             How It Works
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            <span className="text-orange-400 font-semibold">Zero learning curve.</span> We handle everything.
+            Three simple steps to profitable specials.
           </p>
         </div>
 

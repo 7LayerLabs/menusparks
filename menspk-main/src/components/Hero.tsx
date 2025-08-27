@@ -92,23 +92,20 @@ export default function Hero() {
       <div className="section-container">
         <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl lg:text-6xl font-bold text-white mb-8 leading-tight">
-              <span className="text-red-500">Stop Wasting Money</span> Stocking
+              Something Good is
               <br />
-              Shelves with Food That
-              <br />
-              <span className="gradient-text">Won't Sell</span>
+              <span className="gradient-text block text-center pb-2">Simmering</span>
             </h1>
-            <h2 className="text-xl lg:text-2xl font-medium text-gray-300 mb-6 text-center">
-              The average restaurant loses <span className="text-orange-500 font-bold">4-10% of sales</span> to food waste.
+            <h2 className="text-2xl lg:text-3xl font-semibold text-gray-300 mb-6 text-center">
+              <span className="text-red-500 font-bold">STOP!</span> adding to your inventory -
               <br />
-              That's <span className="text-orange-500 font-bold">$5,600 to $11,200</span> thrown away every year.
+              You already have ENOUGH
             </h2>
             
-            <div className="bg-yellow-900/20 border border-yellow-600/30 rounded-lg p-4 mb-8">
-              <p className="text-lg text-yellow-200 text-center font-medium">
-                🔥 <span className="font-bold">What if you could turn that waste into profit?</span> 🔥
-              </p>
-            </div>
+            <p className="text-xl text-gray-300 mb-8 leading-relaxed text-center">
+              Transform your back-of-house inventory into profit-driving specials. No extra items on your order, 
+              no grocery runs - just smart recipes using what's already in your kitchen.
+            </p>
 
             <div className="bg-gray-900 p-6 rounded-lg shadow-lg border border-gray-700 mb-8">
               <h3 className="text-lg font-semibold text-white mb-3">

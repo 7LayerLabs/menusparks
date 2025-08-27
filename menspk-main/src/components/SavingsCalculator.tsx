@@ -39,10 +39,10 @@ export default function SavingsCalculator() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-              Here's What MenuSparks Members Are <span className="text-green-500">Saving Each Year</span>
+              See Your Potential Savings
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Turn that 4-10% waste into pure profit. Pick your revenue level below:
+              Real numbers based on industry averages: 32% food cost, 7% waste rate
             </p>
           </div>
 
@@ -107,9 +107,9 @@ export default function SavingsCalculator() {
             <p className="text-lg font-semibold text-orange-500">
               These are conservative estimates - many restaurants see even greater savings
             </p>
-            <a href="#pricing" className="btn-primary mt-6 inline-block">
-              Start Saving Now
-            </a>
+            <button className="btn-primary mt-6">
+              Calculate My Exact Savings
+            </button>
           </div>
         </div>
       </div>
