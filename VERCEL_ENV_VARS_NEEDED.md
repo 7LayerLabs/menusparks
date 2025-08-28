@@ -2,10 +2,11 @@
 
 Add these to your Vercel project settings → Environment Variables
 
-## 1. Google Gemini API (Already have this)
+## 1. Google Gemini API
 ```
-NEXT_PUBLIC_GEMINI_API_KEY=AIzaSyCyk58AYYjZr5JTN-KdLoOYGRwM9S3X79c
+NEXT_PUBLIC_GEMINI_API_KEY=YOUR_GEMINI_API_KEY_HERE
 ```
+Get your key from: https://makersuite.google.com/app/apikey
 
 ## 2. Supabase (Already set)
 ```
