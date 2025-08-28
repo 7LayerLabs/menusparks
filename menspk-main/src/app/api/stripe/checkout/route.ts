@@ -7,7 +7,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 
 export async function POST(request: NextRequest) {
   try {
-    const { priceId, mode = 'subscription', referralCode } = await request.json()
+    const { priceId, mode = 'subscription', referralCode, promoCode, promoData } = await request.json()
 
     if (!priceId) {
       return NextResponse.json(
@@ -29,7 +29,35 @@ export async function POST(request: NextRequest) {
       cancel_url: `${request.headers.get('origin')}/#pricing`,
       allow_promotion_codes: true,
       billing_address_collection: 'required',
-      metadata: referralCode ? { referral_code: referralCode } : undefined,
+      metadata: {
+        ...(referralCode ? { referral_code: referralCode } : {}),
+        ...(promoCode ? { promo_code: promoCode } : {}),
+        ...(promoData?.promo_id ? { promo_id: promoData.promo_id } : {})
+      },
+    }
+
+    // Handle promo code discounts
+    if (promoData && promoData.discount_type === 'free_trial' && promoData.discount_value) {
+      // For free trials, add a trial period
+      sessionConfig.subscription_data = {
+        trial_period_days: promoData.discount_value,
+        metadata: {
+          promo_code: promoCode,
+          promo_id: promoData.promo_id
+        }
+      }
+    } else if (promoData && promoData.discount_type === 'percentage' && promoData.discount_value) {
+      // For percentage discounts, create or use a coupon
+      const coupon = await stripe.coupons.create({
+        percent_off: promoData.discount_value,
+        duration: 'once',
+        metadata: {
+          promo_code: promoCode
+        }
+      })
+      sessionConfig.discounts = [{
+        coupon: coupon.id
+      }]
     }
 
     // Only add customer_creation for payment mode

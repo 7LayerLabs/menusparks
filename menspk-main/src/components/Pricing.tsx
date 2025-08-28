@@ -8,6 +8,54 @@ const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!
 export default function Pricing() {
   const [billingCycle, setBillingCycle] = useState<'weekly' | 'annual'>('weekly')
   const [loading, setLoading] = useState<string | null>(null)
+  const [promoCode, setPromoCode] = useState('')
+  const [promoStatus, setPromoStatus] = useState<{
+    message: string
+    type: 'success' | 'error' | 'info' | null
+    discount?: any
+  }>({ message: '', type: null })
+  const [validatedPromo, setValidatedPromo] = useState<any>(null)
+
+  const validatePromoCode = async (email: string) => {
+    if (!promoCode) {
+      setPromoStatus({ message: 'Please enter a promo code', type: 'error' })
+      return false
+    }
+
+    try {
+      const response = await fetch('/api/promo/validate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          code: promoCode, 
+          email: email || 'checkout@menusparks.com',
+          tier: billingCycle === 'weekly' ? 'weekly' : 'annual'
+        })
+      })
+
+      const data = await response.json()
+      
+      if (data.valid) {
+        setPromoStatus({ 
+          message: data.message || 'Promo code applied!', 
+          type: 'success',
+          discount: data
+        })
+        setValidatedPromo(data)
+        return true
+      } else {
+        setPromoStatus({ 
+          message: data.message || 'Invalid promo code', 
+          type: 'error' 
+        })
+        setValidatedPromo(null)
+        return false
+      }
+    } catch (error) {
+      setPromoStatus({ message: 'Error validating promo code', type: 'error' })
+      return false
+    }
+  }
 
   const handleCheckout = async (tier: typeof tiers[0]) => {
     if (tier.name === 'The Dessert') return // Coming soon
@@ -20,10 +68,19 @@ export default function Pricing() {
 
     setLoading(tier.name)
     try {
+      // Prepare checkout data
+      const checkoutData: any = { priceId }
+      
+      // If we have a validated promo, include it
+      if (validatedPromo) {
+        checkoutData.promoCode = promoCode
+        checkoutData.promoData = validatedPromo
+      }
+
       const response = await fetch('/api/stripe/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ priceId }),
+        body: JSON.stringify(checkoutData),
       })
 
       const data = await response.json()
@@ -185,6 +242,41 @@ export default function Pricing() {
                 SAVE 10 WEEKS
               </span>
             </span>
+          </div>
+
+          {/* Promo Code Input */}
+          <div className="mt-8 max-w-md mx-auto">
+            <div className="flex gap-2">
+              <input
+                type="text"
+                placeholder="Have a promo code?"
+                value={promoCode}
+                onChange={(e) => {
+                  setPromoCode(e.target.value.toUpperCase())
+                  setPromoStatus({ message: '', type: null })
+                }}
+                className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 uppercase"
+              />
+              <button
+                onClick={() => validatePromoCode('checkout@menusparks.com')}
+                className="px-6 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors font-semibold"
+              >
+                Apply
+              </button>
+            </div>
+            {promoStatus.message && (
+              <p className={`mt-2 text-sm font-medium ${
+                promoStatus.type === 'success' ? 'text-green-600' : 
+                promoStatus.type === 'error' ? 'text-red-600' : 'text-gray-600'
+              }`}>
+                {promoStatus.message}
+                {promoStatus.type === 'success' && promoStatus.discount?.discount_type === 'free_trial' && (
+                  <span className="block text-xs mt-1">
+                    {promoStatus.discount.discount_value} days free trial will be applied at checkout
+                  </span>
+                )}
+              </p>
+            )}
           </div>
         </div>
 
