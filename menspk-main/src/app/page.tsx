@@ -3,6 +3,7 @@ import Header from '@/components/Header'
 import HeroClean from '@/components/HeroClean'
 import FeaturesGrid from '@/components/FeaturesGrid'
 import ProcessSteps from '@/components/ProcessSteps'
+import GeneratorPreview from '@/components/GeneratorPreview'
 import SavingsCalculator from '@/components/SavingsCalculator'
 import Pricing from '@/components/Pricing'
 import Testimonials from '@/components/Testimonials'
@@ -24,6 +25,9 @@ export default function Home() {
       
       {/* How It Works - Process Steps */}
       <ProcessSteps />
+      
+      {/* AI Generator Preview - Shows what members get */}
+      <GeneratorPreview />
       
       {/* Savings Calculator */}
       <SavingsCalculator />

@@ -12,8 +12,12 @@ function SuccessContent() {
   const [email, setEmail] = useState('')
 
   useEffect(() => {
-    // You could fetch session details here if needed
-    // For now, just show success message
+    // Set authentication for dashboard access
+    if (sessionId) {
+      localStorage.setItem('menusparks_session', sessionId)
+      // In production, fetch customer email from Stripe
+      localStorage.setItem('menusparks_customer_email', 'customer@menusparks.com')
+    }
   }, [sessionId])
 
   return (
@@ -87,7 +91,7 @@ function SuccessContent() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/" className="btn-primary">
+              <Link href="/dashboard" className="btn-primary">
                 Go to Dashboard
               </Link>
               <Link href="/" className="btn-secondary">
