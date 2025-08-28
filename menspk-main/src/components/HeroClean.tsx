@@ -59,10 +59,10 @@ export default function HeroClean() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <a 
-                href="/dashboard" 
+                href="#pricing" 
                 className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg transition-all transform hover:scale-105 text-center shadow-lg"
               >
-                🎉 Try FREE Demo (Limited Time)
+                Start Free Trial
               </a>
               <a 
                 href="#how-it-works" 

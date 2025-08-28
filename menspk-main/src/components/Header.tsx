@@ -14,14 +14,7 @@ export default function Header() {
   }, [pathname])
 
   return (
-    <>
-      {/* FREE DEMO BANNER */}
-      <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white text-center py-2 text-sm font-semibold">
-        🚀 FREE DEMO AVAILABLE - Test the AI Recipe Generator Now! 
-        <Link href="/dashboard" className="underline ml-2 hover:text-orange-100">Try It Free →</Link>
-      </div>
-      
-      <header className="bg-white shadow-sm border-b border-gray-200">
+    <header className="bg-white shadow-sm border-b border-gray-200">
         <nav className="container mx-auto px-4 max-w-7xl">
           <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -87,6 +80,5 @@ export default function Header() {
           )}
         </nav>
       </header>
-    </>
   )
 }
