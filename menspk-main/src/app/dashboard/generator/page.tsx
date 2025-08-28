@@ -37,6 +37,12 @@ export default function GeneratorPage() {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
+    // TEMPORARILY DISABLED FOR TESTING - FREE ACCESS
+    setIsAuthenticated(true)
+    setLoading(false)
+    
+    // Original auth check commented out for testing
+    /*
     const checkAuth = async () => {
       const hasSession = localStorage.getItem('menusparks_session')
       if (!hasSession) {
@@ -47,6 +53,7 @@ export default function GeneratorPage() {
       setLoading(false)
     }
     checkAuth()
+    */
   }, [router])
 
   const handleFileChange = (files: File[]) => {

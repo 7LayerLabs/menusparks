@@ -11,10 +11,14 @@ export default function DashboardPage() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // Check if user is authenticated (for now, check localStorage)
-    // In production, this would verify with Stripe/Supabase
+    // TEMPORARILY DISABLED FOR TESTING - FREE ACCESS
+    setIsAuthenticated(true)
+    setCustomerEmail('demo@menusparks.com')
+    setLoading(false)
+    
+    // Original auth check commented out for testing
+    /*
     const checkAuth = async () => {
-      // Temporary: Check if they came from success page or have session
       const hasSession = localStorage.getItem('menusparks_session')
       const email = localStorage.getItem('menusparks_customer_email')
       
@@ -22,13 +26,12 @@ export default function DashboardPage() {
         setIsAuthenticated(true)
         setCustomerEmail(email)
       } else {
-        // Redirect to pricing if not authenticated
         router.push('/#pricing')
       }
       setLoading(false)
     }
-    
     checkAuth()
+    */
   }, [router])
 
   if (loading) {
