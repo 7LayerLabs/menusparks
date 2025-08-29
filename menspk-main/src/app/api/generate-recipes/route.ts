@@ -66,7 +66,14 @@ For each recipe, provide:
 Format as JSON array with these fields: recipeName, description, yield, ingredients (array), instructions (array), chefNotes, costPerServing, suggestedPrice`
 
     // Call Gemini API (server-side only)
-    const model = genAI.getGenerativeModel({ model: 'gemini-pro' })
+    const model = genAI.getGenerativeModel({ 
+      model: 'gemini-1.5-flash',  // Using gemini-1.5-flash as gemini-pro is deprecated
+      generationConfig: {
+        temperature: 0.8,
+        topP: 0.9,
+        maxOutputTokens: 8192,
+      }
+    })
     const result = await model.generateContent(prompt)
     const response = await result.response
     const text = response.text()

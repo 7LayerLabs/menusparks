@@ -38,6 +38,9 @@ export default function Header() {
             <Link href="/referral" className="text-gray-600 hover:text-orange-500 transition-colors">
               Referrals
             </Link>
+            <Link href="/login" className="text-gray-600 hover:text-orange-500 transition-colors">
+              Dashboard Demo
+            </Link>
             <Link href="#pricing" className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-6 rounded-lg transition-all transform hover:scale-105">
               Start Free Trial
             </Link>
@@ -71,6 +74,9 @@ export default function Header() {
                 </Link>
                 <Link href="/referral" className="block px-3 py-2 text-gray-600 hover:text-orange-500" onClick={() => setIsMenuOpen(false)}>
                   Referrals
+                </Link>
+                <Link href="/login" className="block px-3 py-2 text-gray-600 hover:text-orange-500" onClick={() => setIsMenuOpen(false)}>
+                  Dashboard Demo
                 </Link>
                 <Link href="#pricing" className="block mx-3 my-2 py-2 px-4 bg-orange-500 text-white text-center rounded-lg hover:bg-orange-600" onClick={() => setIsMenuOpen(false)}>
                   Start Free Trial
