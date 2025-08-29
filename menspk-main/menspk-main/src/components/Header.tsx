@@ -9,6 +9,21 @@ export default function Header() {
   return (
     <header className="bg-black shadow-sm border-b border-gray-700">
       <nav className="section-container">
+        {/* Comic Pain Point Section */}
+        <div className="hidden lg:flex justify-end items-center py-3 gap-4">
+          <div className="text-right max-w-sm">
+            <p className="text-orange-500 font-bold text-sm mb-1">We've All Been There...</p>
+            <p className="text-gray-400 text-xs leading-tight">
+              You've got talented cooks, but when it comes to creating weekly specials? 
+              The creativity just isn't there. Same old ideas, week after week.
+            </p>
+          </div>
+          <img 
+            src="/images/comic.png" 
+            alt="Restaurant kitchen pain point" 
+            className="h-20 w-auto object-contain"
+          />
+        </div>
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
