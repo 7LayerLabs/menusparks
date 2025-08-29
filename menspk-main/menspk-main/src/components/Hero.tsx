@@ -57,10 +57,27 @@ export default function Hero() {
               You already have ENOUGH
             </h2>
             
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed text-center">
-              Transform your back-of-house inventory into profit-driving specials. No extra items on your order, 
-              no grocery runs - just smart recipes using what's already in your kitchen.
-            </p>
+            {/* Comic Pain Point Section */}
+            <div className="flex flex-col lg:flex-row items-center justify-center gap-6 mb-8">
+              <div className="lg:text-left text-center max-w-md">
+                <p className="text-xl text-gray-300 leading-relaxed">
+                  Transform your back-of-house inventory into profit-driving specials. No extra items on your order, 
+                  no grocery runs - just smart recipes using what's already in your kitchen.
+                </p>
+                <div className="mt-4 p-4 bg-gray-800 rounded-lg border border-gray-700">
+                  <p className="text-orange-500 font-bold text-sm mb-2">We've All Been There...</p>
+                  <p className="text-gray-400 text-sm leading-relaxed">
+                    You've got talented cooks, but when it comes to creating weekly specials? 
+                    The creativity just isn't there. Same old ideas, week after week.
+                  </p>
+                </div>
+              </div>
+              <img 
+                src="/images/comic.png" 
+                alt="Restaurant kitchen pain point comic" 
+                className="w-full max-w-sm lg:max-w-md h-auto object-contain rounded-lg shadow-xl"
+              />
+            </div>
 
             <div className="bg-gray-900 p-6 rounded-lg shadow-lg border border-gray-700 mb-8">
               <h3 className="text-lg font-semibold text-white mb-3">
