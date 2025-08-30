@@ -235,7 +235,7 @@ export default function Contact() {
                 </h3>
                 <p className="text-gray-600 mb-6">
                   We get it. Restaurant margins are tight and you can&apos;t afford another expense 
-                  that doesn&apos;t deliver results. That&apos;s why we offer a satisfaction guarantee 
+                  that doesn&apos;t deliver results. That&apos;s why we focus on delivering real value 
                   and personalized attention for every restaurant.
                 </p>
                 <div className="text-center">

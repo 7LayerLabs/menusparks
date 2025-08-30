@@ -2,11 +2,9 @@ import { Suspense } from 'react'
 import Header from '@/components/Header'
 import HeroClean from '@/components/HeroClean'
 import FeaturesGrid from '@/components/FeaturesGrid'
-import ProcessSteps from '@/components/ProcessSteps'
 import SavingsCalculator from '@/components/SavingsCalculator'
 import Pricing from '@/components/Pricing'
 import Testimonials from '@/components/Testimonials'
-import FinalCTA from '@/components/FinalCTA'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 
@@ -25,10 +23,10 @@ export default function Home() {
         <div className="section-container">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Transform Your Kitchen Into a <span className="text-orange-600">Profit Center</span>
+              Transform Your Kitchen Into a <span className="text-orange-600">Creative Hub</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              MenuSparks is your intelligent recipe generation platform that creates profitable menu specials 
+              MenuSparks is your intelligent recipe generation platform that creates innovative menu specials 
               from your existing inventory - powered by advanced algorithms and culinary expertise.
             </p>
           </div>
@@ -41,19 +39,19 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Smart Recipe Generation</h3>
               <p className="text-gray-600">
-                Generate creative, profitable recipes based on your inventory. Our system analyzes ingredients 
-                and creates specials that maximize margins while delighting customers.
+                Generate creative, delicious recipes based on your inventory. Our system analyzes ingredients 
+                and creates specials that reduce waste while delighting customers.
               </p>
             </div>
 
             <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
               <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg flex items-center justify-center mb-6">
-                <span className="text-3xl">📊</span>
+                <span className="text-3xl">🎨</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Cost Analysis & Pricing</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Creative Recipe Development</h3>
               <p className="text-gray-600">
-                Every recipe includes detailed cost breakdowns, portion calculations, and suggested menu pricing 
-                to ensure maximum profitability on every dish.
+                Transform everyday ingredients into extraordinary dishes. Our culinary expertise ensures every 
+                recipe is both innovative and perfectly suited to your kitchen's capabilities.
               </p>
             </div>
 
@@ -112,8 +110,35 @@ export default function Home() {
                     <span className="text-orange-600 font-bold">✓</span>
                   </div>
                   <div className="ml-4">
-                    <h3 className="font-semibold text-gray-900">History & Analytics</h3>
-                    <p className="text-gray-600">Track what works, save favorites, and analyze your menu performance</p>
+                    <h3 className="font-semibold text-gray-900">10,000+ Classic Recipes by Decade</h3>
+                    <p className="text-gray-600">From 1950s diner classics to modern fusion - twist old favorites or create something completely new and forward-thinking</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mt-1">
+                    <span className="text-orange-600 font-bold">✓</span>
+                  </div>
+                  <div className="ml-4">
+                    <h3 className="font-semibold text-gray-900">Custom Themes & Seasons</h3>
+                    <p className="text-gray-600">Create specials for any occasion - Valentine's Day, Game Day, Summer BBQ, Oktoberfest, holidays, events, and more</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mt-1">
+                    <span className="text-orange-600 font-bold">✓</span>
+                  </div>
+                  <div className="ml-4">
+                    <h3 className="font-semibold text-gray-900">Smart Include/Exclude</h3>
+                    <p className="text-gray-600">Hate mushrooms? Skip them! Too much turkey? Focus on it! Customize every recipe to your exact inventory and preferences</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mt-1">
+                    <span className="text-orange-600 font-bold">✓</span>
+                  </div>
+                  <div className="ml-4">
+                    <h3 className="font-semibold text-gray-900">NEW: Idea Spark</h3>
+                    <p className="text-gray-600">Work out any idea in your head - as detailed or basic as you want. Get suggestions, develop recipes, and modify until you create that 'ah ha!' moment!</p>
                   </div>
                 </div>
               </div>
@@ -203,7 +228,7 @@ export default function Home() {
                     <p className="text-gray-500 text-sm">400x300px Image</p>
                   </div>
                   <h3 className="font-bold text-lg mb-2">Generate Recipes</h3>
-                  <p className="text-gray-600 text-sm">Our system creates profitable specials with full instructions</p>
+                  <p className="text-gray-600 text-sm">Our system creates innovative specials with full instructions</p>
                 </div>
               </div>
             </div>
@@ -217,8 +242,8 @@ export default function Home() {
                   <div className="w-full h-32 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
                     <p className="text-gray-500 text-sm">400x300px Image</p>
                   </div>
-                  <h3 className="font-bold text-lg mb-2">Serve & Profit</h3>
-                  <p className="text-gray-600 text-sm">Execute recipes with confidence and watch profits grow</p>
+                  <h3 className="font-bold text-lg mb-2">Serve & Delight</h3>
+                  <p className="text-gray-600 text-sm">Execute recipes with confidence and watch customers return</p>
                 </div>
               </div>
             </div>
@@ -230,7 +255,7 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="section-container">
           <h2 className="text-4xl font-bold text-center text-gray-900 mb-6">
-            Everything You Need to <span className="text-orange-600">Maximize Menu Profits</span>
+            Everything You Need to <span className="text-orange-600">Maximize Menu Creativity</span>
           </h2>
           <p className="text-xl text-gray-600 text-center max-w-3xl mx-auto mb-16">
             Our platform combines intelligent recipe generation with professional kitchen expertise
@@ -251,9 +276,9 @@ export default function Home() {
             </div>
 
             <div className="bg-gradient-to-br from-green-50 to-white border border-green-100 rounded-lg p-6">
-              <span className="text-3xl mb-4 block">💵</span>
-              <h3 className="font-bold text-gray-900 mb-2">Cost Calculations</h3>
-              <p className="text-sm text-gray-600">Automatic food cost and pricing recommendations</p>
+              <span className="text-3xl mb-4 block">♻️</span>
+              <h3 className="font-bold text-gray-900 mb-2">Waste Reduction</h3>
+              <p className="text-sm text-gray-600">Smart inventory usage to minimize food waste</p>
             </div>
 
             <div className="bg-gradient-to-br from-purple-50 to-white border border-purple-100 rounded-lg p-6">
@@ -299,7 +324,7 @@ export default function Home() {
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Our platform leverages advanced algorithms and culinary databases to generate recipes 
-              that are both creative and profitable - with the ability to pull from cutting-edge systems
+              that are both creative and delicious - with the ability to pull from cutting-edge systems
             </p>
           </div>
 
@@ -335,24 +360,23 @@ export default function Home() {
       <FeaturesGrid />
       
       {/* How It Works - Process Steps */}
-      <ProcessSteps />
       
       {/* Savings Calculator */}
       <SavingsCalculator />
       
-      {/* Pricing with guarantee */}
+      {/* Pricing */}
       <Pricing />
       
       {/* Final Closer - Credibility + CTA */}
-      <section className="py-8 bg-gray-900">
+      <section className="pt-8 pb-4 bg-gray-900">
         <div className="section-container">
           <div className="max-w-5xl mx-auto">
             {/* Credibility Quote */}
-            <div className="text-center mb-16">
-              <blockquote className="text-xl lg:text-2xl font-medium text-white mb-8 leading-relaxed">
+            <div className="text-center mb-8">
+              <blockquote className="text-xl lg:text-2xl font-medium text-white mb-4 leading-relaxed">
                 &quot;Built by Restaurant people for restaurant people.<br />
                 <span className="text-orange-500 font-semibold">25+ years in kitchens, over 10 restaurants managed,</span><br />
-                1 simple mission: help restaurants maximize profitability from existing inventory.&quot;
+                1 simple mission: help restaurants maximize creativity from existing inventory.&quot;
               </blockquote>
               <p className="text-lg text-gray-400 font-medium">
                 - The MenuSparks Team
@@ -360,7 +384,6 @@ export default function Home() {
             </div>
             
             {/* Final CTA Form */}
-            <FinalCTA />
           </div>
         </div>
       </section>

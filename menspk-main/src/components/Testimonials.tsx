@@ -3,7 +3,7 @@ export default function Testimonials() {
     {
       name: "Maria Rodriguez",
       restaurant: "Casa Elena - Springfield, MA",
-      quote: "MenuSparks saved me 6 hours every week and increased our special sales by 40%. The cost analysis alone has improved our margins significantly.",
+      quote: "MenuSparks saved me 6 hours every week and increased our special sales by 40%. The creative recipes have transformed how we use our inventory.",
       avatar: "👩‍🍳"
     },
     {
@@ -15,7 +15,7 @@ export default function Testimonials() {
     {
       name: "Tony Martinelli",
       restaurant: "Tony's Italian Kitchen - Boston, MA", 
-      quote: "These aren&apos;t just recipes - they&apos;re business solutions. Every special comes with exact costs and pricing. My accountant loves the profit improvements.",
+      quote: "These aren&apos;t just recipes - they&apos;re business solutions. Every special comes with detailed instructions and scaling guides. Our customers love the variety and creativity.",
       avatar: "👨‍🍳"
     },
     {
@@ -35,7 +35,7 @@ export default function Testimonials() {
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Hundreds of restaurant owners have already eliminated special stress 
-            while boosting their profits.
+            while boosting their creativity.
           </p>
         </div>
 
@@ -73,11 +73,11 @@ export default function Testimonials() {
             </div>
             <div>
               <div className="text-3xl font-bold text-blue-600 mb-2">35%</div>
-              <div className="text-gray-600">Average margin improvement</div>
+              <div className="text-gray-600">Customer satisfaction increase</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-blue-600 mb-2">48 hours</div>
-              <div className="text-gray-600">Guaranteed delivery time</div>
+              <div className="text-gray-600">Typical delivery time</div>
             </div>
           </div>
         </div>

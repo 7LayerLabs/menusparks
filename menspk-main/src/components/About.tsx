@@ -21,8 +21,8 @@ export default function About() {
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-2">Multi-Generational Restaurant Family</h3>
                   <p className="text-gray-600">
-                    Three generations running restaurants. We understand the pressure, the margins, 
-                    and the daily struggle of keeping customers happy while staying profitable.
+                    Three generations running restaurants. We understand the pressure, the operations, 
+                    and the daily struggle of keeping customers happy while staying creative.
                   </p>
                 </div>
               </div>
@@ -45,10 +45,10 @@ export default function About() {
                   <span className="text-2xl">📊</span>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">25+ Years of Cost Management</h3>
+                  <h3 className="font-semibold text-gray-900 mb-2">25+ Years of Operations Excellence</h3>
                   <p className="text-gray-600">
                     We&apos;ve negotiated with every major distributor, survived economic downturns, 
-                    and optimized margins through multiple market cycles.
+                    and optimized operations through multiple market cycles.
                   </p>
                 </div>
               </div>
@@ -71,7 +71,7 @@ export default function About() {
                   <svg className="w-6 h-6 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-gray-700">Profit optimization, not just pretty pictures</span>
+                  <span className="text-gray-700">Creative optimization, not just pretty pictures</span>
                 </div>
                 
                 <div className="flex items-center">
@@ -92,7 +92,7 @@ export default function About() {
               <div className="mt-8 p-6 bg-white rounded-lg border border-gray-200">
                 <blockquote className="text-gray-700 italic text-center">
                   &quot;We don&apos;t just create specials. We solve the weekly stress that keeps 
-                  restaurant owners up at night, while building their profit margins 
+                  restaurant owners up at night, while building their creative reputation 
                   and customer excitement.&quot;
                 </blockquote>
                 <div className="text-center mt-4">
@@ -126,7 +126,7 @@ export default function About() {
               <div className="text-center">
                 <div className="text-4xl mb-3">🍺</div>
                 <h4 className="font-semibold text-gray-900 mb-2">Bar & Pub Operations</h4>
-                <p className="text-gray-600 text-sm">Late-night crowds, profit optimization, entertainment integration</p>
+                <p className="text-gray-600 text-sm">Late-night crowds, menu innovation, entertainment integration</p>
               </div>
             </div>
           </div>

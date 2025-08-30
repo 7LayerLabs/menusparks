@@ -35,6 +35,9 @@ export default function Header() {
             <Link href="/calculator" className="text-gray-600 hover:text-orange-500 transition-colors">
               Calculator
             </Link>
+            <Link href="/about" className="text-gray-600 hover:text-orange-500 transition-colors">
+              About
+            </Link>
             <Link href="/referral" className="text-gray-600 hover:text-orange-500 transition-colors">
               Referrals
             </Link>
@@ -71,6 +74,9 @@ export default function Header() {
                 </Link>
                 <Link href="/calculator" className="block px-3 py-2 text-gray-600 hover:text-orange-500" onClick={() => setIsMenuOpen(false)}>
                   Calculator
+                </Link>
+                <Link href="/about" className="block px-3 py-2 text-gray-600 hover:text-orange-500" onClick={() => setIsMenuOpen(false)}>
+                  About
                 </Link>
                 <Link href="/referral" className="block px-3 py-2 text-gray-600 hover:text-orange-500" onClick={() => setIsMenuOpen(false)}>
                   Referrals

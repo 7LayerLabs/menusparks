@@ -28,8 +28,8 @@ export default function TermsOfService() {
                   <li>Subscriptions are billed weekly or annually (with 10 weeks free for annual plans)</li>
                   <li>Payments are processed securely through Stripe</li>
                   <li>You can cancel your subscription at any time</li>
-                  <li>No refunds for partial billing periods</li>
-                  <li>100% satisfaction guarantee for first-time subscribers (30-day money-back)</li>
+                  <li>Billing periods are non-prorated</li>
+                  <li>First-time subscribers receive priority onboarding support</li>
                 </ul>
               </div>
 
@@ -50,7 +50,7 @@ export default function TermsOfService() {
 
               <div>
                 <h3 className="text-xl font-semibold text-white mb-2">5. Disclaimer of Warranties</h3>
-                <p>MenuSparks is provided "as is" without warranties of any kind. While we strive for accuracy, we cannot guarantee that all generated specials will be suitable for your specific needs or comply with all dietary restrictions without review.</p>
+                <p>MenuSparks is provided "as is" without warranties of any kind. While we strive for accuracy, all generated specials should be reviewed by your team to ensure they meet your specific needs and comply with all dietary restrictions before implementation.</p>
               </div>
 
               <div>

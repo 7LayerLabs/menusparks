@@ -46,7 +46,7 @@ export default function HeroClean() {
             {/* Main Headline */}
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight">
               Turn Excess Inventory Into
-              <span className="text-orange-500 block">Profitable Specials</span>
+              <span className="text-orange-500 block">Creative Specials</span>
             </h1>
             
             {/* Subheadline */}
@@ -78,13 +78,7 @@ export default function HeroClean() {
                 <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                <span>No credit card required</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span>24-hour delivery</span>
+                <span>FAST delivery</span>
               </div>
               <div className="flex items-center gap-2">
                 <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
@@ -95,60 +89,31 @@ export default function HeroClean() {
             </div>
           </div>
           
-          {/* Right Column - Image/Visual */}
-          <div className="relative">
-            {/* Image Placeholder */}
-            <div className="bg-gradient-to-br from-orange-100 to-orange-50 rounded-2xl p-8 shadow-xl">
-              <div className="bg-white rounded-xl p-6 shadow-lg">
-                <img 
-                  src="/api/placeholder/600/400" 
-                  alt="Restaurant special dish or kitchen scene"
-                  className="w-full h-auto rounded-lg"
-                />
-                <div className="mt-4 p-4 bg-green-50 rounded-lg border border-green-200">
-                  <div className="flex justify-between items-center">
-                    <div>
-                      <p className="text-sm text-gray-600">Average Annual Savings</p>
-                      <p className="text-2xl font-bold text-green-600">$8,400</p>
-                    </div>
-                    <svg className="w-12 h-12 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                    </svg>
-                  </div>
-                </div>
+          {/* Right Column - Comic and Pain Point */}
+          <div className="relative flex flex-col items-center lg:items-end gap-2">
+            {/* Pain Point Box with red indicator */}
+            <div className="bg-orange-50 border-2 border-orange-200 rounded-lg p-4 max-w-md relative mb-2">
+              <div className="absolute -top-3 -right-3 bg-red-500 rounded-full w-8 h-8 flex items-center justify-center animate-pulse">
+                <span className="text-white font-bold text-lg">!</span>
               </div>
+              <p className="text-red-600 font-bold text-base mb-2 flex items-center">
+                <span className="inline-block w-2 h-2 bg-red-500 rounded-full mr-2"></span>
+                We've All Been There...
+              </p>
+              <p className="text-gray-700 text-sm leading-relaxed">
+                You've got talented cooks, but when it comes to creating weekly specials? 
+                The creativity just isn't there. Same old ideas, week after week.
+              </p>
             </div>
             
-            {/* Floating Elements for Visual Interest */}
-            <div className="absolute -top-4 -right-4 bg-white rounded-lg shadow-lg p-4 hidden lg:block">
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="text-sm font-semibold text-gray-700">Live Dashboard</span>
-              </div>
-            </div>
+            {/* Comic Image - No white background */}
+            <img 
+              src="/images/comic.png" 
+              alt="Restaurant kitchen pain point comic" 
+              className="rounded-lg shadow-2xl"
+              style={{ width: '100%', maxWidth: '600px', height: 'auto', objectFit: 'cover' }}
+            />
             
-            <div className="absolute -bottom-4 -left-4 bg-white rounded-lg shadow-lg p-4 hidden lg:block">
-              <div className="flex items-center gap-3">
-                <span className="text-2xl">👨‍🍳</span>
-                <div>
-                  <p className="text-xs text-gray-600">Built by chefs</p>
-                  <p className="text-sm font-semibold text-gray-900">25+ years experience</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        {/* Social Proof Bar */}
-        <div className="mt-20 pt-12 border-t border-gray-200">
-          <p className="text-center text-sm text-gray-600 mb-8">Trusted by restaurants across the country</p>
-          <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-12 opacity-60">
-            {/* Restaurant Logo Placeholders */}
-            <img src="/api/placeholder/120/40" alt="Restaurant Logo 1" className="h-8" />
-            <img src="/api/placeholder/120/40" alt="Restaurant Logo 2" className="h-8" />
-            <img src="/api/placeholder/120/40" alt="Restaurant Logo 3" className="h-8" />
-            <img src="/api/placeholder/120/40" alt="Restaurant Logo 4" className="h-8" />
-            <img src="/api/placeholder/120/40" alt="Restaurant Logo 5" className="h-8" />
           </div>
         </div>
       </div>

@@ -108,7 +108,7 @@ export default function AboutPage() {
                     <svg className="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                    Complete cost breakdowns and margin analysis
+                    Complete ingredient optimization and usage tracking
                   </li>
                   <li className="flex items-start">
                     <svg className="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -178,9 +178,9 @@ export default function AboutPage() {
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center">
                 <div className="text-4xl mb-2">💰</div>
-                <h3 className="text-xl font-semibold text-white mb-2">ROI Guarantee</h3>
+                <h3 className="text-xl font-semibold text-white mb-2">Immediate Value</h3>
                 <p className="text-orange-100">
-                  See savings in your first month or get your money back
+                  Start seeing savings and improved menu creativity from day one
                 </p>
               </div>
               <div className="text-center">

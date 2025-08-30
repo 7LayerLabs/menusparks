@@ -115,7 +115,7 @@ export default function Pricing() {
       description: "Get instant recipes for your kitchen",
       features: [
         billingCycle === 'onetime' ? "5 recipes generated instantly" : "10-15 monthly recipes with complete instructions",
-        "Cost breakdown and pricing guidance",
+        "Ingredient usage optimization and scaling guides",
         "Prep complexity and timing guides", 
         "Equipment requirement specifications",
         billingCycle === 'onetime' ? "Download & use forever" : "Email support included"
@@ -134,7 +134,7 @@ export default function Pricing() {
       description: "Professional recipe development & optimization",
       features: [
         billingCycle === 'onetime' ? "15 premium recipes instantly" : "25-30 monthly premium recipes",
-        "Detailed cost analysis and profit margins",
+        "Advanced recipe customization and variations",
         "Complete social media content package",
         "Scaling guides for 10-200 portions", 
         "Performance tracking dashboard",
@@ -427,18 +427,6 @@ export default function Pricing() {
           </div>
         </div>
 
-        <div className="mt-16 text-center">
-          <div className="bg-gray-50 rounded-xl p-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              100% Satisfaction Guarantee
-            </h3>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              If you&apos;re not seeing value within your first 30 days, 
-              we&apos;ll refund your money. No questions asked. We&apos;ve been running restaurants 
-              for 25+ years - we know what works.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   )
