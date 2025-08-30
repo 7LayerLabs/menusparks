@@ -34,8 +34,8 @@ export default function Home() {
           {/* Feature Boxes */}
           <div className="grid md:grid-cols-3 gap-8 mt-16">
             <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
-              <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg flex items-center justify-center mb-6">
-                <span className="text-3xl">🎯</span>
+              <div className="w-16 h-16 mb-6">
+                <img src="/images/cookbook.png" alt="Smart Recipe Generation" className="w-full h-full object-contain" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Smart Recipe Generation</h3>
               <p className="text-gray-600">
@@ -45,8 +45,8 @@ export default function Home() {
             </div>
 
             <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg flex items-center justify-center mb-6">
-                <span className="text-3xl">🎨</span>
+              <div className="w-16 h-16 mb-6">
+                <img src="/images/whisk.png" alt="Creative Recipe Development" className="w-full h-full object-contain" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Creative Recipe Development</h3>
               <p className="text-gray-600">
@@ -56,8 +56,8 @@ export default function Home() {
             </div>
 
             <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
-              <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-lg flex items-center justify-center mb-6">
-                <span className="text-3xl">🚀</span>
+              <div className="w-16 h-16 mb-6">
+                <img src="/images/tray.png" alt="Instant Implementation" className="w-full h-full object-contain" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Instant Implementation</h3>
               <p className="text-gray-600">
