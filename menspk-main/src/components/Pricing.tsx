@@ -218,12 +218,38 @@ export default function Pricing() {
       <div className="section-container">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            Choose Your Recipe Generation Plan
+            Simple Math: $10 = 1 Special Sold
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
-            Get instant results with one-time purchases or save with our subscription plans. 
-            Generate professional recipes in minutes, not hours.
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-4">
+            If just ONE special gets sold because of our recipes, you've already made your money back. 
+            Most restaurants sell 10-20 specials per day.
           </p>
+          
+          {/* ROI Calculator Box */}
+          <div className="bg-orange-50 border-2 border-orange-200 rounded-xl p-6 max-w-2xl mx-auto mb-8">
+            <div className="grid md:grid-cols-3 gap-4 text-left">
+              <div>
+                <div className="text-sm text-gray-600 mb-1">Weekly Investment</div>
+                <div className="text-2xl font-bold text-gray-900">$10-35</div>
+              </div>
+              <div>
+                <div className="text-sm text-gray-600 mb-1">Avg Special Price</div>
+                <div className="text-2xl font-bold text-gray-900">$12-18</div>
+              </div>
+              <div>
+                <div className="text-sm text-gray-600 mb-1">Break Even</div>
+                <div className="text-2xl font-bold text-green-600">1-3 Sales</div>
+              </div>
+            </div>
+            <div className="mt-4 pt-4 border-t border-orange-200">
+              <p className="text-sm text-gray-700">
+                <span className="font-semibold">Real Example:</span> Sell 15 specials/day × $15 average × 7 days = 
+                <span className="font-bold text-green-600"> $1,575 weekly revenue</span> from specials. 
+                MenuSparks cost: <span className="font-bold">$10-35</span>. 
+                ROI: <span className="font-bold text-green-600">4,400%+</span>
+              </p>
+            </div>
+          </div>
 
           {/* Billing Toggle */}
           <div className="flex items-center justify-center gap-6 flex-wrap">

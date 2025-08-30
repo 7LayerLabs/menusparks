@@ -45,24 +45,23 @@ export default function HeroClean() {
             
             {/* Main Headline */}
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight">
-              Turn Excess Inventory Into
-              <span className="text-orange-500 block">Creative Specials</span>
+              Line cooks can cook.
+              <span className="text-orange-500 block">They can't create.</span>
             </h1>
             
             {/* Subheadline */}
             <p className="text-lg lg:text-xl text-gray-600 leading-relaxed">
-              MenuSparks transforms your overstocked items into ready-to-execute specials 
-              in less than 24 hours. Save <span className="font-semibold text-gray-900">$5,600-$11,200</span> annually 
-              while delighting customers with fresh, creative dishes.
+              Independent kitchens struggle with fresh, profitable specials. Managers end up overspending 
+              at Sysco or wasting food they already have. The creativity gap costs money and adds waste.
             </p>
             
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
               <a 
                 href="#pricing" 
                 className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg transition-all transform hover:scale-105 text-center shadow-lg"
               >
-                Get a Free Sample
+                Fix My Specials
               </a>
               <a 
                 href="#how-it-works" 

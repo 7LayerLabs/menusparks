@@ -1,7 +1,6 @@
 import { Suspense } from 'react'
 import Header from '@/components/Header'
 import HeroClean from '@/components/HeroClean'
-import FeaturesGrid from '@/components/FeaturesGrid'
 import SavingsCalculator from '@/components/SavingsCalculator'
 import Pricing from '@/components/Pricing'
 import Testimonials from '@/components/Testimonials'
@@ -18,52 +17,202 @@ export default function Home() {
         <HeroClean />
       </Suspense>
 
-      {/* What We Do Section */}
+      {/* Truth Section - Same Suppliers */}
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center">
+            <div className="inline-block px-4 py-2 bg-red-100 text-red-600 rounded-full text-sm font-semibold mb-6">
+              INDUSTRY SECRET
+            </div>
+            
+            <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                The Real Advantage Chains Have
+              </h2>
+              <p className="text-2xl text-gray-800 mb-6 font-bold">
+                It is not better suppliers—it's better resources.
+              </p>
+              
+              <div className="space-y-6 text-lg text-gray-700">
+                <p className="leading-relaxed">
+                  Chains don't have secret ingredients. They order from the same vendor catalogs as independents — 
+                  <span className="font-semibold text-orange-600">Sysco, US Foods, PFG.</span>
+                </p>
+                
+                <div className="flex items-center justify-center">
+                  <span className="text-gray-400">——</span>
+                  <span className="px-3 text-gray-500 font-semibold">BUT</span>
+                  <span className="text-gray-400">——</span>
+                </div>
+                
+                <p className="leading-relaxed">
+                  What they do have are <span className="font-semibold">corporate chef teams</span> and 
+                  <span className="font-semibold"> volume pricing</span>—resources independents can't afford.
+                </p>
+              </div>
+            </div>
+            
+            <div className="bg-orange-500 text-white rounded-xl p-6 transform hover:scale-105 transition-transform">
+              <p className="text-xl font-bold">
+                Now, one tool gives you the same creative firepower—without the corporate overhead.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Who It's For - Personas */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+            Who MenuSparks Is For
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Owner */}
+            <div className="text-center">
+              <div className="w-20 h-20 mx-auto mb-4 bg-orange-100 rounded-full flex items-center justify-center">
+                <span className="text-4xl">👔</span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Restaurant Owners</h3>
+              <p className="text-gray-600">
+                "I need to reduce food costs and increase margins without hiring expensive consultants."
+              </p>
+              <div className="mt-4 text-sm text-orange-600 font-semibold">
+                Save 30% on waste • Boost margins by 5-7%
+              </div>
+            </div>
+            
+            {/* Manager */}
+            <div className="text-center">
+              <div className="w-20 h-20 mx-auto mb-4 bg-orange-100 rounded-full flex items-center justify-center">
+                <span className="text-4xl">📋</span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Kitchen Managers</h3>
+              <p className="text-gray-600">
+                "I'm tired of scrambling for special ideas and watching inventory expire in the walk-in."
+              </p>
+              <div className="mt-4 text-sm text-orange-600 font-semibold">
+                Save time from your busy schedule • Never run out of ideas • Look like a genius to your boss!
+              </div>
+            </div>
+            
+            {/* Line Cook */}
+            <div className="text-center">
+              <div className="w-20 h-20 mx-auto mb-4 bg-orange-100 rounded-full flex items-center justify-center">
+                <span className="text-4xl">👨‍🍳</span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Line Cooks</h3>
+              <p className="text-gray-600">
+                "I can execute any recipe perfectly, but creating new dishes from scratch? That's not my strength."
+              </p>
+              <div className="mt-4 text-sm text-orange-600 font-semibold">
+                Focus on cooking • Leave creativity to us
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Mission - Purpose Statement */}
       <section className="py-20 bg-gradient-to-br from-orange-50 to-white">
         <div className="section-container">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Transform Your Kitchen Into a <span className="text-orange-600">Creative Hub</span>
+              Level the Playing Field for <span className="text-orange-600">Independent Restaurants</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              MenuSparks is your intelligent recipe generation platform that creates innovative menu specials 
-              from your existing inventory - powered by advanced algorithms and culinary expertise.
+              Big chains have teams of corporate chefs. You have MenuSparks. We're here to give every 
+              independent restaurant the creative firepower to compete and win.
             </p>
+            <div className="mt-8 text-lg text-gray-700 font-medium">
+              Because great food shouldn't be limited to those with deep pockets.
+            </div>
           </div>
 
-          {/* Feature Boxes */}
-          <div className="grid md:grid-cols-3 gap-8 mt-16">
-            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
-              <div className="w-16 h-16 mb-6">
-                <img src="/images/cookbook.png" alt="Smart Recipe Generation" className="w-full h-full object-contain" />
+          {/* Hero Product Feature - Recipe Generation */}
+          <div className="bg-white rounded-xl shadow-xl p-10 mt-12 border-2 border-orange-200">
+            <div className="flex flex-col items-center text-center">
+              <img src="/images/cookbook.png" alt="Recipe Generation" className="w-24 h-24 object-contain mb-6" />
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                Recipe Generation That Actually Works
+              </h3>
+              <p className="text-gray-600 mb-4 max-w-3xl">
+                Input your inventory. Select your style. Get professionally crafted recipes in seconds. 
+                Draw from 10,000+ classics or create innovative new twists—complete with prep instructions, 
+                portion sizes, plating notes, and even social posts.
+              </p>
+              <div className="text-left max-w-2xl mx-auto mb-4 space-y-2">
+                <div className="flex items-start">
+                  <span className="text-orange-500 mr-2">•</span>
+                  <p className="text-gray-600">
+                    <span className="font-semibold">Multi-Style Generation</span> — Create recipes for 24 restaurant styles and 14 categories.
+                  </p>
+                </div>
+                <div className="flex items-start">
+                  <span className="text-orange-500 mr-2">•</span>
+                  <p className="text-gray-600">
+                    <span className="font-semibold">Equipment Matching</span> — Tailors steps and techniques to your kitchen's gear.
+                  </p>
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Smart Recipe Generation</h3>
-              <p className="text-gray-600">
-                Generate creative, delicious recipes based on your inventory. Our system analyzes ingredients 
-                and creates specials that reduce waste while delighting customers.
+              <div className="flex flex-wrap gap-3 justify-center">
+                <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-medium">
+                  24 Restaurant Styles
+                </span>
+                <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-medium">
+                  14 Recipe Categories
+                </span>
+                <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-medium">
+                  10,000+ Classic Recipes (1950-2025)
+                </span>
+              </div>
+              <p className="text-sm text-gray-500 italic mt-4">
+                Never run the same special twice unless it sells so good you have no choice!
               </p>
             </div>
+          </div>
 
-            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
-              <div className="w-16 h-16 mb-6">
-                <img src="/images/whisk.png" alt="Creative Recipe Development" className="w-full h-full object-contain" />
+          {/* Supporting Features */}
+          <div className="grid md:grid-cols-2 gap-8 mt-8">
+            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow text-center">
+              <div className="w-12 h-12 mb-4 mx-auto">
+                <img src="/images/whisk.png" alt="Creative Development" className="w-full h-full object-contain" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Creative Recipe Development</h3>
-              <p className="text-gray-600">
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Creative Recipe Development</h3>
+              <p className="text-gray-600 text-sm mb-4">
                 Transform everyday ingredients into extraordinary dishes. Our culinary expertise ensures every 
                 recipe is both innovative and perfectly suited to your kitchen's capabilities.
               </p>
+              <div className="flex flex-wrap gap-2 justify-center">
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 rounded-full text-xs font-medium">
+                  Theme Specific Options
+                </span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 rounded-full text-xs font-medium">
+                  Creative New Options
+                </span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 rounded-full text-xs font-medium">
+                  Hybrid Recipe Fusion
+                </span>
+              </div>
             </div>
 
-            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
-              <div className="w-16 h-16 mb-6">
+            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow text-center">
+              <div className="w-12 h-12 mb-4 mx-auto">
                 <img src="/images/tray.png" alt="Instant Implementation" className="w-full h-full object-contain" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Instant Implementation</h3>
-              <p className="text-gray-600">
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Instant Implementation</h3>
+              <p className="text-gray-600 text-sm mb-4">
                 Recipes come with prep instructions, scaling tips, and even social media posts. 
                 From generation to service in minutes, not hours.
               </p>
+              <div className="flex flex-wrap gap-2 justify-center">
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 rounded-full text-xs font-medium">
+                  Include/Exclude Ingredients
+                </span>
+                <span className="px-2 py-1 bg-orange-50 text-orange-600 rounded-full text-xs font-medium">
+                  Recipe Scaling
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -102,7 +251,7 @@ export default function Home() {
                   </div>
                   <div className="ml-4">
                     <h3 className="font-semibold text-gray-900">Professional Output</h3>
-                    <p className="text-gray-600">Three-phase recipes with prep, bulk prep, and service instructions</p>
+                    <p className="text-gray-600">Export & print in multiple formats. Three-phase recipes with prep, bulk prep, and service instructions</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -110,8 +259,26 @@ export default function Home() {
                     <span className="text-orange-600 font-bold">✓</span>
                   </div>
                   <div className="ml-4">
-                    <h3 className="font-semibold text-gray-900">10,000+ Classic Recipes by Decade</h3>
-                    <p className="text-gray-600">From 1950s diner classics to modern fusion - twist old favorites or create something completely new and forward-thinking</p>
+                    <h3 className="font-semibold text-gray-900">Recipe Scaling</h3>
+                    <p className="text-gray-600">Automatically adjust portions from 10 to 200 servings with proper ingredient ratios</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mt-1">
+                    <span className="text-orange-600 font-bold">✓</span>
+                  </div>
+                  <div className="ml-4">
+                    <h3 className="font-semibold text-gray-900">Waste Reduction</h3>
+                    <p className="text-gray-600">Track inventory usage and get alerts for expiring ingredients to minimize waste</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mt-1">
+                    <span className="text-orange-600 font-bold">✓</span>
+                  </div>
+                  <div className="ml-4">
+                    <h3 className="font-semibold text-gray-900">Analytics Dashboard</h3>
+                    <p className="text-gray-600">Track recipe performance, popular dishes, and cost analysis in real-time</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -137,8 +304,17 @@ export default function Home() {
                     <span className="text-orange-600 font-bold">✓</span>
                   </div>
                   <div className="ml-4">
-                    <h3 className="font-semibold text-gray-900">NEW: Idea Spark</h3>
+                    <h3 className="font-semibold text-gray-900">Idea Spark (New)</h3>
                     <p className="text-gray-600">Work out any idea in your head - as detailed or basic as you want. Get suggestions, develop recipes, and modify until you create that 'ah ha!' moment!</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mt-1">
+                    <span className="text-orange-600 font-bold">✓</span>
+                  </div>
+                  <div className="ml-4">
+                    <h3 className="font-semibold text-gray-900">Social Media Ready</h3>
+                    <p className="text-gray-600">Auto-generated posts with descriptions and hashtags for Instagram, Facebook, and more</p>
                   </div>
                 </div>
               </div>
@@ -146,34 +322,14 @@ export default function Home() {
                 Try Demo Dashboard →
               </Link>
             </div>
-            <div className="relative">
-              {/* Dashboard Screenshot Placeholder */}
-              <div className="bg-gray-900 rounded-lg shadow-2xl p-4">
-                <div className="bg-gray-800 rounded-lg h-96 flex items-center justify-center">
-                  <div className="text-center">
-                    <p className="text-gray-400 mb-2">Dashboard Preview</p>
-                    <p className="text-gray-500 text-sm">1200x800px Image</p>
-                  </div>
-                </div>
-              </div>
-              {/* Floating Feature Cards */}
-              <div className="absolute -top-4 -right-4 bg-white rounded-lg shadow-lg p-4 w-48">
-                <div className="flex items-center space-x-3">
-                  <span className="text-2xl">📈</span>
-                  <div>
-                    <p className="font-semibold text-sm">50+ Recipes</p>
-                    <p className="text-xs text-gray-600">Generated This Week</p>
-                  </div>
-                </div>
-              </div>
-              <div className="absolute -bottom-4 -left-4 bg-white rounded-lg shadow-lg p-4 w-48">
-                <div className="flex items-center space-x-3">
-                  <span className="text-2xl">💰</span>
-                  <div>
-                    <p className="font-semibold text-sm">$2,400 Saved</p>
-                    <p className="text-xs text-gray-600">From Waste Reduction</p>
-                  </div>
-                </div>
+            <div className="relative h-full flex items-center">
+              {/* Dashboard Screenshot */}
+              <div className="rounded-lg shadow-2xl overflow-hidden w-full">
+                <img 
+                  src="/images/demo.png" 
+                  alt="MenuSparks Dashboard Preview" 
+                  className="w-full h-auto rounded-lg"
+                />
               </div>
             </div>
           </div>
@@ -251,70 +407,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Platform Features Grid */}
-      <section className="py-20 bg-white">
-        <div className="section-container">
-          <h2 className="text-4xl font-bold text-center text-gray-900 mb-6">
-            Everything You Need to <span className="text-orange-600">Maximize Menu Creativity</span>
-          </h2>
-          <p className="text-xl text-gray-600 text-center max-w-3xl mx-auto mb-16">
-            Our platform combines intelligent recipe generation with professional kitchen expertise
-          </p>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Row 1 */}
-            <div className="bg-gradient-to-br from-orange-50 to-white border border-orange-100 rounded-lg p-6">
-              <span className="text-3xl mb-4 block">🍳</span>
-              <h3 className="font-bold text-gray-900 mb-2">Multi-Style Generation</h3>
-              <p className="text-sm text-gray-600">Create recipes for any cuisine style from American to Vegan</p>
-            </div>
-
-            <div className="bg-gradient-to-br from-blue-50 to-white border border-blue-100 rounded-lg p-6">
-              <span className="text-3xl mb-4 block">📝</span>
-              <h3 className="font-bold text-gray-900 mb-2">Professional Formatting</h3>
-              <p className="text-sm text-gray-600">Industry-standard recipe cards with yields and timings</p>
-            </div>
-
-            <div className="bg-gradient-to-br from-green-50 to-white border border-green-100 rounded-lg p-6">
-              <span className="text-3xl mb-4 block">♻️</span>
-              <h3 className="font-bold text-gray-900 mb-2">Waste Reduction</h3>
-              <p className="text-sm text-gray-600">Smart inventory usage to minimize food waste</p>
-            </div>
-
-            <div className="bg-gradient-to-br from-purple-50 to-white border border-purple-100 rounded-lg p-6">
-              <span className="text-3xl mb-4 block">📱</span>
-              <h3 className="font-bold text-gray-900 mb-2">Social Media Ready</h3>
-              <p className="text-sm text-gray-600">Auto-generated posts to promote your specials</p>
-            </div>
-
-            {/* Row 2 */}
-            <div className="bg-gradient-to-br from-red-50 to-white border border-red-100 rounded-lg p-6">
-              <span className="text-3xl mb-4 block">⚙️</span>
-              <h3 className="font-bold text-gray-900 mb-2">Equipment Matching</h3>
-              <p className="text-sm text-gray-600">Recipes tailored to your kitchen equipment</p>
-            </div>
-
-            <div className="bg-gradient-to-br from-yellow-50 to-white border border-yellow-100 rounded-lg p-6">
-              <span className="text-3xl mb-4 block">📊</span>
-              <h3 className="font-bold text-gray-900 mb-2">Analytics Dashboard</h3>
-              <p className="text-sm text-gray-600">Track performance and identify best sellers</p>
-            </div>
-
-            <div className="bg-gradient-to-br from-indigo-50 to-white border border-indigo-100 rounded-lg p-6">
-              <span className="text-3xl mb-4 block">🔄</span>
-              <h3 className="font-bold text-gray-900 mb-2">Recipe Scaling</h3>
-              <p className="text-sm text-gray-600">Easily adjust portions from 10 to 100+ servings</p>
-            </div>
-
-            <div className="bg-gradient-to-br from-pink-50 to-white border border-pink-100 rounded-lg p-6">
-              <span className="text-3xl mb-4 block">💾</span>
-              <h3 className="font-bold text-gray-900 mb-2">Export & Print</h3>
-              <p className="text-sm text-gray-600">Download recipes in multiple formats</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Technology Section */}
       <section className="py-20 bg-gradient-to-br from-gray-900 to-gray-800">
         <div className="section-container">
@@ -355,11 +447,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
-      {/* Original Features Grid */}
-      <FeaturesGrid />
-      
-      {/* How It Works - Process Steps */}
       
       {/* Savings Calculator */}
       <SavingsCalculator />
