@@ -322,34 +322,27 @@ export default function Home() {
                 Try Demo Dashboard →
               </Link>
             </div>
-            <div className="relative h-full">
-              {/* Dashboard Screenshots Grid */}
-              <div className="grid grid-cols-1 gap-4">
-                {/* Main Dashboard Image */}
-                <div className="rounded-lg shadow-2xl overflow-hidden">
-                  <img 
-                    src="/images/demo2.png" 
-                    alt="MenuSparks Dashboard Main View" 
-                    className="w-full h-auto rounded-lg"
-                  />
-                </div>
-                {/* Secondary Images Row */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="rounded-lg shadow-xl overflow-hidden">
-                    <img 
-                      src="/images/demo3.png" 
-                      alt="Recipe Generation Interface" 
-                      className="w-full h-auto rounded-lg"
-                    />
-                  </div>
-                  <div className="rounded-lg shadow-xl overflow-hidden">
-                    <img 
-                      src="/images/demo4.png" 
-                      alt="Recipe Output View" 
-                      className="w-full h-auto rounded-lg"
-                    />
-                  </div>
-                </div>
+            <div className="relative">
+              {/* Dashboard Screenshot - Single Image */}
+              <div className="rounded-lg shadow-2xl overflow-hidden bg-gray-100">
+                <img 
+                  src="/images/demo2.png" 
+                  alt="MenuSparks Dashboard Preview" 
+                  className="w-full h-auto rounded-lg object-contain"
+                  style={{ maxHeight: '500px' }}
+                />
+              </div>
+              {/* Feature Badges */}
+              <div className="flex flex-wrap gap-2 mt-4 justify-center">
+                <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-medium">
+                  Live Dashboard
+                </span>
+                <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-medium">
+                  Recipe Generator
+                </span>
+                <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-medium">
+                  Export & Print
+                </span>
               </div>
             </div>
           </div>
