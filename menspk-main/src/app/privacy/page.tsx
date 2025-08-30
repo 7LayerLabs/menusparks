@@ -13,7 +13,7 @@ export default function PrivacyPolicy() {
             
             <div className="space-y-6 text-gray-300">
               <div>
-                <h2 className="text-2xl font-semibold text-white mb-3">Last Updated: January 2025</h2>
+                <h2 className="text-2xl font-semibold text-white mb-3">Last Updated: August 30, 2025</h2>
                 <p>MenuSparks ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our service.</p>
               </div>
 

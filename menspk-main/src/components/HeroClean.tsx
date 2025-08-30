@@ -45,7 +45,7 @@ export default function HeroClean() {
             
             {/* Main Headline */}
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight">
-              Line cooks can cook.
+              <span className="whitespace-nowrap">Line cooks can cook.</span>
               <span className="text-orange-500 block">They can't create.</span>
             </h1>
             

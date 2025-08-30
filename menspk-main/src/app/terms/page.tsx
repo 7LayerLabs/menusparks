@@ -13,7 +13,7 @@ export default function TermsOfService() {
             
             <div className="space-y-6 text-gray-300">
               <div>
-                <h2 className="text-2xl font-semibold text-white mb-3">Last Updated: January 2025</h2>
+                <h2 className="text-2xl font-semibold text-white mb-3">Last Updated: August 30, 2025</h2>
                 <p>These Terms of Service ("Terms") govern your use of MenuSparks. By using our service, you agree to these Terms.</p>
               </div>
 

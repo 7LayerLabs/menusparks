@@ -30,7 +30,7 @@ export default function Home() {
                 The Real Advantage Chains Have
               </h2>
               <p className="text-2xl text-gray-800 mb-6 font-bold">
-                It is not better suppliers—it's better resources.
+                The real advantage chains have, are not better suppliers — it's better resources.
               </p>
               
               <div className="space-y-6 text-lg text-gray-700">
@@ -322,14 +322,34 @@ export default function Home() {
                 Try Demo Dashboard →
               </Link>
             </div>
-            <div className="relative h-full flex items-center">
-              {/* Dashboard Screenshot */}
-              <div className="rounded-lg shadow-2xl overflow-hidden w-full">
-                <img 
-                  src="/images/demo.png" 
-                  alt="MenuSparks Dashboard Preview" 
-                  className="w-full h-auto rounded-lg"
-                />
+            <div className="relative h-full">
+              {/* Dashboard Screenshots Grid */}
+              <div className="grid grid-cols-1 gap-4">
+                {/* Main Dashboard Image */}
+                <div className="rounded-lg shadow-2xl overflow-hidden">
+                  <img 
+                    src="/images/demo2.png" 
+                    alt="MenuSparks Dashboard Main View" 
+                    className="w-full h-auto rounded-lg"
+                  />
+                </div>
+                {/* Secondary Images Row */}
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="rounded-lg shadow-xl overflow-hidden">
+                    <img 
+                      src="/images/demo3.png" 
+                      alt="Recipe Generation Interface" 
+                      className="w-full h-auto rounded-lg"
+                    />
+                  </div>
+                  <div className="rounded-lg shadow-xl overflow-hidden">
+                    <img 
+                      src="/images/demo4.png" 
+                      alt="Recipe Output View" 
+                      className="w-full h-auto rounded-lg"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
