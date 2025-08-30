@@ -323,10 +323,10 @@ export default function Home() {
               </Link>
             </div>
             <div className="relative">
-              {/* Dashboard Screenshot - Single Image */}
+              {/* Dashboard Screenshot */}
               <div className="rounded-lg shadow-2xl overflow-hidden bg-gray-100">
                 <img 
-                  src="/images/demo2.png" 
+                  src="/images/demo.png" 
                   alt="MenuSparks Dashboard Preview" 
                   className="w-full h-auto rounded-lg object-contain"
                   style={{ maxHeight: '500px' }}
