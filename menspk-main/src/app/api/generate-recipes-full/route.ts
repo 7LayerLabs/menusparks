@@ -155,7 +155,7 @@ Return a JSON array with these exact fields for each recipe:
     })
 
     // Build parts for Gemini
-    const parts = [{ text: fullPrompt }]
+    const parts: any[] = [{ text: fullPrompt }]
 
     // Add image files if any
     for (const file of [...ingredientFiles, ...menuFiles]) {
