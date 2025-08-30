@@ -18,8 +18,8 @@ export default function TestPromoPage() {
       })
       const data = await response.json()
       setResult(data)
-    } catch (error) {
-      setResult({ error: error.message })
+    } catch (error: any) {
+      setResult({ error: error.message || 'An error occurred' })
     } finally {
       setLoading(false)
     }
