@@ -70,8 +70,8 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Owner */}
             <div className="text-center">
-              <div className="w-20 h-20 mx-auto mb-4 bg-orange-100 rounded-full flex items-center justify-center">
-                <span className="text-4xl">👔</span>
+              <div className="w-32 h-32 mx-auto mb-4 flex items-center justify-center">
+                <img src="/images/owner.png" alt="Restaurant Owner" className="w-full h-full object-contain" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Restaurant Owners</h3>
               <p className="text-gray-600">
@@ -84,8 +84,8 @@ export default function Home() {
             
             {/* Manager */}
             <div className="text-center">
-              <div className="w-20 h-20 mx-auto mb-4 bg-orange-100 rounded-full flex items-center justify-center">
-                <span className="text-4xl">📋</span>
+              <div className="w-32 h-32 mx-auto mb-4 flex items-center justify-center">
+                <img src="/images/kitchenmgr.png" alt="Kitchen Manager" className="w-full h-full object-contain" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Kitchen Managers</h3>
               <p className="text-gray-600">
@@ -98,8 +98,8 @@ export default function Home() {
             
             {/* Line Cook */}
             <div className="text-center">
-              <div className="w-20 h-20 mx-auto mb-4 bg-orange-100 rounded-full flex items-center justify-center">
-                <span className="text-4xl">👨‍🍳</span>
+              <div className="w-32 h-32 mx-auto mb-4 flex items-center justify-center">
+                <img src="/images/linecooks.png" alt="Line Cook" className="w-full h-full object-contain" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Line Cooks</h3>
               <p className="text-gray-600">
@@ -242,13 +242,15 @@ export default function Home() {
               </div>
               <div className="bg-white rounded-lg p-6 shadow-md">
                 <div className="w-12 h-12 mb-3 mx-auto">
-                  <img src="/images/recipe database.png" alt="Recipe Database" className="w-full h-full object-contain" />
+                  <img src="/images/precisionmatching.png" alt="Recipe Database" className="w-full h-full object-contain" />
                 </div>
                 <h3 className="font-bold text-gray-900 mb-2">Recipe Database</h3>
                 <p className="text-sm text-gray-600">All your generated specials saved and searchable for future use</p>
               </div>
               <div className="bg-white rounded-lg p-6 shadow-md">
-                <span className="text-2xl mb-3 block">📧</span>
+                <div className="w-12 h-12 mb-3 mx-auto">
+                  <img src="/images/dualdatabase.png" alt="Dual Delivery" className="w-full h-full object-contain" />
+                </div>
                 <h3 className="font-bold text-gray-900 mb-2">Dual Delivery</h3>
                 <p className="text-sm text-gray-600">Recipes sent via email AND stored in your portal for permanent access</p>
               </div>
@@ -483,24 +485,24 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8 mt-12">
             <div className="text-center">
-              <div className="w-20 h-20 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-3xl">🧠</span>
+              <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4 p-4">
+                <img src="/images/smartanalysis.png" alt="Smart Analysis" className="w-full h-full object-contain" />
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Smart Analysis</h3>
               <p className="text-gray-400">Analyzes ingredient combinations and flavor profiles</p>
             </div>
 
             <div className="text-center">
-              <div className="w-20 h-20 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-3xl">🎯</span>
+              <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4 p-4">
+                <img src="/images/precisionmatching.png" alt="Precision Matching" className="w-full h-full object-contain" />
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Precision Matching</h3>
               <p className="text-gray-400">Matches recipes to your specific inventory and equipment</p>
             </div>
 
             <div className="text-center">
-              <div className="w-20 h-20 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-3xl">📈</span>
+              <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-4 p-4">
+                <img src="/images/learning.png" alt="Continuous Learning" className="w-full h-full object-contain" />
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Continuous Learning</h3>
               <p className="text-gray-400">Improves recommendations based on your preferences</p>
