@@ -218,6 +218,45 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Web Portal Feature Highlight */}
+      <section className="py-16 bg-gradient-to-r from-green-50 to-orange-50">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center">
+            <div className="inline-block px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-semibold mb-4">
+              COMING SOON: THE ULTIMATE SOLUTION
+            </div>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Your Private Recipe Web Portal
+            </h2>
+            <p className="text-lg text-gray-700 mb-6 max-w-3xl mx-auto">
+              The long-term solution for managing all your generated specials. Each client gets their own secure login 
+              to access their complete recipe database - never lose a special again.
+            </p>
+            <div className="grid md:grid-cols-3 gap-6 mt-8">
+              <div className="bg-white rounded-lg p-6 shadow-md">
+                <div className="w-12 h-12 mb-3 mx-auto">
+                  <img src="/images/secureaccess.png" alt="Secure Access" className="w-full h-full object-contain" />
+                </div>
+                <h3 className="font-bold text-gray-900 mb-2">Secure Access</h3>
+                <p className="text-sm text-gray-600">Private login portal for each restaurant with encrypted data storage</p>
+              </div>
+              <div className="bg-white rounded-lg p-6 shadow-md">
+                <div className="w-12 h-12 mb-3 mx-auto">
+                  <img src="/images/recipe database.png" alt="Recipe Database" className="w-full h-full object-contain" />
+                </div>
+                <h3 className="font-bold text-gray-900 mb-2">Recipe Database</h3>
+                <p className="text-sm text-gray-600">All your generated specials saved and searchable for future use</p>
+              </div>
+              <div className="bg-white rounded-lg p-6 shadow-md">
+                <span className="text-2xl mb-3 block">📧</span>
+                <h3 className="font-bold text-gray-900 mb-2">Dual Delivery</h3>
+                <p className="text-sm text-gray-600">Recipes sent via email AND stored in your portal for permanent access</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Dashboard Preview Section */}
       <section className="py-20 bg-white">
         <div className="section-container">
@@ -227,6 +266,15 @@ export default function Home() {
                 Your Complete Recipe Management Dashboard
               </h2>
               <div className="space-y-4">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mt-1">
+                    <span className="text-green-600 font-bold">🔐</span>
+                  </div>
+                  <div className="ml-4">
+                    <h3 className="font-semibold text-gray-900">Private Web Portal</h3>
+                    <p className="text-gray-600">Your own secure login to access all generated specials. Never lose a recipe - everything is saved in your personal database for future reference</p>
+                  </div>
+                </div>
                 <div className="flex items-start">
                   <div className="flex-shrink-0 w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mt-1">
                     <span className="text-orange-600 font-bold">✓</span>
