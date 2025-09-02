@@ -414,7 +414,7 @@ export default function Home() {
                 </div>
                 <div className="mt-4">
                   <div className="w-full h-32 rounded-lg mb-4 overflow-hidden">
-                    <img src="/images/inventoryinput.jpeg" alt="Input Your Inventory" className="w-full h-full object-cover" />
+                    <img src="/images/inventory.png" alt="Input Your Inventory" className="w-full h-full object-contain" />
                   </div>
                   <h3 className="font-bold text-lg mb-2">Input Your Inventory</h3>
                   <p className="text-gray-600 text-sm">Upload ingredient lists or manually select what you have on hand</p>
@@ -429,7 +429,7 @@ export default function Home() {
                 </div>
                 <div className="mt-4">
                   <div className="w-full h-32 rounded-lg mb-4 overflow-hidden">
-                    <img src="/images/setyourstyle.jpeg" alt="Set Your Style" className="w-full h-full object-cover" />
+                    <img src="/images/style.png" alt="Set Your Style" className="w-full h-full object-contain" />
                   </div>
                   <h3 className="font-bold text-lg mb-2">Set Your Style</h3>
                   <p className="text-gray-600 text-sm">Choose recipe types, complexity, and restaurant style preferences</p>
@@ -444,7 +444,7 @@ export default function Home() {
                 </div>
                 <div className="mt-4">
                   <div className="w-full h-32 rounded-lg mb-4 overflow-hidden">
-                    <img src="/images/creating.png" alt="Generate Recipes" className="w-full h-full object-cover" />
+                    <img src="/images/creating.png" alt="Generate Recipes" className="w-full h-full object-contain" />
                   </div>
                   <h3 className="font-bold text-lg mb-2">Generate Recipes</h3>
                   <p className="text-gray-600 text-sm">Our system creates innovative specials with full instructions</p>
@@ -458,8 +458,8 @@ export default function Home() {
                   ✓
                 </div>
                 <div className="mt-4">
-                  <div className="w-full h-32 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
-                    <p className="text-gray-500 text-sm">400x300px Image</p>
+                  <div className="w-full h-32 rounded-lg mb-4 overflow-hidden">
+                    <img src="/images/chicken.png" alt="Serve & Delight" className="w-full h-full object-contain" />
                   </div>
                   <h3 className="font-bold text-lg mb-2">Serve & Delight</h3>
                   <p className="text-gray-600 text-sm">Execute recipes with confidence and watch customers return</p>
