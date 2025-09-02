@@ -413,8 +413,8 @@ export default function Home() {
                   1
                 </div>
                 <div className="mt-4">
-                  <div className="w-full h-32 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
-                    <p className="text-gray-500 text-sm">400x300px Image</p>
+                  <div className="w-full h-32 rounded-lg mb-4 overflow-hidden">
+                    <img src="/images/inventoryinput.jpeg" alt="Input Your Inventory" className="w-full h-full object-cover" />
                   </div>
                   <h3 className="font-bold text-lg mb-2">Input Your Inventory</h3>
                   <p className="text-gray-600 text-sm">Upload ingredient lists or manually select what you have on hand</p>
@@ -428,8 +428,8 @@ export default function Home() {
                   2
                 </div>
                 <div className="mt-4">
-                  <div className="w-full h-32 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
-                    <p className="text-gray-500 text-sm">400x300px Image</p>
+                  <div className="w-full h-32 rounded-lg mb-4 overflow-hidden">
+                    <img src="/images/setyourstyle.jpeg" alt="Set Your Style" className="w-full h-full object-cover" />
                   </div>
                   <h3 className="font-bold text-lg mb-2">Set Your Style</h3>
                   <p className="text-gray-600 text-sm">Choose recipe types, complexity, and restaurant style preferences</p>
@@ -443,8 +443,8 @@ export default function Home() {
                   3
                 </div>
                 <div className="mt-4">
-                  <div className="w-full h-32 bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
-                    <p className="text-gray-500 text-sm">400x300px Image</p>
+                  <div className="w-full h-32 rounded-lg mb-4 overflow-hidden">
+                    <img src="/images/creating.png" alt="Generate Recipes" className="w-full h-full object-cover" />
                   </div>
                   <h3 className="font-bold text-lg mb-2">Generate Recipes</h3>
                   <p className="text-gray-600 text-sm">Our system creates innovative specials with full instructions</p>
