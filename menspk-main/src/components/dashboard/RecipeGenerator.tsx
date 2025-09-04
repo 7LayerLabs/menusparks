@@ -77,7 +77,7 @@ export default function RecipeGenerator() {
       <div className="bg-white rounded-2xl shadow-xl p-8">
         <div className="mb-8">
           <h2 className="text-3xl font-bold bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent mb-2">
-            Generate AI-Powered Specials
+            Generate Chef-Quality Specials
           </h2>
           <p className="text-gray-600">
             Create restaurant-quality recipes tailored to your ingredients, style, and equipment

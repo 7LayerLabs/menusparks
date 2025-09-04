@@ -36,7 +36,7 @@ export default function DashboardPage() {
                 MenuSparks
               </h1>
               <span className="ml-3 px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-semibold">
-                AI Recipe Generator
+                Recipe Generator
               </span>
             </div>
             <div className="flex items-center space-x-4">
