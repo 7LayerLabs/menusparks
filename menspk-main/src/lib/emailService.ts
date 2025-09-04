@@ -1,6 +1,5 @@
-import emailjs from '@emailjs/browser'
-
-// Initialize EmailJS with your public key
+// Email service - now using SendGrid instead
+// This file is kept for backwards compatibility
 const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_tk9f7ak'
 const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'kMJXzY8qzAGtmeqhE'
 
