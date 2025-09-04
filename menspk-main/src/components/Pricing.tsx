@@ -6,7 +6,7 @@ import { loadStripe } from '@stripe/stripe-js'
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
 
 export default function Pricing() {
-  const [billingCycle, setBillingCycle] = useState<'onetime' | 'weekly' | 'monthly'>('monthly')
+  const [billingCycle, setBillingCycle] = useState<'weekly' | 'monthly'>('monthly')
   const [loading, setLoading] = useState<string | null>(null)
   const [promoCode, setPromoCode] = useState('')
   const [promoStatus, setPromoStatus] = useState<{
@@ -71,7 +71,7 @@ export default function Pricing() {
       // Prepare checkout data
       const checkoutData: any = { 
         priceId,
-        mode: billingCycle === 'onetime' ? 'payment' : 'subscription'
+        mode: 'subscription'
       }
       
       // If we have a validated promo, include it
@@ -106,62 +106,59 @@ export default function Pricing() {
   const tiers = [
     {
       name: "Quick Bite",
-      price: { onetime: 15, weekly: 10, monthly: 35 },
+      price: { weekly: 10, monthly: 35 },
       priceId: {
-        onetime: process.env.NEXT_PUBLIC_STRIPE_PRICE_QUICK_BITE_ONETIME || '',
         weekly: process.env.NEXT_PUBLIC_STRIPE_PRICE_APPETIZER_WEEKLY || '',
         monthly: process.env.NEXT_PUBLIC_STRIPE_PRICE_QUICK_BITE_MONTHLY || ''
       },
-      description: "Get instant recipes for your kitchen",
+      description: "Perfect for small kitchens",
       features: [
-        billingCycle === 'onetime' ? "5 recipes generated instantly" : "10-15 monthly recipes with complete instructions",
-        "Ingredient usage optimization and scaling guides",
-        "Prep complexity and timing guides", 
-        "Equipment requirement specifications",
-        billingCycle === 'onetime' ? "Download & use forever" : "Email support included"
+        billingCycle === 'weekly' ? "2-3 weekly specials" : "10-15 monthly recipes",
+        "Basic ingredient optimization",
+        "Simple prep instructions", 
+        "Standard scaling (10-50 portions)",
+        "Email support"
       ],
       popular: false,
-      cta: billingCycle === 'onetime' ? "Get Instant Recipes" : "Start Monthly Plan"
+      cta: billingCycle === 'weekly' ? "Start Weekly" : "Start Monthly"
     },
     {
       name: "Chef's Choice",
-      price: { onetime: 35, weekly: 20, monthly: 75 },
+      price: { weekly: 20, monthly: 75 },
       priceId: {
-        onetime: process.env.NEXT_PUBLIC_STRIPE_PRICE_CHEF_CHOICE_ONETIME || '',
         weekly: process.env.NEXT_PUBLIC_STRIPE_PRICE_MAIN_WEEKLY || '',
         monthly: process.env.NEXT_PUBLIC_STRIPE_PRICE_CHEF_CHOICE_MONTHLY || ''
       },
-      description: "Professional recipe development & optimization",
+      description: "Most popular for busy restaurants",
       features: [
-        billingCycle === 'onetime' ? "15 premium recipes instantly" : "25-30 monthly premium recipes",
-        "Advanced recipe customization and variations",
-        "Complete social media content package",
-        "Scaling guides for 10-200 portions", 
-        "Performance tracking dashboard",
-        billingCycle === 'onetime' ? "Export to PDF/Print" : "Priority email support"
+        billingCycle === 'weekly' ? "5-7 weekly specials" : "25-30 monthly recipes",
+        "Advanced customization options",
+        "Social media content included",
+        "Scaling for 10-200 portions", 
+        "Recipe performance analytics",
+        "Priority support"
       ],
       popular: true,
-      cta: billingCycle === 'onetime' ? "Get Premium Pack" : "Go Professional"
+      cta: billingCycle === 'weekly' ? "Go Pro Weekly" : "Go Pro Monthly"
     },
     {
       name: "Full Kitchen",
-      price: { onetime: 75, weekly: 35, monthly: 140 },
+      price: { weekly: 35, monthly: 140 },
       priceId: {
-        onetime: process.env.NEXT_PUBLIC_STRIPE_PRICE_FULL_KITCHEN_ONETIME || '',
         weekly: process.env.NEXT_PUBLIC_STRIPE_PRICE_DESSERT_WEEKLY || '',
         monthly: process.env.NEXT_PUBLIC_STRIPE_PRICE_FULL_KITCHEN_MONTHLY || ''
       },
-      description: "Complete menu transformation package",
+      description: "Everything you need to dominate",
       features: [
-        billingCycle === 'onetime' ? "30+ recipes across all categories" : "Unlimited recipe generation",
-        "Full access to The Pour Plan (beverage recipes)",
+        billingCycle === 'weekly' ? "Unlimited weekly recipes" : "Unlimited monthly recipes",
+        "Pour Plan included (beverages)",
         "Seasonal menu planning",
-        "Inventory optimization algorithms",
-        "Direct expert consultation",
-        billingCycle === 'onetime' ? "30-day support included" : "Phone & video support"
+        "Waste tracking & alerts",
+        "1-on-1 consultation calls",
+        "White-glove support"
       ],
       popular: false,
-      cta: billingCycle === 'onetime' ? "Transform My Menu" : "Get Everything"
+      cta: billingCycle === 'weekly' ? "Get Everything" : "Maximize Success"
     }
   ]
 
@@ -222,23 +219,12 @@ export default function Pricing() {
           </h2>
 
           {/* Billing Toggle */}
-          <div className="flex items-center justify-center gap-6 flex-wrap">
-            <button
-              onClick={() => setBillingCycle('onetime')}
-              className={`px-6 py-2 rounded-full font-semibold transition-all ${
-                billingCycle === 'onetime' 
-                  ? 'bg-orange-600 text-white shadow-lg' 
-                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-              }`}
-            >
-              One-Time
-              <span className="ml-2 text-xs opacity-90">Instant Access</span>
-            </button>
+          <div className="flex items-center justify-center gap-8 mb-2">
             <button
               onClick={() => setBillingCycle('weekly')}
-              className={`px-6 py-2 rounded-full font-semibold transition-all ${
+              className={`px-8 py-3 rounded-full font-semibold transition-all text-lg ${
                 billingCycle === 'weekly' 
-                  ? 'bg-orange-600 text-white shadow-lg' 
+                  ? 'bg-orange-600 text-white shadow-lg scale-105' 
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
               }`}
             >
@@ -246,16 +232,19 @@ export default function Pricing() {
             </button>
             <button
               onClick={() => setBillingCycle('monthly')}
-              className={`px-6 py-2 rounded-full font-semibold transition-all ${
+              className={`px-8 py-3 rounded-full font-semibold transition-all text-lg ${
                 billingCycle === 'monthly' 
-                  ? 'bg-orange-600 text-white shadow-lg' 
+                  ? 'bg-orange-600 text-white shadow-lg scale-105' 
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
               }`}
             >
               Monthly
-              <span className="ml-2 bg-green-500 text-white px-2 py-0.5 rounded-full text-xs font-bold">BEST VALUE</span>
+              <span className="ml-2 bg-green-500 text-white px-2 py-0.5 rounded-full text-xs font-bold">SAVE 65%</span>
             </button>
           </div>
+          <p className="text-center text-sm text-gray-500 mb-6">
+            {billingCycle === 'weekly' ? 'Pay as you go, cancel anytime' : 'Best value - save over $100/month'}
+          </p>
 
           {/* Promo Code Input */}
           <div className="mt-8 max-w-md mx-auto">
@@ -312,7 +301,7 @@ export default function Pricing() {
               )}
               
               {/* Coming Soon Overlay for Full Kitchen */}
-              {tier.name === 'Full Kitchen' && billingCycle !== 'onetime' && (
+              {tier.name === 'Full Kitchen' && (
                 <div className="absolute inset-0 bg-black/60 backdrop-blur-sm z-10 flex flex-col items-center justify-center">
                   <div className="bg-orange-500 text-white px-6 py-3 rounded-full font-bold text-xl mb-3 shadow-xl">
                     🍰 LAUNCHING SOON
@@ -334,15 +323,10 @@ export default function Pricing() {
                         ${tier.price[billingCycle]}
                       </span>
                       <span className="text-gray-600 ml-2">
-                        {billingCycle === 'onetime' ? 'one-time' : billingCycle === 'weekly' ? '/week' : '/month'}
+                        {billingCycle === 'weekly' ? '/week' : '/month'}
                       </span>
                     </div>
 
-                    {billingCycle === 'onetime' && (
-                      <p className="text-sm text-orange-600 font-semibold">
-                        Get recipes instantly - use forever!
-                      </p>
-                    )}
                     {billingCycle === 'weekly' && (
                       <p className="text-sm text-green-600 font-semibold">
                         Save ${Math.round((tier.price.weekly * 4.33) - tier.price.monthly)} with monthly plan
@@ -382,17 +366,15 @@ export default function Pricing() {
               <button
                 onClick={() => handleCheckout(tier)}
                 className={`w-full py-3 px-4 rounded-lg font-semibold transition-colors ${
-                  (tier.name === 'Full Kitchen' && billingCycle !== 'onetime')
+                  tier.name === 'Full Kitchen'
                     ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
                     : tier.popular
                     ? 'bg-blue-600 hover:bg-blue-700 text-white'
-                    : billingCycle === 'onetime'
-                    ? 'bg-orange-600 hover:bg-orange-700 text-white'
                     : 'bg-gray-100 hover:bg-gray-200 text-gray-900'
                 }`}
-                disabled={(tier.name === 'Full Kitchen' && billingCycle !== 'onetime') || loading === tier.name}
+                disabled={loading === tier.name}
               >
-                {loading === tier.name ? 'Loading...' : (tier.name === 'Full Kitchen' && billingCycle !== 'onetime') ? 'Get Early Access' : tier.cta}
+                {loading === tier.name ? 'Loading...' : tier.cta}
               </button>
             </div>
           ))}
