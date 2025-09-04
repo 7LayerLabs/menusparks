@@ -260,142 +260,124 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Dashboard Preview Section */}
-      <section className="py-20 bg-white">
+      {/* Dashboard Features Section - Redesigned */}
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="section-container">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Your Complete Recipe Management Dashboard
-              </h2>
-              <div className="space-y-4">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mt-1">
-                    <span className="text-green-600 font-bold">🔐</span>
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="font-semibold text-gray-900">Private Web Portal</h3>
-                    <p className="text-gray-600">Your own secure login to access all generated specials. Never lose a recipe - everything is saved in your personal database for future reference</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mt-1">
-                    <span className="text-orange-600 font-bold">✓</span>
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="font-semibold text-gray-900">24 Restaurant Styles</h3>
-                    <p className="text-gray-600">From Classic American to Vegan, generate recipes that match your restaurant's identity</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mt-1">
-                    <span className="text-orange-600 font-bold">✓</span>
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="font-semibold text-gray-900">14 Recipe Categories</h3>
-                    <p className="text-gray-600">Breakfast, lunch, dinner, appetizers, desserts, and everything in between</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mt-1">
-                    <span className="text-orange-600 font-bold">✓</span>
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="font-semibold text-gray-900">Professional Output</h3>
-                    <p className="text-gray-600">Export & print in multiple formats. Three-phase recipes with prep, bulk prep, and service instructions</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mt-1">
-                    <span className="text-orange-600 font-bold">✓</span>
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="font-semibold text-gray-900">Recipe Scaling</h3>
-                    <p className="text-gray-600">Automatically adjust portions from 10 to 200 servings with proper ingredient ratios</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mt-1">
-                    <span className="text-orange-600 font-bold">✓</span>
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="font-semibold text-gray-900">Waste Reduction</h3>
-                    <p className="text-gray-600">Track inventory usage and get alerts for expiring ingredients to minimize waste</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mt-1">
-                    <span className="text-orange-600 font-bold">✓</span>
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="font-semibold text-gray-900">Analytics Dashboard</h3>
-                    <p className="text-gray-600">Track recipe performance, popular dishes, and cost analysis in real-time</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mt-1">
-                    <span className="text-orange-600 font-bold">✓</span>
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="font-semibold text-gray-900">Custom Themes & Seasons</h3>
-                    <p className="text-gray-600">Create specials for any occasion - Valentine's Day, Game Day, Summer BBQ, Oktoberfest, holidays, events, and more</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mt-1">
-                    <span className="text-orange-600 font-bold">✓</span>
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="font-semibold text-gray-900">Smart Include/Exclude</h3>
-                    <p className="text-gray-600">Hate mushrooms? Skip them! Too much turkey? Focus on it! Customize every recipe to your exact inventory and preferences</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mt-1">
-                    <span className="text-orange-600 font-bold">✓</span>
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="font-semibold text-gray-900">Idea Spark (New)</h3>
-                    <p className="text-gray-600">Work out any idea in your head - as detailed or basic as you want. Get suggestions, develop recipes, and modify until you create that 'ah ha!' moment!</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mt-1">
-                    <span className="text-orange-600 font-bold">✓</span>
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="font-semibold text-gray-900">Social Media Ready</h3>
-                    <p className="text-gray-600">Auto-generated posts with descriptions and hashtags for Instagram, Facebook, and more</p>
-                  </div>
-                </div>
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Everything You Need to <span className="text-orange-500">Create Like a Chef</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Professional tools that turn your inventory into profit. No culinary degree required.
+            </p>
+          </div>
+
+          {/* Core Features Grid */}
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {/* Private Portal Card */}
+            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all border border-gray-100">
+              <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
               </div>
-              <Link href="/login" className="inline-block mt-8 px-8 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-colors">
-                Try Demo Dashboard →
-              </Link>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Your Private Portal</h3>
+              <p className="text-gray-600 text-sm mb-3">Secure dashboard with all your recipes saved forever</p>
+              <div className="text-xs text-green-600 font-semibold">COMING SOON</div>
             </div>
-            <div className="relative">
-              {/* Dashboard Screenshot */}
-              <div className="rounded-lg shadow-2xl overflow-hidden bg-gray-100">
-                <img 
-                  src="/images/demo.png" 
-                  alt="MenuSparks Dashboard Preview" 
-                  className="w-full h-auto rounded-lg object-contain"
-                  style={{ maxHeight: '500px' }}
-                />
+
+            {/* Recipe Variety Card */}
+            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all border border-gray-100">
+              <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                </svg>
               </div>
-              {/* Feature Badges */}
-              <div className="flex flex-wrap gap-2 mt-4 justify-center">
-                <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-medium">
-                  Live Dashboard
-                </span>
-                <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-medium">
-                  Recipe Generator
-                </span>
-                <span className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-medium">
-                  Export & Print
-                </span>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Endless Variety</h3>
+              <p className="text-gray-600 text-sm mb-3">24 restaurant styles × 14 recipe categories</p>
+              <div className="text-xs text-orange-600 font-semibold">336 COMBINATIONS</div>
+            </div>
+
+            {/* Smart Features Card */}
+            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all border border-gray-100">
+              <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Smart Creation</h3>
+              <p className="text-gray-600 text-sm mb-3">Include/exclude ingredients, scale portions instantly</p>
+              <div className="text-xs text-blue-600 font-semibold">FULLY CUSTOMIZABLE</div>
+            </div>
+          </div>
+
+          {/* Feature List - Compact Grid */}
+          <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
+            <h3 className="text-xl font-bold text-gray-900 mb-6 text-center">Complete Feature Set</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="flex items-center">
+                <svg className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                <span className="text-gray-700 text-sm">Three-phase recipes (prep/bulk/service)</span>
+              </div>
+              <div className="flex items-center">
+                <svg className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                <span className="text-gray-700 text-sm">Scale from 10-200 portions</span>
+              </div>
+              <div className="flex items-center">
+                <svg className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                <span className="text-gray-700 text-sm">Export & print formats</span>
+              </div>
+              <div className="flex items-center">
+                <svg className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                <span className="text-gray-700 text-sm">Waste tracking alerts</span>
+              </div>
+              <div className="flex items-center">
+                <svg className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                <span className="text-gray-700 text-sm">Cost analysis dashboard</span>
+              </div>
+              <div className="flex items-center">
+                <svg className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                <span className="text-gray-700 text-sm">Holiday & event themes</span>
+              </div>
+              <div className="flex items-center">
+                <svg className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                <span className="text-gray-700 text-sm">Social media templates</span>
+              </div>
+              <div className="flex items-center">
+                <svg className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                <span className="text-gray-700 text-sm">Idea Spark brainstorming</span>
+              </div>
+              <div className="flex items-center">
+                <svg className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                <span className="text-gray-700 text-sm">Recipe performance tracking</span>
               </div>
             </div>
+          </div>
+
+          {/* CTA */}
+          <div className="text-center">
+            <Link href="/login" className="inline-block px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold rounded-lg transition-all transform hover:scale-105 shadow-xl text-lg">
+              Explore the Dashboard →
+            </Link>
+            <p className="text-sm text-gray-500 mt-4">No credit card required to explore</p>
           </div>
         </div>
       </section>
