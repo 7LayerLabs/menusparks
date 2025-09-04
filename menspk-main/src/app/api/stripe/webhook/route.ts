@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import Stripe from 'stripe'
 import { supabase } from '@/lib/supabase'
+import { sendWelcomeEmail } from '@/lib/emailService'
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
   apiVersion: '2024-12-18.acacia' as any
@@ -72,6 +73,11 @@ export async function POST(request: NextRequest) {
               console.error('Error creating customer:', error)
             } else {
               console.log('New paying customer created:', newCustomer)
+              // Send welcome email
+              await sendWelcomeEmail(customerEmail, {
+                tier: tier,
+                profileLink: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://menusparks.com'}/profile`
+              })
             }
           } else {
             // Update existing customer

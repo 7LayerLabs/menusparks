@@ -87,11 +87,11 @@ function SuccessContent() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/" className="btn-primary">
-                Go to Dashboard
+              <Link href="/profile" className="px-8 py-3 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold rounded-lg transition-all transform hover:scale-105 inline-block text-center">
+                Complete Restaurant Profile →
               </Link>
-              <Link href="/" className="btn-secondary">
-                Return to Homepage
+              <Link href="/" className="px-8 py-3 bg-gray-700 hover:bg-gray-600 text-white font-bold rounded-lg transition-all inline-block text-center">
+                Skip for Now
               </Link>
             </div>
           </div>
