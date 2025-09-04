@@ -80,25 +80,19 @@ export default function SavingsCalculator() {
                   </div>
                   
                   <div className="relative">
-                    {/* Helper Ribbon */}
-                    {index === 1 && (
-                      <div className="absolute -top-10 left-0 right-0 flex justify-center z-10">
-                        <div className="bg-orange-500 text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-xl flex items-center animate-bounce">
-                          <span className="text-base mr-1">👇</span>
-                          THIS IS WHERE WE HELP!
-                        </div>
-                      </div>
-                    )}
-                    <div className="border-2 border-orange-500 rounded-lg px-3 py-2 bg-orange-500/10">
+                    <div className="border-2 border-orange-500 rounded-lg px-3 py-3 bg-orange-500/10">
                       <div className="flex justify-between items-center mb-1">
                         <span className="text-orange-300 font-semibold text-sm">Spoilage & Expiration (21%)</span>
                         <span className="text-lg font-bold text-orange-400">
                           -{formatCurrency(calc.spoilage)}
                         </span>
                       </div>
-                      <p className="text-xs text-gray-400">
+                      <p className="text-xs text-gray-400 mb-2">
                         Poor FIFO rotation, expired products, excess inventory
                       </p>
+                      <div className="bg-orange-600 text-white px-2 py-1 rounded text-xs font-bold text-center">
+                        👉 THIS IS WHERE WE HELP!
+                      </div>
                     </div>
                   </div>
                 </div>
