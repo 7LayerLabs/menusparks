@@ -4,18 +4,21 @@ export default function SavingsCalculator() {
       revenue: 500000,
       foodCost: 160000, // 32% of revenue
       waste: 11200, // 7% of food cost
+      spoilage: 2352, // 21% of waste
       savings: 5600 // 50% waste reduction
     },
     {
       revenue: 750000,
       foodCost: 240000, // 32% of revenue
       waste: 16800, // 7% of food cost
+      spoilage: 3528, // 21% of waste
       savings: 8400 // 50% waste reduction
     },
     {
       revenue: 1000000,
       foodCost: 320000, // 32% of revenue
       waste: 22400, // 7% of food cost
+      spoilage: 4704, // 21% of waste
       savings: 11200 // 50% waste reduction
     }
   ]
@@ -42,10 +45,10 @@ export default function SavingsCalculator() {
               See Your Potential Savings
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-3">
-              Real numbers based on industry averages: 32% food cost, 7% waste rate
+              Industry averages: 32% food cost, 7% waste rate, 21% from spoilage
             </p>
             <p className="text-lg text-orange-400 font-semibold">
-              We turn your existing inventory into profit instead of waste
+              We help you use inventory BEFORE it expires - turning waste into profit
             </p>
           </div>
 
@@ -69,21 +72,33 @@ export default function SavingsCalculator() {
                     </span>
                   </div>
                   
+                  <div className="flex justify-between items-center py-3 border-b border-gray-700">
+                    <span className="text-gray-400">Total Annual Waste</span>
+                    <span className="text-lg font-semibold text-red-500">
+                      -{formatCurrency(calc.waste)}
+                    </span>
+                  </div>
+                  
                   <div className="relative">
                     {/* Helper Ribbon */}
                     {index === 1 && (
                       <div className="absolute -top-10 left-0 right-0 flex justify-center z-10">
                         <div className="bg-orange-500 text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-xl flex items-center animate-bounce">
                           <span className="text-base mr-1">👇</span>
-                          This is where we help you!
+                          THIS IS WHERE WE HELP!
                         </div>
                       </div>
                     )}
-                    <div className="flex justify-between items-center py-3 border-2 border-orange-500 rounded-lg px-3 bg-orange-500/10">
-                      <span className="text-orange-300 font-semibold">Annual Waste</span>
-                      <span className="text-lg font-semibold text-red-500">
-                        -{formatCurrency(calc.waste)}
-                      </span>
+                    <div className="border-2 border-orange-500 rounded-lg px-3 py-2 bg-orange-500/10">
+                      <div className="flex justify-between items-center mb-1">
+                        <span className="text-orange-300 font-semibold text-sm">Spoilage & Expiration (21%)</span>
+                        <span className="text-lg font-bold text-orange-400">
+                          -{formatCurrency(calc.spoilage)}
+                        </span>
+                      </div>
+                      <p className="text-xs text-gray-400">
+                        Poor FIFO rotation, expired products, excess inventory
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -107,7 +122,7 @@ export default function SavingsCalculator() {
                     <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
                     </svg>
-                    50%+ waste reduction
+                    Eliminate spoilage waste
                   </div>
                 </div>
               </div>
@@ -116,10 +131,10 @@ export default function SavingsCalculator() {
 
           <div className="mt-12 bg-gray-800/90 rounded-xl p-6 border border-gray-700 text-center">
             <p className="text-gray-400 text-sm mb-3">
-              Based on 2025 industry averages from National Restaurant Association
+              Based on NRA data: 21% of all food waste comes from spoilage & expiration
             </p>
             <p className="text-lg font-semibold text-orange-400">
-              These are conservative estimates - many restaurants see even greater savings
+              MenuSparks creates specials using inventory BEFORE it expires - eliminating this waste
             </p>
             <a href="/calculator" className="mt-6 inline-block px-8 py-3 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-lg transition-all transform hover:scale-105">
               Calculate My Exact Savings
