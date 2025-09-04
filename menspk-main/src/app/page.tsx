@@ -470,6 +470,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Savings Calculator */}
+      <SavingsCalculator />
+      
       {/* Technology Section */}
       <section className="py-20 bg-gradient-to-br from-gray-900 to-gray-800">
         <div className="section-container">
@@ -513,9 +516,6 @@ export default function Home() {
       
       {/* Pricing */}
       <Pricing />
-      
-      {/* Savings Calculator */}
-      <SavingsCalculator />
       
       {/* Final Closer - Credibility + CTA */}
       <section className="pt-8 pb-4 bg-gray-900">
