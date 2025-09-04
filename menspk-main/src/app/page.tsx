@@ -396,8 +396,10 @@ export default function Home() {
                   1
                 </div>
                 <div className="mt-4">
-                  <div className="w-full h-32 rounded-lg mb-4 overflow-hidden">
-                    <img src="/images/inventory.png" alt="Input Your Inventory" className="w-full h-full object-contain" />
+                  <div className="w-full h-32 rounded-lg mb-4 bg-gradient-to-br from-orange-50 to-orange-100 flex items-center justify-center">
+                    <svg className="w-20 h-20 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                    </svg>
                   </div>
                   <h3 className="font-bold text-lg mb-2 text-gray-900">Input Your Inventory</h3>
                   <p className="text-gray-600 text-sm">Upload ingredient lists or manually select what you have on hand</p>
@@ -411,8 +413,10 @@ export default function Home() {
                   2
                 </div>
                 <div className="mt-4">
-                  <div className="w-full h-32 rounded-lg mb-4 overflow-hidden">
-                    <img src="/images/style.png" alt="Set Your Style" className="w-full h-full object-contain" />
+                  <div className="w-full h-32 rounded-lg mb-4 bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
+                    <svg className="w-20 h-20 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                    </svg>
                   </div>
                   <h3 className="font-bold text-lg mb-2 text-gray-900">Set Your Style</h3>
                   <p className="text-gray-600 text-sm">Choose recipe types, complexity, and restaurant style preferences</p>
@@ -426,11 +430,13 @@ export default function Home() {
                   3
                 </div>
                 <div className="mt-4">
-                  <div className="w-full h-32 rounded-lg mb-4 overflow-hidden">
-                    <img src="/images/creating.png" alt="Generate Recipes" className="w-full h-full object-contain" />
+                  <div className="w-full h-32 rounded-lg mb-4 bg-gradient-to-br from-purple-50 to-purple-100 flex items-center justify-center">
+                    <svg className="w-20 h-20 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
                   </div>
                   <h3 className="font-bold text-lg mb-2 text-gray-900">Generate Recipes</h3>
-                  <p className="text-gray-600 text-sm">Our AI creates innovative specials with full instructions</p>
+                  <p className="text-gray-600 text-sm">Our system creates innovative specials with full instructions</p>
                 </div>
               </div>
             </div>
