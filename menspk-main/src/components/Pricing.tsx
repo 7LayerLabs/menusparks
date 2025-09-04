@@ -106,7 +106,7 @@ export default function Pricing() {
   const tiers = [
     {
       name: "Quick Bite",
-      price: { weekly: 15, monthly: 52 },
+      price: { weekly: 15, monthly: 49 },
       priceId: {
         weekly: process.env.NEXT_PUBLIC_STRIPE_PRICE_APPETIZER_WEEKLY || '',
         monthly: process.env.NEXT_PUBLIC_STRIPE_PRICE_QUICK_BITE_MONTHLY || ''
@@ -123,7 +123,7 @@ export default function Pricing() {
     },
     {
       name: "Chef's Choice",
-      price: { weekly: 25, monthly: 87 },
+      price: { weekly: 25, monthly: 79 },
       priceId: {
         weekly: process.env.NEXT_PUBLIC_STRIPE_PRICE_MAIN_WEEKLY || '',
         monthly: process.env.NEXT_PUBLIC_STRIPE_PRICE_CHEF_CHOICE_MONTHLY || ''
@@ -237,11 +237,11 @@ export default function Pricing() {
               }`}
             >
               Monthly
-              <span className="ml-2 bg-green-500 text-white px-2 py-0.5 rounded-full text-xs font-bold">SAVE 65%</span>
+              <span className="ml-2 bg-green-500 text-white px-2 py-0.5 rounded-full text-xs font-bold">SAVE 20%</span>
             </button>
           </div>
           <p className="text-center text-sm text-gray-500 mb-6">
-            {billingCycle === 'weekly' ? 'Pay as you go, cancel anytime' : 'Best value - save over $100/month'}
+            {billingCycle === 'weekly' ? 'Pay as you go, cancel anytime' : 'Best value - save 20% compared to weekly'}
           </p>
 
           {/* Promo Code Input */}
