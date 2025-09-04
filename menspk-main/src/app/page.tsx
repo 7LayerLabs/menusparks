@@ -372,13 +372,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* CTA */}
-          <div className="text-center">
-            <Link href="/login" className="inline-block px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold rounded-lg transition-all transform hover:scale-105 shadow-xl text-lg">
-              Explore the Dashboard →
-            </Link>
-            <p className="text-sm text-gray-500 mt-4">No credit card required to explore</p>
-          </div>
         </div>
       </section>
 
