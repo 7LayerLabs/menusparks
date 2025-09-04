@@ -106,17 +106,16 @@ export default function Pricing() {
   const tiers = [
     {
       name: "Quick Bite",
-      price: { weekly: 10, monthly: 35 },
+      price: { weekly: 15, monthly: 52 },
       priceId: {
         weekly: process.env.NEXT_PUBLIC_STRIPE_PRICE_APPETIZER_WEEKLY || '',
         monthly: process.env.NEXT_PUBLIC_STRIPE_PRICE_QUICK_BITE_MONTHLY || ''
       },
       description: "Perfect for small kitchens",
       features: [
-        billingCycle === 'weekly' ? "2-3 weekly specials" : "10-15 monthly recipes",
+        billingCycle === 'weekly' ? "5 weekly specials" : "20 monthly recipes",
         "Basic ingredient optimization",
-        "Simple prep instructions", 
-        "Standard scaling (10-50 portions)",
+        "Simple prep instructions",
         "Email support"
       ],
       popular: false,
@@ -124,17 +123,16 @@ export default function Pricing() {
     },
     {
       name: "Chef's Choice",
-      price: { weekly: 20, monthly: 75 },
+      price: { weekly: 25, monthly: 87 },
       priceId: {
         weekly: process.env.NEXT_PUBLIC_STRIPE_PRICE_MAIN_WEEKLY || '',
         monthly: process.env.NEXT_PUBLIC_STRIPE_PRICE_CHEF_CHOICE_MONTHLY || ''
       },
       description: "Most popular for busy restaurants",
       features: [
-        billingCycle === 'weekly' ? "5-7 weekly specials" : "25-30 monthly recipes",
+        billingCycle === 'weekly' ? "10 weekly specials" : "40 monthly recipes",
         "Advanced customization options",
         "Social media content included",
-        "Scaling for 10-200 portions", 
         "Recipe performance analytics",
         "Priority support"
       ],
