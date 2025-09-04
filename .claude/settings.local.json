@@ -58,6 +58,9 @@
       "Read(c:\\Users\\derek\\Downloads/**)",
       "Read(c:\\Users\\derek\\Downloads/**)",
       "Read(c:\\Users\\derek\\Downloads/**)",
+      "Read(/c:\\Users\\derek\\Downloads/**)",
+      "Read(/c:\\Users\\derek\\Downloads/**)",
+      "Read(/c:\\Users\\derek\\Downloads/**)",
       "Read(/c:\\Users\\derek\\Downloads/**)"
     ],
     "deny": [],
