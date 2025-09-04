@@ -15,7 +15,7 @@ export default function RestaurantProfilePage() {
     state: '',
     zipCode: '',
     cuisineType: '',
-    serviceType: [], // dine-in, takeout, delivery, catering
+    serviceType: [] as string[], // dine-in, takeout, delivery, catering
     averageTicket: '',
     seatingCapacity: '',
     inventory: '',
