@@ -55,7 +55,7 @@ export default function Home() {
             
             <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-xl p-6 transform hover:scale-105 transition-all hover:shadow-xl">
               <p className="text-xl font-bold">
-                Now, one AI system gives you the same creative firepower—without the corporate overhead.
+                Now, one intelligent system gives you the same creative firepower—without the corporate overhead.
               </p>
             </div>
           </div>

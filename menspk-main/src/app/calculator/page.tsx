@@ -272,7 +272,7 @@ export default function Calculator() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-300">
                     <div className="flex items-start">
                       <span className="text-green-500 mr-2">✓</span>
-                      <span>Weekly AI-generated specials targeting expiring inventory</span>
+                      <span>Weekly chef-created specials targeting expiring inventory</span>
                     </div>
                     <div className="flex items-start">
                       <span className="text-green-500 mr-2">✓</span>

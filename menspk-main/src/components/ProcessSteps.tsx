@@ -10,7 +10,7 @@ export default function ProcessSteps() {
     {
       number: "02",
       title: "We Create Your Specials",
-      description: "Our culinary AI analyzes your inventory and creates 5-7 profitable specials overnight.",
+      description: "Our culinary experts analyze your inventory and create 5-7 profitable specials overnight.",
       image: "/api/placeholder/400/300",
       details: ["Complete recipes", "Exact costs calculated", "Suggested pricing"]
     },
@@ -99,8 +99,8 @@ export default function ProcessSteps() {
                   )}
                   {index === 1 && (
                     <div className="absolute -top-4 -left-4 bg-white rounded-lg shadow-lg p-3 hidden lg:block">
-                      <span className="text-2xl">🤖</span>
-                      <span className="text-sm font-semibold text-gray-700 ml-2">AI-Powered</span>
+                      <span className="text-2xl">👨‍🍳</span>
+                      <span className="text-sm font-semibold text-gray-700 ml-2">Chef-Created</span>
                     </div>
                   )}
                   {index === 2 && (

@@ -71,7 +71,7 @@ function SuccessContent() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-white mb-1">Get Your First Specials</h3>
-                    <p className="text-gray-400">Your first batch of AI-generated specials will be delivered within 24 hours of profile completion.</p>
+                    <p className="text-gray-400">Your first batch of chef-crafted specials will be delivered within 24 hours of profile completion.</p>
                   </div>
                 </div>
               </div>

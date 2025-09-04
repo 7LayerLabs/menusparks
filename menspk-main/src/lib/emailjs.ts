@@ -66,7 +66,7 @@ Hi {{to_name}},
 
 Welcome to MenuSparks! 🚀
 
-You've secured your spot on our exclusive waitlist. We're launching soon and you'll be among the first to transform your restaurant's profitability with AI-powered menu optimization.
+You've secured your spot on our exclusive waitlist. We're launching soon and you'll be among the first to transform your restaurant's profitability with intelligent menu optimization.
 
 📊 What to Expect:
 • Save $5,600-$11,200 annually on food costs
