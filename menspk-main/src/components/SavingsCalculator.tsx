@@ -41,14 +41,17 @@ export default function SavingsCalculator() {
             <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
               See Your Potential Savings
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-3">
               Real numbers based on industry averages: 32% food cost, 7% waste rate
+            </p>
+            <p className="text-lg text-orange-400 font-semibold">
+              We turn your existing inventory into profit instead of waste
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {calculations.map((calc, index) => (
-              <div key={index} className="bg-gray-800/90 backdrop-blur rounded-xl p-8 border border-gray-700 hover:border-green-500 transition-all duration-300 transform hover:scale-105">
+              <div key={index} className="relative bg-gray-800/90 backdrop-blur rounded-xl p-8 border border-gray-700 hover:border-green-500 transition-all duration-300 transform hover:scale-105">
                 <div className="text-center mb-6">
                   <div className="text-3xl font-bold text-white mb-2">
                     {formatRevenue(calc.revenue)}
@@ -66,11 +69,22 @@ export default function SavingsCalculator() {
                     </span>
                   </div>
                   
-                  <div className="flex justify-between items-center py-3 border-b border-gray-700">
-                    <span className="text-gray-400">Annual Waste</span>
-                    <span className="text-lg font-semibold text-red-500">
-                      -{formatCurrency(calc.waste)}
-                    </span>
+                  <div className="relative">
+                    {/* Helper Ribbon */}
+                    {index === 1 && (
+                      <div className="absolute -top-10 left-0 right-0 flex justify-center z-10">
+                        <div className="bg-orange-500 text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-xl flex items-center animate-bounce">
+                          <span className="text-base mr-1">👇</span>
+                          This is where we help you!
+                        </div>
+                      </div>
+                    )}
+                    <div className="flex justify-between items-center py-3 border-2 border-orange-500 rounded-lg px-3 bg-orange-500/10">
+                      <span className="text-orange-300 font-semibold">Annual Waste</span>
+                      <span className="text-lg font-semibold text-red-500">
+                        -{formatCurrency(calc.waste)}
+                      </span>
+                    </div>
                   </div>
                 </div>
                 
