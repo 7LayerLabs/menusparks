@@ -301,7 +301,7 @@ export default function Pricing() {
               
               {/* Coming Soon Overlay for Full Kitchen */}
               {tier.name === 'Full Kitchen' && (
-                <div className="absolute inset-0 bg-black/60 backdrop-blur-sm z-10 flex flex-col items-center justify-center">
+                <div className="absolute inset-0 bg-black/80 backdrop-blur-md z-10 flex flex-col items-center justify-center rounded-2xl">
                   <div className="bg-orange-500 text-white px-6 py-3 rounded-full font-bold text-xl mb-3 shadow-xl">
                     🍰 LAUNCHING SOON
                   </div>
