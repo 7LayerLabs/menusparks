@@ -134,7 +134,7 @@ export default function Pricing() {
         "🎁 Industry Newsletter included ($5/week value)",
         "Advanced customization options",
         "Social media content included",
-        "Recipe performance analytics",
+        "Custom Newsletter access",
         "Priority support"
       ],
       popular: true,
@@ -301,7 +301,7 @@ export default function Pricing() {
               
               {/* Coming Soon Overlay for Full Kitchen */}
               {tier.name === 'Full Kitchen' && (
-                <div className="absolute inset-0 bg-black/80 backdrop-blur-md z-10 flex flex-col items-center justify-center rounded-2xl">
+                <div className="absolute inset-0 bg-gray-900/95 backdrop-blur-lg z-10 flex flex-col items-center justify-center rounded-2xl">
                   <div className="bg-orange-500 text-white px-6 py-3 rounded-full font-bold text-xl mb-3 shadow-xl">
                     🍰 LAUNCHING SOON
                   </div>
