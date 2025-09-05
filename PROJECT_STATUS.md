@@ -3,29 +3,27 @@
 ## 🚀 COMPLETE ONBOARDING SYSTEM LIVE!
 **URL:** https://menusparks.com  
 **Status:** Production with Email Automation & Onboarding  
-**Last Updated:** September 4, 2025 (7:00 PM)
+**Last Updated:** September 5, 2025 (5:00 PM)
 
 ---
 
-## Today's Major Release (Sep 4, 2025)
+## Today's Updates (Sep 5, 2025)
 
-### Morning State
-- ❌ Old pricing ($10/$20)
-- ❌ AI terminology throughout
-- ❌ No email system
-- ❌ No onboarding flow
-- ❌ Poor UI contrast
-- ❌ Dashboard access exposed
+### Major Improvements
+- ✅ **Tally.so Integration** - Replaced 329-line custom form
+- ✅ **Project Reorganization** - Cleaned nested folder structure
+- ✅ **Security Fix** - Added .env to gitignore, removed secrets
+- ✅ **Pricing Updates** - Added newsletter bonus to Chef's Choice
+- ✅ **UI Improvements** - Increased blur on launching soon plan
+- ✅ **CDN Cache Fixed** - Resolved deployment visibility issues
 
-### Evening State 
+### Yesterday's Release (Sep 4)
 - ✅ **New pricing live** ($15/$25 weekly)
 - ✅ **Zero AI mentions** (chef-focused messaging)
 - ✅ **SendGrid emails active** (professional templates)
 - ✅ **Complete onboarding flow** (profile system)
 - ✅ **Modern UI design** (tech aesthetic)
 - ✅ **Spoilage focus** (21% waste messaging)
-- ✅ **Restaurant profile page** (comprehensive form)
-- ✅ **Welcome emails automated** (via webhook)
 
 ---
 
@@ -49,8 +47,8 @@
 1. Customer purchases → Stripe processes
 2. Webhook triggers → Email sent
 3. Welcome email → Links to profile
-4. Profile completed → Admin notified
-5. Specials created → Delivered in 24hr
+4. Profile form (Tally) → Data collected
+5. Admin notified → Specials created in 24hr
 
 ### ✅ Database (100%)
 - Supabase connected
@@ -270,4 +268,4 @@ NEXT_PUBLIC_STRIPE_PRICE_CHEF_CHOICE_MONTHLY ✅
 
 *Project Lead: Derek Bobola*  
 *Development: Claude Assistant*  
-*Last Update: September 4, 2025 @ 7:00 PM - WEBHOOK SYSTEM LIVE*
+*Last Update: September 5, 2025 @ 5:00 PM - TALLY INTEGRATION COMPLETE*
