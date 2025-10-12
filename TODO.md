@@ -20,7 +20,11 @@
 - [x] Review and confirm tech stack decisions with Derek
 - [x] Get Perplexity API credentials from Derek
 - [x] Get Gemini API key from Derek
-- [ ] Determine pricing for service tiers
+- [x] Determine pricing for service tiers (See docs/Pricing-Strategy.md)
+  - Quick Bites: $12/week or $40/month
+  - Chef's Choice: $19/week or $70/month
+  - Industry Newsletter: $3/week or $10/month
+  - Customized Newsletter: $10/week or $35/month
 
 ### 0.2 Development Environment Setup ✅ COMPLETE
 - [x] Install Node.js (v18+) and npm
