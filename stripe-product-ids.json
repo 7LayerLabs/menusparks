@@ -1,0 +1,22 @@
+{
+  "quickBites": {
+    "productId": "prod_TE05UaXwuGuym1",
+    "weekly": "price_1SHY5JDlxrM8ZIxcQq2iUe6Y",
+    "monthly": "price_1SHY5JDlxrM8ZIxcsAns99wX"
+  },
+  "chefsChoice": {
+    "productId": "prod_TE05eR6EB9fQ2g",
+    "weekly": "price_1SHY5KDlxrM8ZIxcdi3UCNzj",
+    "monthly": "price_1SHY5KDlxrM8ZIxcGotjhqzp"
+  },
+  "industryNewsletter": {
+    "productId": "prod_TE05unNHEvyXe8",
+    "weekly": "price_1SHY5LDlxrM8ZIxcl9SnQXSi",
+    "monthly": "price_1SHY5LDlxrM8ZIxcZNNx7L86"
+  },
+  "customNewsletter": {
+    "productId": "prod_TE051KEhIeNQ5E",
+    "weekly": "price_1SHY5LDlxrM8ZIxcg7wpO8fx",
+    "monthly": "price_1SHY5MDlxrM8ZIxcDr3freb8"
+  }
+}

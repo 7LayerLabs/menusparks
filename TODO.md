@@ -50,9 +50,13 @@
 ### 0.4 External Service Setup
 - [x] Create Supabase account and project (PostgreSQL + Auth)
 - [x] Get Supabase connection string and API keys
-- [ ] Create Stripe account
-- [ ] Get Stripe API keys (test mode)
-- [ ] Set up Stripe products for Quick Byte and Chef's Choice
+- [x] Create Stripe account
+- [x] Get Stripe API keys (test mode)
+- [x] Set up Stripe products for Quick Byte and Chef's Choice (See stripe-product-ids.json)
+  - Quick Bites: Weekly ($12) & Monthly ($40)
+  - Chef's Choice: Weekly ($19) & Monthly ($70)
+  - Industry Newsletter: Weekly ($3) & Monthly ($10)
+  - Customized Newsletter: Weekly ($10) & Monthly ($35)
 - [ ] Create Vercel account for deployment
 - [ ] Create SendGrid/Resend account for emails
 - [ ] Get email API keys
