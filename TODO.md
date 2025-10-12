@@ -57,7 +57,9 @@
   - Chef's Choice: Weekly ($19) & Monthly ($70)
   - Industry Newsletter: Weekly ($3) & Monthly ($10)
   - Customized Newsletter: Weekly ($10) & Monthly ($35)
-- [ ] Create Vercel account for deployment
+- [x] Create Vercel account for deployment
+- [x] Deploy to Vercel (https://menusparks-app.vercel.app)
+- [x] Configure environment variables in Vercel (11 variables added)
 - [ ] Create SendGrid/Resend account for emails
 - [ ] Get email API keys
 - [ ] Create Sentry account for error tracking
