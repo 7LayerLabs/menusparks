@@ -44,8 +44,8 @@
 - [x] Set up ESLint
 
 ### 0.4 External Service Setup
-- [ ] Create Supabase account and project (PostgreSQL + Auth)
-- [ ] Get Supabase connection string and API keys
+- [x] Create Supabase account and project (PostgreSQL + Auth)
+- [x] Get Supabase connection string and API keys
 - [ ] Create Stripe account
 - [ ] Get Stripe API keys (test mode)
 - [ ] Set up Stripe products for Quick Byte and Chef's Choice
