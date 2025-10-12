@@ -15,7 +15,10 @@
       "Bash(git commit -m \"$(cat <<''EOF''\nInitial commit: MenuSparks project setup\n\n✅ Phase 0.3 Complete - Project Initialization\n\n- Next.js 15 + TypeScript + Tailwind CSS\n- Project folder structure created\n- Configuration files set up (tsconfig, tailwind, eslint)\n- Environment variable templates created\n- Development server tested successfully\n\n📁 Project Structure:\n- /docs - All documentation (PRD, architecture, TODO)\n- /src - Source code (app, components, services, agents)\n- /public - Static assets\n\n📚 Documentation Created:\n- PRD-MenuSpark.md\n- Product-Vision-MenuSparks.md\n- Technical-Architecture.md\n- Reference-Project-Analysis.md\n- AI-Agent-Army-B2B-Outreach.md\n- Practical-Agent-Architecture.md\n- TODO.md (316 tasks)\n- README.md\n\n🎯 Next Steps: Phase 1 - MVP Development\n- Authentication system\n- Restaurant profile setup\n- AI recipe generation\n- Email delivery\n- Stripe billing\n\n🤖 Generated with Claude Code (https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
       "Bash(tree:*)",
       "Bash(curl:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(npx prisma:*)",
+      "Read(//c/Users/derek/Downloads/**)",
+      "Bash(PRISMA_USER_CONSENT_FOR_DANGEROUS_AI_ACTION=\"yes proceed.\" npx prisma migrate reset --force --skip-seed)"
     ],
     "deny": [],
     "ask": []
