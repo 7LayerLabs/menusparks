@@ -1021,26 +1021,41 @@
 
 ## CURRENT STATUS
 
-**Phase:** 1.2 - Landing Page & Marketing Site (MVP Development)
-**Last Completed:** Phase 0.2 - Development Environment Setup ✅
-**Next Action:** Build landing page OR continue with Phase 1.3 (Restaurant Profile Setup)
+**Phase:** 0.4 - External Service Setup (In Progress)
+**Last Completed:** Vercel Deployment & Stripe Setup ✅
+**Next Action:** Complete email service setup (SendGrid/Resend) → Then move to Phase 1.2 (Landing Page)
 
 **Completed:**
+- ✅ Phase 0.1 - Documentation (PRD, Architecture, Pricing Strategy)
 - ✅ Phase 0.2 - Development Environment Setup (Git + GitHub + VS Code)
 - ✅ Phase 0.3 - Project Initialization (Next.js 15 + TypeScript + Tailwind CSS v4)
 - ✅ Phase 0.5 - Database Setup (Supabase PostgreSQL + Prisma)
 - ✅ Phase 1.1 - Authentication System (NextAuth.js + JWT + Protected Routes)
+- ✅ Stripe Account & Products Setup (8 pricing tiers configured)
+- ✅ Vercel Deployment (https://menusparks-app.vercel.app)
 
-**Active:**
+**Active Services:**
 - 🔄 GitHub Repository: https://github.com/7LayerLabs/menusparks_app.git
-- 🔄 Gemini API key configured in .env.local
-- 🔄 Perplexity API key configured in .env.local
-- 🔄 Server running on http://localhost:3005
+- 🔄 Vercel Production: https://menusparks-app.vercel.app
+- 🔄 Stripe Dashboard: https://dashboard.stripe.com/test/products
+- 🔄 Supabase Database: Connected and running
+- 🔄 Local Dev Server: http://localhost:3005
 
-**Pending:**
-- [ ] Stripe API keys (for billing)
-- [ ] SendGrid/Resend API key (for emails)
-- [ ] Confirm pricing strategy for tiers
+**API Keys Configured:**
+- ✅ Gemini API (AI recipe generation)
+- ✅ Perplexity API (market research)
+- ✅ Stripe Test Keys (billing ready)
+- ✅ Supabase (database connected)
+
+**Pending in Phase 0.4:**
+- [ ] SendGrid/Resend API key (for email delivery)
+- [ ] Sentry account (error tracking)
+
+**Pricing Strategy Finalized:**
+- Quick Bites: $12/week or $40/month
+- Chef's Choice: $19/week or $70/month
+- Industry Newsletter: $3/week or $10/month
+- Customized Newsletter: $10/week or $35/month
 
 ---
 
