@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import RecipeSettings from './RecipeSettings'
 import RecipeOutput from './RecipeOutput'
+import { supabase } from '@/lib/supabase'
 
 export default function RecipeGenerator() {
   const [loading, setLoading] = useState(false)
@@ -28,6 +29,11 @@ export default function RecipeGenerator() {
       formData.append('restaurantStyle', settings.restaurantStyle || '')
       formData.append('theme', settings.theme || '')
 
+      // Add inventory items if they exist
+      if (settings.inventoryItems && settings.inventoryItems.length > 0) {
+        formData.append('inventoryItems', JSON.stringify(settings.inventoryItems))
+      }
+
       // Add files if they exist
       if (settings.ingredientFiles) {
         settings.ingredientFiles.forEach((file: File) => {
@@ -52,17 +58,43 @@ export default function RecipeGenerator() {
       if (data.error) {
         setError(data.error)
       } else {
-        setRecipes(data.recipes || [])
-        // Save to history
+        const generatedRecipes = data.recipes || []
+        setRecipes(generatedRecipes)
+
+        // Save to localStorage (always)
         const history = JSON.parse(localStorage.getItem('recipeHistory') || '[]')
         const newEntry = {
           id: Date.now(),
           date: new Date().toISOString(),
-          recipes: data.recipes,
+          recipes: generatedRecipes,
           settings: settings
         }
         history.unshift(newEntry)
         localStorage.setItem('recipeHistory', JSON.stringify(history.slice(0, 50)))
+
+        // Save to Supabase if authenticated
+        if (supabase && generatedRecipes.length > 0) {
+          try {
+            const { data: { session } } = await supabase.auth.getSession()
+            if (session?.user) {
+              await supabase.from('recipe_history').insert({
+                user_id: session.user.id,
+                recipes: generatedRecipes,
+                inventory: settings.inventoryItems || [],
+                settings: {
+                  style: settings.recipeStyle,
+                  complexity: settings.recipeComplexity,
+                  restaurantStyle: settings.restaurantStyle,
+                  theme: settings.theme,
+                },
+                created_at: new Date().toISOString(),
+              })
+            }
+          } catch (dbErr) {
+            // Non-fatal — localStorage fallback already saved
+            console.warn('Supabase save failed (non-fatal):', dbErr)
+          }
+        }
       }
     } catch (err: any) {
       setError(err.message || 'Failed to generate recipes')

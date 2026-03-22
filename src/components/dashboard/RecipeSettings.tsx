@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import InventoryInput, { InventoryItem } from './InventoryInput'
 
 interface RecipeSettingsProps {
   onGenerate: (settings: any) => void
@@ -13,6 +14,7 @@ export default function RecipeSettings({ onGenerate, loading }: RecipeSettingsPr
     'Main Course': 2
   })
   
+  const [inventoryItems, setInventoryItems] = useState<InventoryItem[]>([])
   const [customRequest, setCustomRequest] = useState('')
   const [includeIngredients, setIncludeIngredients] = useState('')
   const [excludeIngredients, setExcludeIngredients] = useState('')
@@ -105,10 +107,15 @@ export default function RecipeSettings({ onGenerate, loading }: RecipeSettingsPr
       count: recipeCounts[mealType] || 1
     }))
 
+    // Build inventory string for the AI prompt
+    const inventoryText = inventoryItems.length > 0
+      ? inventoryItems.map(i => `${i.quantity ? i.quantity + ' ' + i.unit + ' ' : ''}${i.name}${i.notes ? ' (' + i.notes + ')' : ''} [${i.category}]`).join('\n')
+      : ''
+
     const settings = {
       recipeRequests,
       customRequest,
-      includeIngredients,
+      includeIngredients: inventoryText || includeIngredients,
       excludeIngredients,
       equipment,
       recipeStyle,
@@ -116,7 +123,8 @@ export default function RecipeSettings({ onGenerate, loading }: RecipeSettingsPr
       restaurantStyle: restaurantStyles.join(', '),
       theme,
       ingredientFiles,
-      menuFiles
+      menuFiles,
+      inventoryItems,
     }
     onGenerate(settings)
   }
@@ -125,6 +133,12 @@ export default function RecipeSettings({ onGenerate, loading }: RecipeSettingsPr
 
   return (
     <div className="space-y-8">
+
+      {/* Inventory Input — THE KILLER FEATURE */}
+      <div className="bg-gradient-to-r from-orange-50 to-amber-50 rounded-xl p-6 border-2 border-orange-300 shadow-sm">
+        <InventoryInput onInventoryChange={setInventoryItems} />
+      </div>
+
       {/* Recipe Types Section */}
       <div className="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-xl p-6 border border-orange-200">
         <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center">

@@ -38,6 +38,7 @@ export async function POST(request: NextRequest) {
     const includeIngredients = formData.get('includeIngredients') as string || ''
     const excludeIngredients = formData.get('excludeIngredients') as string || ''
     const equipment = JSON.parse(formData.get('equipment') as string || '[]')
+    const inventoryItems = JSON.parse(formData.get('inventoryItems') as string || '[]')
     const recipeStyle = formData.get('recipeStyle') as string || 'creative'
     const recipeComplexity = formData.get('recipeComplexity') as string || 'intermediate'
     const restaurantStyle = formData.get('restaurantStyle') as string || ''
@@ -89,7 +90,10 @@ Complexity: ${recipeComplexity === 'basic' ? 'Simple, quick execution, minimal p
 ${restaurantStyle ? `Restaurant Style: ${restaurantStyle}` : ''}
 ${theme ? `Theme: ${theme}` : ''}
 ${equipment.length > 0 ? `Available Equipment: ${equipment.join(', ')}` : ''}
-${includeIngredients ? `MUST INCLUDE THESE INGREDIENTS: ${includeIngredients}` : ''}
+${inventoryItems.length > 0 ? `WALK-IN INVENTORY (build specials FROM THESE ITEMS — no extra purchasing required):
+${inventoryItems.map((i: any) => `- ${i.quantity ? i.quantity + ' ' + i.unit + ' ' : ''}${i.name} [${i.category}]${i.notes ? ' — ' + i.notes : ''}`).join('\n')}
+
+CRITICAL: Every recipe MUST be built around the inventory above. The goal is to use what the restaurant already has to create profitable specials without any additional food purchasing.` : includeIngredients ? `MUST INCLUDE THESE INGREDIENTS: ${includeIngredients}` : ''}
 ${excludeIngredients ? `MUST EXCLUDE (allergies/restrictions): ${excludeIngredients}` : ''}
 ${customRequest ? `Special Instructions: ${customRequest}` : ''}
 

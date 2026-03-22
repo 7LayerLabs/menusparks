@@ -6,6 +6,7 @@ import RecipeGenerator from '@/components/dashboard/RecipeGenerator'
 import RecipeHistory from '@/components/dashboard/RecipeHistory'
 import SavedRecipes from '@/components/dashboard/SavedRecipes'
 import DashboardStats from '@/components/dashboard/DashboardStats'
+import { supabase } from '@/lib/supabase'
 
 export default function DashboardPage() {
   const [activeTab, setActiveTab] = useState('generate')
@@ -13,8 +14,16 @@ export default function DashboardPage() {
   const router = useRouter()
 
   useEffect(() => {
-    // Check if user is authenticated (placeholder for now)
-    const checkAuth = () => {
+    const checkAuth = async () => {
+      // Try Supabase real auth first
+      if (supabase) {
+        const { data: { session } } = await supabase.auth.getSession()
+        if (session?.user) {
+          setUser({ email: session.user.email, id: session.user.id })
+          return
+        }
+      }
+      // Fallback to localStorage demo mode
       const userData = localStorage.getItem('user')
       if (!userData) {
         router.push('/login')
@@ -42,10 +51,11 @@ export default function DashboardPage() {
             <div className="flex items-center space-x-4">
               <div className="text-right">
                 <p className="text-sm font-semibold text-gray-700">Welcome back!</p>
-                <p className="text-xs text-gray-500">Demo Mode</p>
+                <p className="text-xs text-gray-500">{user?.email || 'Demo Mode'}</p>
               </div>
               <button
-                onClick={() => {
+                onClick={async () => {
+                  if (supabase) await supabase.auth.signOut()
                   localStorage.removeItem('user')
                   router.push('/')
                 }}
