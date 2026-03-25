@@ -21,20 +21,32 @@ model User {
   name          String?
   email         String    @unique
   emailVerified DateTime?
-  password      String
+  password      String?
   image         String?
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
 
+  // Admin
+  isAdmin Boolean @default(false)
+
   // Stripe
   stripeCustomerId String? @unique
 
+  // Credit / Usage Tracking
+  generationsUsed        Int      @default(0)
+  generationsThisMonth   Int      @default(0)
+  generationsResetAt     DateTime @default(now())
+
   // Relations
-  accounts      Account[]
-  sessions      Session[]
-  restaurants   Restaurant[]
-  subscriptions Subscription[]
-  payments      Payment[]
+  accounts           Account[]
+  sessions           Session[]
+  restaurants        Restaurant[]
+  subscriptions      Subscription[]
+  payments           Payment[]
+  recipeGenerations  RecipeGeneration[]
+  restaurantProfile  UserRestaurantProfile?
+  socialSettings     UserSocialSettings?
+  savedRecipes       SavedRecipe[]
 
   @@map("users")
 }
@@ -120,13 +132,14 @@ model Restaurant {
 model Subscription {
   id           String   @id @default(cuid())
   userId       String
-  restaurantId String
+  restaurantId String?
 
-  tier         String // quick_byte, chefs_choice, industry_newsletter, custom_intelligence
+  tier         String // quick_byte (20/mo), chefs_choice (40/mo)
+  monthlyGenerationLimit Int @default(20)
   status       String   @default("active") // active, paused, cancelled
 
   // Delivery Schedule
-  deliveryDay  String // monday, tuesday, etc.
+  deliveryDay  String   @default("monday")
   deliveryTime String   @default("08:00")
 
   // Stripe
@@ -138,8 +151,8 @@ model Subscription {
   updatedAt    DateTime @updatedAt
 
   // Relations
-  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
-  restaurant Restaurant @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
+  user       User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  restaurant Restaurant? @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
   deliveries Delivery[]
   payments   Payment[]
 
@@ -219,6 +232,85 @@ model Payment {
   subscription Subscription @relation(fields: [subscriptionId], references: [id], onDelete: Cascade)
 
   @@map("payments")
+}
+
+// ============================================
+// Credit-Based Usage Tracking
+// ============================================
+
+model RecipeGeneration {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  recipeCount Int
+  mealTypes   String
+  recipeStyle String
+  complexity  String
+  theme       String?
+  createdAt   DateTime @default(now())
+
+  @@index([userId])
+  @@map("recipe_generations")
+}
+
+// ============================================
+// User Restaurant Profile & Social Settings
+// ============================================
+
+model UserRestaurantProfile {
+  id                      String   @id @default(cuid())
+  userId                  String   @unique
+  user                    User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  restaurantName          String   @default("")
+  restaurantType          String   @default("")
+  cuisineStyle            String   @default("")
+  location                String   @default("")
+  phone                   String   @default("")
+  description             String   @default("")
+  defaultRecipeStyle      String   @default("classic")
+  defaultComplexity       String   @default("basic")
+  defaultDecade           String   @default("")
+  defaultTheme            String   @default("")
+  defaultRestaurantStyles String   @default("[]")
+  updatedAt               DateTime @updatedAt
+
+  @@map("user_restaurant_profiles")
+}
+
+model UserSocialSettings {
+  id            String   @id @default(cuid())
+  userId        String   @unique
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  tone          String   @default("casual")
+  brandHashtags String   @default("")
+  ctaTemplate   String   @default("")
+  alwaysInclude String   @default("")
+  alwaysExclude String   @default("")
+  platforms     String   @default("Instagram,Facebook")
+  updatedAt     DateTime @updatedAt
+
+  @@map("user_social_settings")
+}
+
+model SavedRecipe {
+  id           String   @id @default(cuid())
+  userId       String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  recipeName   String
+  mealType     String
+  description  String   @db.Text
+  yield        String
+  ingredients  String   @db.Text
+  prep         String   @db.Text
+  bulkPrep     String   @db.Text
+  instructions String   @db.Text
+  chefNotes    String?  @db.Text
+  socialPost   String?  @db.Text
+  tags         String   @default("[]") // JSON array of tags e.g. ["Spring","Holiday"]
+  createdAt    DateTime @default(now())
+
+  @@index([userId])
+  @@map("saved_recipes")
 }
 
 // ============================================

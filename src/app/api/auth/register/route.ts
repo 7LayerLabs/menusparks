@@ -62,6 +62,16 @@ export async function POST(request: Request) {
       },
     });
 
+    // Initialize profile records with default values
+    await prisma.userRestaurantProfile.create({ data: { userId: user.id } });
+    await prisma.userSocialSettings.create({ data: { userId: user.id } });
+
+    // Grant admin role if email matches ADMIN_EMAIL env var
+    const adminEmail = process.env.ADMIN_EMAIL;
+    if (adminEmail && email === adminEmail) {
+      await prisma.user.update({ where: { id: user.id }, data: { isAdmin: true } });
+    }
+
     return NextResponse.json(
       {
         message: 'User created successfully',

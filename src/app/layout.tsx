@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import SessionProvider from "@/components/providers/SessionProvider";
 
 export const metadata: Metadata = {
   title: "MenuSparks - AI-Powered Menu Optimization for Restaurants",
@@ -15,9 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        <SessionProvider>
-          {children}
-        </SessionProvider>
+        {children}
       </body>
     </html>
   );
